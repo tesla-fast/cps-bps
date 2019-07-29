@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bpaas.bps.user.mapper.AppBuryingPointMapper" >
+  <resultMap id="BaseResultMap" type="com.bpaas.bps.user.po.AppBuryingPointPo" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="app_flag" property="appFlag" jdbcType="VARCHAR" />
+    <result column="org" property="org" jdbcType="VARCHAR" />
+    <result column="is_new_customer" property="isNewCustomer" jdbcType="VARCHAR" />
+    <result column="e_id" property="eId" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="mobile" property="mobile" jdbcType="VARCHAR" />
+    <result column="id_type" property="idType" jdbcType="VARCHAR" />
+    <result column="id_no" property="idNo" jdbcType="VARCHAR" />
+    <result column="product_name" property="productName" jdbcType="VARCHAR" />
+    <result column="is_order" property="isOrder" jdbcType="VARCHAR" />
+    <result column="is_pay" property="isPay" jdbcType="VARCHAR" />
+    <result column="total_amount" property="totalAmount" jdbcType="DOUBLE" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  
+  <insert id="insert" parameterType="com.bpaas.bps.user.po.AppBuryingPointPo" >
+    insert into t_app_burying_point (id, app_flag, org, 
+      is_new_customer, e_id, name, 
+      mobile, id_type, id_no, 
+      product_name, is_order, is_pay, 
+      total_amount, create_time)
+    values (#{id,jdbcType=INTEGER}, #{appFlag,jdbcType=VARCHAR}, #{org,jdbcType=VARCHAR}, 
+      #{isNewCustomer,jdbcType=VARCHAR}, #{eId,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
+      #{mobile,jdbcType=VARCHAR}, #{idType,jdbcType=VARCHAR}, #{idNo,jdbcType=VARCHAR}, 
+      #{productName,jdbcType=VARCHAR}, #{isOrder,jdbcType=VARCHAR}, #{isPay,jdbcType=VARCHAR}, 
+      #{totalAmount,jdbcType=DOUBLE}, #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.bpaas.bps.user.po.AppBuryingPointPo" >
+    insert into t_app_burying_point
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="appFlag != null" >
+        app_flag,
+      </if>
+      <if test="org != null" >
+        org,
+      </if>
+      <if test="isNewCustomer != null" >
+        is_new_customer,
+      </if>
+      <if test="eId != null" >
+        e_id,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="mobile != null" >
+        mobile,
+      </if>
+      <if test="idType != null" >
+        id_type,
+      </if>
+      <if test="idNo != null" >
+        id_no,
+      </if>
+      <if test="productName != null" >
+        product_name,
+      </if>
+      <if test="isOrder != null" >
+        is_order,
+      </if>
+      <if test="isPay != null" >
+        is_pay,
+      </if>
+      <if test="totalAmount != null" >
+        total_amount,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="appFlag != null" >
+        #{appFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="org != null" >
+        #{org,jdbcType=VARCHAR},
+      </if>
+      <if test="isNewCustomer != null" >
+        #{isNewCustomer,jdbcType=VARCHAR},
+      </if>
+      <if test="eId != null" >
+        #{eId,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null" >
+        #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="idType != null" >
+        #{idType,jdbcType=VARCHAR},
+      </if>
+      <if test="idNo != null" >
+        #{idNo,jdbcType=VARCHAR},
+      </if>
+      <if test="productName != null" >
+        #{productName,jdbcType=VARCHAR},
+      </if>
+      <if test="isOrder != null" >
+        #{isOrder,jdbcType=VARCHAR},
+      </if>
+      <if test="isPay != null" >
+        #{isPay,jdbcType=VARCHAR},
+      </if>
+      <if test="totalAmount != null" >
+        #{totalAmount,jdbcType=DOUBLE},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  
+</mapper>

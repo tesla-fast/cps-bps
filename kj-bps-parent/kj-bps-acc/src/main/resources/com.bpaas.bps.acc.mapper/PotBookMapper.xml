@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bpaas.bps.acc.mapper.PotBookMapper">
+	<resultMap id="BaseResultMap" type="com.bpaas.bps.acc.po.PotBookPo">
+		<id column="ID" property="id" />
+		<result column="USER_ID" property="userId" />
+		<result column="POT_ACCT_NO" property="potAcctNo" />
+		<result column="POT_ACCT_TYPE" property="potAcctType" />
+		<result column="POT_ACCT_NAME" property="potAcctName" />
+		<result column="POT_ACCT_STAT" property="potAcctStat" />
+		<result column="OPEN_BRC" property="openBrc" />
+		<result column="OPEN_DATE" property="openDate" />
+		<result column="POT_ACCT_BAL" property="potAcctBal" />
+		<result column="DATELASTMAINT" property="datelastmaint" />
+		<result column="REMARK1" property="remark1" />
+		<result column="REMARK2" property="remark2" />
+		<result column="REMARK3" property="remark3" />
+		<result column="E_CARD_NO" property="eCardNo" />
+	</resultMap>
+
+	<sql id="Table_Name">
+		T_POT_BOOK
+	</sql>
+
+	<sql id="Base_Column">
+		ID,
+		USER_ID,
+		E_CARD_NO,
+		POT_ACCT_NO,
+		POT_ACCT_TYPE,
+		POT_ACCT_NAME,
+		POT_ACCT_STAT,
+		OPEN_BRC,
+		OPEN_DATE,
+		POT_ACCT_BAL,
+		DATELASTMAINT,
+		REMARK1,
+		REMARK2,
+		REMARK3
+	</sql>
+
+	<sql id="Base_Where">
+		<trim suffixOverrides="AND">
+		<if test="id != null">
+			ID= #{id}
+	           AND 
+		</if>
+		<if test="userId != null">
+			USER_ID= #{userId}
+	           AND 
+		</if>
+		<if test="eCardNo != null">
+			E_CARD_NO= #{eCardNo}
+	           AND 
+		</if>
+		<if test="potAcctNo != null">
+			POT_ACCT_NO= #{potAcctNo}
+	           AND 
+		</if>
+		<if test="potAcctType != null">
+			POT_ACCT_TYPE= #{potAcctType}
+	           AND 
+		</if>
+		<if test="potAcctName != null">
+			POT_ACCT_NAME= #{potAcctName}
+	           AND 
+		</if>
+		<if test="potAcctStat != null">
+			POT_ACCT_STAT= #{potAcctStat}
+	           AND 
+		</if>
+		<if test="openBrc != null">
+			OPEN_BRC= #{openBrc}
+	           AND 
+		</if>
+		<if test="openDate != null">
+			OPEN_DATE= #{openDate}
+	           AND 
+		</if>
+		<if test="potAcctBal != null">
+			POT_ACCT_BAL= #{potAcctBal}
+	           AND 
+		</if>
+		<if test="datelastmaint != null">
+			DATELASTMAINT= #{datelastmaint}
+	           AND 
+		</if>
+		<if test="remark1 != null">
+			REMARK1= #{remark1}
+	           AND 
+		</if>
+		<if test="remark2 != null">
+			REMARK2= #{remark2}
+	           AND 
+		</if>
+		<if test="remark3 != null">
+			REMARK3= #{remark3}
+		</if>
+		</trim>
+	</sql>
+
+	<insert id="insert" >
+		insert into
+		<include refid="Table_Name" />
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+	<if test="id != null">
+		ID,
+	</if>
+	<if test="userId != null">
+		USER_ID,
+	</if>
+	<if test="eCardNo != null">
+		E_CARD_NO,
+	</if>
+	<if test="potAcctNo != null">
+		POT_ACCT_NO,
+	</if>
+	<if test="potAcctType != null">
+		POT_ACCT_TYPE,
+	</if>
+	<if test="potAcctName != null">
+		POT_ACCT_NAME,
+	</if>
+	<if test="potAcctStat != null">
+		POT_ACCT_STAT,
+	</if>
+	<if test="openBrc != null">
+		OPEN_BRC,
+	</if>
+	<if test="openDate != null">
+		OPEN_DATE,
+	</if>
+	<if test="potAcctBal != null">
+		POT_ACCT_BAL,
+	</if>
+	<if test="datelastmaint != null">
+		DATELASTMAINT,
+	</if>
+	<if test="remark1 != null">
+		REMARK1,
+	</if>
+	<if test="remark2 != null">
+		REMARK2,
+	</if>
+	<if test="remark3 != null">
+		REMARK3,
+	</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+	<if test="id != null">
+		#{id},
+	</if>
+	<if test="userId != null">
+		#{userId},
+	</if>
+	<if test="eCardNo != null">
+		#{eCardNo},
+	</if>
+	<if test="potAcctNo != null">
+		#{potAcctNo},
+	</if>
+	<if test="potAcctType != null">
+		#{potAcctType},
+	</if>
+	<if test="potAcctName != null">
+		#{potAcctName},
+	</if>
+	<if test="potAcctStat != null">
+		#{potAcctStat},
+	</if>
+	<if test="openBrc != null">
+		#{openBrc},
+	</if>
+	<if test="openDate != null">
+		#{openDate},
+	</if>
+	<if test="potAcctBal != null">
+		#{potAcctBal},
+	</if>
+	<if test="datelastmaint != null">
+		#{datelastmaint},
+	</if>
+	<if test="remark1 != null">
+		#{remark1},
+	</if>
+	<if test="remark2 != null">
+		#{remark2},
+	</if>
+	<if test="remark3 != null">
+		#{remark3},
+	</if>
+		</trim>
+	</insert>
+
+	<update id="update" >
+		update
+		<include refid="Table_Name" />
+		<set>
+	<if test="id != null">
+		ID=#{id},
+	</if>
+	<if test="userId != null">
+		USER_ID=#{userId},
+	</if>
+	<if test="eCardNo != null">
+		E_CARD_NO=#{eCardNo},
+	</if>
+	<if test="potAcctNo != null">
+		POT_ACCT_NO=#{potAcctNo},
+	</if>
+	<if test="potAcctType != null">
+		POT_ACCT_TYPE=#{potAcctType},
+	</if>
+	<if test="potAcctName != null">
+		POT_ACCT_NAME=#{potAcctName},
+	</if>
+	<if test="potAcctStat != null">
+		POT_ACCT_STAT=#{potAcctStat},
+	</if>
+	<if test="openBrc != null">
+		OPEN_BRC=#{openBrc},
+	</if>
+	<if test="openDate != null">
+		OPEN_DATE=#{openDate},
+	</if>
+	<if test="potAcctBal != null">
+		POT_ACCT_BAL=#{potAcctBal},
+	</if>
+	<if test="datelastmaint != null">
+		DATELASTMAINT=#{datelastmaint},
+	</if>
+	<if test="remark1 != null">
+		REMARK1=#{remark1},
+	</if>
+	<if test="remark2 != null">
+		REMARK2=#{remark2},
+	</if>
+	<if test="remark3 != null">
+		REMARK3=#{remark3},
+	</if>
+		</set>
+		where 
+			      ID=#{id}
+	</update>
+
+	<update id="updateByEntity" >
+		UPDATE
+		<include refid="Table_Name" />
+		<set>
+			<if test="s.userId != null">
+                    USER_ID=#{s.userId},
+			</if>
+			<if test="s.eCardNo != null">
+					E_CARD_NO=#{s.eCardNo},
+			</if>
+			<if test="s.potAcctNo != null">
+                    POT_ACCT_NO=#{s.potAcctNo},
+			</if>
+			<if test="s.potAcctType != null">
+                    POT_ACCT_TYPE=#{s.potAcctType},
+			</if>
+			<if test="s.potAcctName != null">
+                    POT_ACCT_NAME=#{s.potAcctName},
+			</if>
+			<if test="s.potAcctStat != null">
+                    POT_ACCT_STAT=#{s.potAcctStat},
+			</if>
+			<if test="s.openBrc != null">
+                    OPEN_BRC=#{s.openBrc},
+			</if>
+			<if test="s.openDate != null">
+                    OPEN_DATE=#{s.openDate},
+			</if>
+			<if test="s.potAcctBal != null">
+                    POT_ACCT_BAL=#{s.potAcctBal},
+			</if>
+			<if test="s.datelastmaint != null">
+                    DATELASTMAINT=#{s.datelastmaint},
+			</if>
+			<if test="s.remark1 != null">
+                    REMARK1=#{s.remark1},
+			</if>
+			<if test="s.remark2 != null">
+                    REMARK2=#{s.remark2},
+			</if>
+			<if test="s.remark3 != null">
+                    REMARK3=#{s.remark3}
+			</if>
+		</set>
+		<where> 
+			<trim prefix="(" suffix=")" suffixOverrides="AND">
+			<if test="w.id != null">
+                    ID=#{w.id}
+                   AND 
+ 			</if>
+			<if test="w.userId != null">
+                    USER_ID=#{w.userId}
+                   AND 
+ 			</if>
+ 			<if test="w.eCardNo != null">
+                    E_CARD_NO=#{w.eCardNo}
+                   AND 
+ 			</if>
+			<if test="w.potAcctNo != null">
+                    POT_ACCT_NO=#{w.potAcctNo}
+                   AND 
+ 			</if>
+			<if test="w.potAcctType != null">
+                    POT_ACCT_TYPE=#{w.potAcctType}
+                   AND 
+ 			</if>
+			<if test="w.potAcctName != null">
+                    POT_ACCT_NAME=#{w.potAcctName}
+                   AND 
+ 			</if>
+			<if test="w.potAcctStat != null">
+                    POT_ACCT_STAT=#{w.potAcctStat}
+                   AND 
+ 			</if>
+			<if test="w.openBrc != null">
+                    OPEN_BRC=#{w.openBrc}
+                   AND 
+ 			</if>
+			<if test="w.openDate != null">
+                    OPEN_DATE=#{w.openDate}
+                   AND 
+ 			</if>
+			<if test="w.potAcctBal != null">
+                    POT_ACCT_BAL=#{w.potAcctBal}
+                   AND 
+ 			</if>
+			<if test="w.datelastmaint != null">
+                    DATELASTMAINT=#{w.datelastmaint}
+                   AND 
+ 			</if>
+			<if test="w.remark1 != null">
+                    REMARK1=#{w.remark1}
+                   AND 
+ 			</if>
+			<if test="w.remark2 != null">
+                    REMARK2=#{w.remark2}
+                   AND 
+ 			</if>
+			<if test="w.remark3 != null">
+                    REMARK3=#{w.remark3}
+ 			</if>
+			</trim>
+		</where>
+	</update>
+
+	<delete id="delete" >
+		delete from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</delete>
+
+	<select id="count" parameterType="java.util.Map" resultType="int">
+		select count(1) from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</select>
+
+	<select id="selectOne"  resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column" />
+		from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</select>
+
+	<select id="selectList"  resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column" />
+		from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</select>
+
+</mapper>

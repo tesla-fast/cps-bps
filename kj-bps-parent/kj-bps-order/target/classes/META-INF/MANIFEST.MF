@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: kj-bps-order
+Implementation-Version: 1.0.0-SNAPSHOT
+Built-By: Jason
+Implementation-Vendor-Id: com.bpaas.bps
+Build-Jdk: 1.8.0_131
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/kj-bps-parent/kj-bps-order
+Created-By: Maven Integration for Eclipse
+

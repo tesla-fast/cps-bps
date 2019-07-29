@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="kj-bps-base" />
+        <module name="kj-bps-common" />
+        <module name="kj-bps-common-httpclient" />
+        <module name="kj-bps-common-rabbitmq" />
+        <module name="kj-bps-common-redis" />
+        <module name="kj-bps-mbg" />
+        <module name="kj-bps-order" />
+        <module name="kj-bps-pay" />
+        <module name="kj-bps-user" />
+        <module name="micro-api-gateway" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="kj-bps-httpclient" target="1.8" />
+      <module name="kj-bps-mbg" target="1.8" />
+      <module name="micro-consul" target="1.8" />
+      <module name="micro-eureka" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

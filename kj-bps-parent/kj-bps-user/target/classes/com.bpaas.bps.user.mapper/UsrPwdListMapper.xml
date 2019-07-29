@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bpaas.bps.user.mapper.UsrPwdListMapper">
+	<resultMap id="BaseResultMap" type="com.bpaas.bps.user.po.UsrPwdListPo">
+		<id column="ID" property="id" />
+		<result column="USER_ID" property="userId" />
+		<result column="COUNT_DATE" property="countDate" />
+		<result column="LOG_DAY_ERR" property="logDayErr" />
+		<result column="LOG_TOT_ERR" property="logTotErr" />
+		<result column="LAST_LOGPWD_ERRTIME" property="lastLogpwdErrtime" />
+		<result column="TRADE_DAY_ERR" property="tradeDayErr" />
+		<result column="TRADE_TOT_ERR" property="tradeTotErr" />
+		<result column="LAST_TRADEPWD_ERRTIME" property="lastTradepwdErrtime" />
+		<result column="QUERY_DAY_ERR" property="queryDayErr" />
+		<result column="QUERY_TOT_ERR" property="queryTotErr" />
+		<result column="LAST_QUERYPWD_ERRTIME" property="lastQuerypwdErrtime" />
+		<result column="GESTURE_DAY_ERR" property="gestureDayErr" />
+		<result column="FINGERPRINT_DAY_ERR" property="fingerprintDayErr" />
+		<result column="REMARK1" property="remark1" />
+		<result column="REMARK2" property="remark2" />
+		<result column="REMARK3" property="remark3" />
+	</resultMap>
+
+	<sql id="Table_Name">
+		T_USR_PWD_LIST
+	</sql>
+
+	<sql id="Base_Column">
+		ID,
+		USER_ID,
+		COUNT_DATE,
+		LOG_DAY_ERR,
+		LOG_TOT_ERR,
+		LAST_LOGPWD_ERRTIME,
+		TRADE_DAY_ERR,
+		TRADE_TOT_ERR,
+		LAST_TRADEPWD_ERRTIME,
+		QUERY_DAY_ERR,
+		QUERY_TOT_ERR,
+		LAST_QUERYPWD_ERRTIME,
+		GESTURE_DAY_ERR,
+		FINGERPRINT_DAY_ERR,
+		REMARK1,
+		REMARK2,
+		REMARK3
+	</sql>
+
+	<sql id="Base_Where">
+		<trim suffixOverrides="AND">
+		<if test="id != null">
+			ID= #{id}
+	           AND 
+		</if>
+		<if test="userId != null">
+			USER_ID= #{userId}
+	           AND 
+		</if>
+		<if test="countDate != null">
+			COUNT_DATE= #{countDate}
+	           AND 
+		</if>
+		<if test="logDayErr != null">
+			LOG_DAY_ERR= #{logDayErr}
+	           AND 
+		</if>
+		<if test="logTotErr != null">
+			LOG_TOT_ERR= #{logTotErr}
+	           AND 
+		</if>
+		<if test="lastLogpwdErrtime != null">
+			LAST_LOGPWD_ERRTIME= #{lastLogpwdErrtime}
+	           AND 
+		</if>
+		<if test="tradeDayErr != null">
+			TRADE_DAY_ERR= #{tradeDayErr}
+	           AND 
+		</if>
+		<if test="tradeTotErr != null">
+			TRADE_TOT_ERR= #{tradeTotErr}
+	           AND 
+		</if>
+		<if test="lastTradepwdErrtime != null">
+			LAST_TRADEPWD_ERRTIME= #{lastTradepwdErrtime}
+	           AND 
+		</if>
+		<if test="queryDayErr != null">
+			QUERY_DAY_ERR= #{queryDayErr}
+	           AND 
+		</if>
+		<if test="queryTotErr != null">
+			QUERY_TOT_ERR= #{queryTotErr}
+	           AND 
+		</if>
+		<if test="lastQuerypwdErrtime != null">
+			LAST_QUERYPWD_ERRTIME= #{lastQuerypwdErrtime}
+	           AND 
+		</if>
+		<if test="gestureDayErr != null">
+			GESTURE_DAY_ERR= #{gestureDayErr}
+	           AND 
+		</if>
+		<if test="fingerprintDayErr != null">
+			FINGERPRINT_DAY_ERR= #{fingerprintDayErr}
+	           AND 
+		</if>
+		<if test="remark1 != null">
+			REMARK1= #{remark1}
+	           AND 
+		</if>
+		<if test="remark2 != null">
+			REMARK2= #{remark2}
+	           AND 
+		</if>
+		<if test="remark3 != null">
+			REMARK3= #{remark3}
+		</if>
+		</trim>
+	</sql>
+
+	<insert id="insert" >
+		insert into
+		<include refid="Table_Name" />
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+	<if test="id != null">
+		ID,
+	</if>
+	<if test="userId != null">
+		USER_ID,
+	</if>
+	<if test="countDate != null">
+		COUNT_DATE,
+	</if>
+	<if test="logDayErr != null">
+		LOG_DAY_ERR,
+	</if>
+	<if test="logTotErr != null">
+		LOG_TOT_ERR,
+	</if>
+	<if test="lastLogpwdErrtime != null">
+		LAST_LOGPWD_ERRTIME,
+	</if>
+	<if test="tradeDayErr != null">
+		TRADE_DAY_ERR,
+	</if>
+	<if test="tradeTotErr != null">
+		TRADE_TOT_ERR,
+	</if>
+	<if test="lastTradepwdErrtime != null">
+		LAST_TRADEPWD_ERRTIME,
+	</if>
+	<if test="queryDayErr != null">
+		QUERY_DAY_ERR,
+	</if>
+	<if test="queryTotErr != null">
+		QUERY_TOT_ERR,
+	</if>
+	<if test="lastQuerypwdErrtime != null">
+		LAST_QUERYPWD_ERRTIME,
+	</if>
+	<if test="gestureDayErr != null">
+		GESTURE_DAY_ERR,
+	</if>
+	<if test="fingerprintDayErr != null">
+		FINGERPRINT_DAY_ERR,
+	</if>
+	<if test="remark1 != null">
+		REMARK1,
+	</if>
+	<if test="remark2 != null">
+		REMARK2,
+	</if>
+	<if test="remark3 != null">
+		REMARK3,
+	</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+	<if test="id != null">
+		#{id},
+	</if>
+	<if test="userId != null">
+		#{userId},
+	</if>
+	<if test="countDate != null">
+		#{countDate},
+	</if>
+	<if test="logDayErr != null">
+		#{logDayErr},
+	</if>
+	<if test="logTotErr != null">
+		#{logTotErr},
+	</if>
+	<if test="lastLogpwdErrtime != null">
+		#{lastLogpwdErrtime},
+	</if>
+	<if test="tradeDayErr != null">
+		#{tradeDayErr},
+	</if>
+	<if test="tradeTotErr != null">
+		#{tradeTotErr},
+	</if>
+	<if test="lastTradepwdErrtime != null">
+		#{lastTradepwdErrtime},
+	</if>
+	<if test="queryDayErr != null">
+		#{queryDayErr},
+	</if>
+	<if test="queryTotErr != null">
+		#{queryTotErr},
+	</if>
+	<if test="lastQuerypwdErrtime != null">
+		#{lastQuerypwdErrtime},
+	</if>
+	<if test="gestureDayErr != null">
+		#{gestureDayErr},
+	</if>
+	<if test="fingerprintDayErr != null">
+		#{fingerprintDayErr},
+	</if>
+	<if test="remark1 != null">
+		#{remark1},
+	</if>
+	<if test="remark2 != null">
+		#{remark2},
+	</if>
+	<if test="remark3 != null">
+		#{remark3},
+	</if>
+		</trim>
+	</insert>
+
+	<update id="update" >
+		update
+		<include refid="Table_Name" />
+		<set>
+	<if test="id != null">
+		ID=#{id},
+	</if>
+	<if test="userId != null">
+		USER_ID=#{userId},
+	</if>
+	<if test="countDate != null">
+		COUNT_DATE=#{countDate},
+	</if>
+	<if test="logDayErr != null">
+		LOG_DAY_ERR=#{logDayErr},
+	</if>
+	<if test="logTotErr != null">
+		LOG_TOT_ERR=#{logTotErr},
+	</if>
+	<if test="lastLogpwdErrtime != null">
+		LAST_LOGPWD_ERRTIME=#{lastLogpwdErrtime},
+	</if>
+	<if test="tradeDayErr != null">
+		TRADE_DAY_ERR=#{tradeDayErr},
+	</if>
+	<if test="tradeTotErr != null">
+		TRADE_TOT_ERR=#{tradeTotErr},
+	</if>
+	<if test="lastTradepwdErrtime != null">
+		LAST_TRADEPWD_ERRTIME=#{lastTradepwdErrtime},
+	</if>
+	<if test="queryDayErr != null">
+		QUERY_DAY_ERR=#{queryDayErr},
+	</if>
+	<if test="queryTotErr != null">
+		QUERY_TOT_ERR=#{queryTotErr},
+	</if>
+	<if test="lastQuerypwdErrtime != null">
+		LAST_QUERYPWD_ERRTIME=#{lastQuerypwdErrtime},
+	</if>
+	<if test="gestureDayErr != null">
+		GESTURE_DAY_ERR= #{gestureDayErr},
+	</if>
+	<if test="fingerprintDayErr != null">
+		FINGERPRINT_DAY_ERR= #{fingerprintDayErr},
+	</if>
+	<if test="remark1 != null">
+		REMARK1=#{remark1},
+	</if>
+	<if test="remark2 != null">
+		REMARK2=#{remark2},
+	</if>
+	<if test="remark3 != null">
+		REMARK3=#{remark3},
+	</if>
+		</set>
+		where 
+			      ID=#{id}
+	</update>
+
+	<update id="updateByEntity" >
+		UPDATE
+		<include refid="Table_Name" />
+		<set>
+			<if test="s.userId != null">
+                    USER_ID=#{s.userId},
+			</if>
+			<if test="s.countDate != null">
+                    COUNT_DATE=#{s.countDate},
+			</if>
+			<if test="s.logDayErr != null">
+                    LOG_DAY_ERR=#{s.logDayErr},
+			</if>
+			<if test="s.logTotErr != null">
+                    LOG_TOT_ERR=#{s.logTotErr},
+			</if>
+			<if test="s.lastLogpwdErrtime != null">
+                    LAST_LOGPWD_ERRTIME=#{s.lastLogpwdErrtime},
+			</if>
+			<if test="s.tradeDayErr != null">
+                    TRADE_DAY_ERR=#{s.tradeDayErr},
+			</if>
+			<if test="s.tradeTotErr != null">
+                    TRADE_TOT_ERR=#{s.tradeTotErr},
+			</if>
+			<if test="s.lastTradepwdErrtime != null">
+                    LAST_TRADEPWD_ERRTIME=#{s.lastTradepwdErrtime},
+			</if>
+			<if test="s.queryDayErr != null">
+                    QUERY_DAY_ERR=#{s.queryDayErr},
+			</if>
+			<if test="s.queryTotErr != null">
+                    QUERY_TOT_ERR=#{s.queryTotErr},
+			</if>
+			<if test="s.lastQuerypwdErrtime != null">
+                    LAST_QUERYPWD_ERRTIME=#{s.lastQuerypwdErrtime},
+			</if>
+			<if test="s.gestureDayErr != null">
+				GESTURE_DAY_ERR= #{s.gestureDayErr},
+			</if>
+			<if test="s.fingerprintDayErr != null">
+				FINGERPRINT_DAY_ERR= #{s.fingerprintDayErr},
+			</if>
+			<if test="s.remark1 != null">
+                    REMARK1=#{s.remark1},
+			</if>
+			<if test="s.remark2 != null">
+                    REMARK2=#{s.remark2},
+			</if>
+			<if test="s.remark3 != null">
+                    REMARK3=#{s.remark3}
+			</if>
+		</set>
+		<where> 
+			<trim prefix="(" suffix=")" suffixOverrides="AND">
+			<if test="w.id != null">
+                    ID=#{w.id}
+                   AND 
+ 			</if>
+			<if test="w.userId != null">
+                    USER_ID=#{w.userId}
+                   AND 
+ 			</if>
+			<if test="w.countDate != null">
+                    COUNT_DATE=#{w.countDate}
+                   AND 
+ 			</if>
+			<if test="w.logDayErr != null">
+                    LOG_DAY_ERR=#{w.logDayErr}
+                   AND 
+ 			</if>
+			<if test="w.logTotErr != null">
+                    LOG_TOT_ERR=#{w.logTotErr}
+                   AND 
+ 			</if>
+			<if test="w.lastLogpwdErrtime != null">
+                    LAST_LOGPWD_ERRTIME=#{w.lastLogpwdErrtime}
+                   AND 
+ 			</if>
+			<if test="w.tradeDayErr != null">
+                    TRADE_DAY_ERR=#{w.tradeDayErr}
+                   AND 
+ 			</if>
+			<if test="w.tradeTotErr != null">
+                    TRADE_TOT_ERR=#{w.tradeTotErr}
+                   AND 
+ 			</if>
+			<if test="w.lastTradepwdErrtime != null">
+                    LAST_TRADEPWD_ERRTIME=#{w.lastTradepwdErrtime}
+                   AND 
+ 			</if>
+ 			<if test="w.queryDayErr != null">
+                    QUERY_DAY_ERR=#{w.queryDayErr}
+                   AND 
+ 			</if>
+			<if test="w.queryTotErr != null">
+                    QUERY_TOT_ERR=#{w.queryTotErr}
+                   AND 
+ 			</if>
+			<if test="w.lastQuerypwdErrtime != null">
+                    LAST_QUERYPWD_ERRTIME=#{w.lastQuerypwdErrtime}
+                   AND 
+ 			</if>
+ 			<if test="w.gestureDayErr != null">
+				GESTURE_DAY_ERR= #{w.gestureDayErr}
+		           AND 
+			</if>
+			<if test="w.fingerprintDayErr != null">
+				FINGERPRINT_DAY_ERR= #{w.fingerprintDayErr}
+		           AND 
+			</if>
+			<if test="w.remark1 != null">
+                    REMARK1=#{w.remark1}
+                   AND 
+ 			</if>
+			<if test="w.remark2 != null">
+                    REMARK2=#{w.remark2}
+                   AND 
+ 			</if>
+			<if test="w.remark3 != null">
+                    REMARK3=#{w.remark3}
+ 			</if>
+			</trim>
+		</where>
+	</update>
+
+	<delete id="delete" >
+		delete from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</delete>
+
+	<select id="count" parameterType="java.util.Map" resultType="int">
+		select count(1) from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</select>
+
+	<select id="selectOne"  resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column" />
+		from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</select>
+
+	<select id="selectList"  resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column" />
+		from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</select>
+
+
+</mapper>

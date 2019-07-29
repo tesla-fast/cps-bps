@@ -1,0 +1,76 @@
+spring:  
+  profiles:
+    active: dev
+---  
+server:
+  port: 8002
+spring: 
+  profiles: dev
+  application: 
+    name: kj-bps-pay
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name}
+        instance-id: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
+  datasource:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://127.0.0.1:3306/mall
+      username: root
+      password: 123456
+      type: com.alibaba.druid.pool.DruidDataSource
+      druid:
+        max-active: 20
+        initial-size: 5
+        min-idle: 5
+        max-wait: 60000
+        time-between-eviction-runs-millis: 60000
+        min-evictable-idle-time-millis: 300000
+        test-while-idle: true
+        test-on-borrow: false
+        test-on-return: false
+        filters: config,stat,wall
+        connectionProperties: config.decrypt=false;config.decrypt.key=MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBALHFe8Mce4Lvj1fA2lgwKCAyz0Qbgy6AdxqCGlmi93VJUx8a2S1etbEr1TTF+zyR6+e/7UY0MuB4WuBnCMYKpxECAwEAAQ==
+  task:
+    pool:
+      corePoolSize: 10
+      maxPoolSize: 50
+      keepAliveSeconds: 1000
+      queueCapacity: 300
+
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:8761/eureka/
+#  instance:
+#    prefer-ip-address: true
+
+mybatis:
+  type-aliases-package: com.bpaas.bps.pay.po
+  mapper-locations: classpath:com.bpaas.bps.pay.mapper/*.xml
+
+
+alipay-app:
+    serverUrl: https://openapi.alipaydev.com/gateway.do
+    appId: 2016092900623739
+    privateKey: MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCwVUSuVX4BeWsnGlcQk0YeTqvJKRBNFE/SgLhH5dg2wMG4eWIujDd3QrD9lZ3ge5EtBdS4XFNiDwJBJmsD3jK+kbYRLD3D3nFdQ49hcv8/V+OntGKa72n7i/VU0mSb0Cy+nFu5tmBSZ/8ZioaJV+IfiePjaqvdI8QmWBZe4jzJuRvEcON8ZGrljWVhkXvT0mYOA1a9ryLNDjV8Di+d1u+30N9oAN+eMGjvhALqvQOvuSB0aFamSVRdEykQ4duC8pvtyjGcukerq86scRLIji0rd/mgzXFa5u6hxB0BfYELTY9jfuvpc5Ac4hS/HtXDGuuWJ9FP0aPQ0JOJFXibFkXzAgMBAAECggEAEwfQ1sPRSpVxFBJKrTZHzgONlLNC2B7GEqDjwpayxA3/mko3Z3Col81xzpx0IoMTgvlrIM6ODTozcxaTXCKB9YFCVg4hSF9cesVM1yaTF6IDptjX/4KxPH25Z4MhapOIELZNS/i74ojoxjfmFzKN6/t0xdmAXOh8Resh1vGxv891qAlkmX+u4au3QnrhUHApKr2q1xH0Dqw0W7TkN3+C+PJLfH8R72afpPIi9Fw3fy3lfamOa6G9e7GYzHVSrwp+hskUVzSZu/VnXlW5Z2YCDsPHMlHfn9bjzSfcuIqhAMyAKRzgKu6SF2aWhcudwP1Aecpj+hhESoR8c+aW+2tj0QKBgQDaU43laiAV4rX0q2zaBEf/gWMy5ZtAAynOf4NKR1OVPmod17LOSClBv2YuVyzAoR4M7vsSWjiPj/hnwyGbQTAsH5PoBlPDjwXB+JzPGNoP7uWeR3gQ8uo/K3+/QX09OzdF9RriSQ9cEkChO2fsT3Hj/y6ZVjAM7UvvrlSQo5sfmwKBgQDOwq7sKMTzovEtPSQ9y5QK35/UVdv2KnwEisaeYjatc0+mEFbPoH6zPO/nYRpY3iC3YyZATxmYjnMovn2mITb192pB53DepiUBmbGZmz0zUrp2DntYmUO/RvAApPzXy2ZZcWTAVzd3eNEV1KOjCFhM3QzFlaeVaZ/3s7Ld+hLUiQKBgQCiiigOzwaaJJGgWOuOGDfd4d8Pal89td0vDkGZUCbK6o+oLgjBiHmmqC8TevUnaAvuRxEGpcKMJvwhi+V+J3cMsmm0CNndsqHvuf5MNE1MJWgvgTfDLoX0h5bwtXne1zIcVBEyvH/B5RjWsFp7VN4OhtGTeNYHGbc59oigshzv1wKBgDQ3WIPNvAeno+7/3PI6QpYIac3vLRDbI9zly0lell5xm7DduX7QEo9jmVa+4C+HUY3e3V8qWtV7TDwC96qIAuBVbqFcONYR8ZCY5xBa8zbN8scz2xTCCCj7WktfX3eEJ8H48C/fFuP2QB+aRwU6a0pmHP6dT+hc94hP+qEysaS5AoGAD8rmEIecTxY9Ktxdx5dc30xG/jg4LcnW9eO2qNnMPB4MHxNyoKDC6pPgeDn4CkynWe8aSxAhiDdqgO29Ifo51VPRYIP7MKaiTW38pkqnP1lqVXddDkjC1DpQa6/xI13EJLqGM9OSIKgEGX+nEEd4AlFw3zqb8nUrP3jt+hoWvzg=
+    format: json
+    charset: utf-8
+    alipayPublicKey: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqCMegEV8+RiCdw51fwYdrj6RX5HjSOdnVxN6IM6zevGcaBs6ieOBQ0KIz3lVYOOawfGBJ/dmHP/2dRYBm04N8hdM8GWGl5Dc1rb0ZVQDCzurhEufaiPRcmi+cTs803gZ0O5Z3D0ZLBWkkphuAYalrIZetA5FqipTDHl/zIsRdeSK0n93s6BUZ03KRVFBZ/HlB+MArPOwvYuZ0Lp6fYmHH+Pwtfxtx8ybOQDPT6Wput329MNB/8CohqC+6qYoQiqxZ0lmvHdxoo+O7pH2hcc1KfWJmlybELi6rrj1qJOQx2Ckw5db7tLJ22QRuzmVwI760a+2AbFspPymB65aKU4BtQIDAQAB
+    signType: RSA2
+    notifyUrl: http://172.20.10.6:8002/alipayReceiveNotify
+
+wechat-app:
+    serverUrl: https://openapi.alipaydev.com/gateway.do
+    appId: wx879a41488feb698c
+    mchId: 2016092900623739
+    mchKey: 1513151011
+    signtype: MD5
+    unifiedorder: https://api.mch.weixin.qq.com/sandboxnew/pay/unifiedorder
+    orderquery: https://api.mch.weixin.qq.com/sandboxnew//pay/orderquery
+    downloadbill: https://api.mch.weixin.qq.com/sandboxnew/pay/downloadbill
+    getsignkey: https://api.mch.weixin.qq.com/sandboxnew/pay/getsignkey
+    downloadurl: d://test
+    notifyUrl: http://172.20.10.6:8002/alipayReceiveNotify

@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE  mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bpaas.bps.user.mapper.UsrChnlBaseInfoMapper">
+	<resultMap id="BaseResultMap" type="com.bpaas.bps.user.po.UsrChnlBaseInfoPo">
+		<id column="ID" property="id" />
+		<!-- 用户ID -->
+		<result column="USER_ID" property="userId" />
+		<!-- 商户ID -->
+		<result column="MERCHANT_ID" property="merchantId" />
+		<!-- 证件类型 -->
+		<result column="CERT_TYPE" property="certType" />
+		<!-- 证件号码 -->
+		<result column="CERT_NO" property="certNo" />
+		<!-- 用户姓名 -->
+		<result column="CERT_NAME" property="certName" />
+		<!-- 注册渠道 -->
+		<result column="REG_CHNL_ID" property="regChnlId" />
+		<!-- 注册时间 -->
+		<result column="REG_TIME" property="regTime" />
+	</resultMap>
+
+	<sql id="Table_Name">
+		T_USR_CHNL_BASE_INFO
+	</sql>
+
+
+	<sql id="Base_Column">
+		ID,
+		USER_ID,
+		MERCHANT_ID,
+		CERT_TYPE,
+		CERT_NO,
+		CERT_NAME,
+		REG_CHNL_ID,
+		REG_TIME
+	</sql>
+
+
+	<sql id="Base_Where">
+		<trim suffixOverrides="AND">
+			<if test="id != null">
+				ID=#{id}
+				AND
+			</if>
+			<if test="userId != null">
+				USER_ID=#{userId}
+				AND
+			</if>
+			<if test="merchantId != null">
+				MERCHANT_ID=#{merchantId}
+				AND
+			</if>
+			<if test="certType != null">
+				CERT_TYPE=#{certType}
+				AND
+			</if>
+			<if test="certNo != null">
+				CERT_NO=#{certNo}
+				AND
+			</if>
+			<if test="certName != null">
+				CERT_NAME=#{certName}
+				AND
+			</if>
+			<if test="regChnlId != null">
+				REG_CHNL_ID=#{regChnlId}
+				AND
+			</if>
+			<if test="regTime != null">
+				REG_TIME=#{regTime}
+			</if>
+		</trim>
+	</sql>
+
+
+	<insert id="insert">
+		insert into
+		<include refid="Table_Name" />
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				ID,
+			</if>
+			<if test="userId != null">
+				USER_ID,
+			</if>
+			<if test="merchantId != null">
+				MERCHANT_ID,
+			</if>
+			<if test="certType != null">
+				CERT_TYPE,
+			</if>
+			<if test="certNo != null">
+				CERT_NO,
+			</if>
+			<if test="certName != null">
+				CERT_NAME,
+			</if>
+			<if test="regChnlId != null">
+				REG_CHNL_ID,
+			</if>
+			<if test="regTime != null">
+				REG_TIME,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				#{id},
+			</if>
+			<if test="userId != null">
+				#{userId},
+			</if>
+			<if test="merchantId != null">
+				#{merchantId},
+			</if>
+			<if test="certType != null">
+				#{certType},
+			</if>
+			<if test="certNo != null">
+				#{certNo},
+			</if>
+			<if test="certName != null">
+				#{certName},
+			</if>
+			<if test="regChnlId != null">
+				#{regChnlId},
+			</if>
+			<if test="regTime != null">
+				#{regTime},
+			</if>
+		</trim>
+	</insert>
+
+
+	<update id="update">
+		update
+		<include refid="Table_Name" />
+		<set>
+			<if test="id != null">
+				ID=#{id},
+			</if>
+			<if test="userId != null">
+				USER_ID=#{userId},
+			</if>
+			<if test="merchantId != null">
+				MERCHANT_ID=#{merchantId},
+			</if>
+			<if test="certType != null">
+				CERT_TYPE=#{certType},
+			</if>
+			<if test="certNo != null">
+				CERT_NO=#{certNo},
+			</if>
+			<if test="certName != null">
+				CERT_NAME=#{certName},
+			</if>
+			<if test="regChnlId != null">
+				REG_CHNL_ID=#{regChnlId},
+			</if>
+			<if test="regTime != null">
+				REG_TIME=#{regTime},
+			</if>
+		</set>
+		where
+		ID=#{id}
+	</update>
+
+
+	<update id="updateByEntity">
+		UPDATE
+		<include refid="Table_Name" />
+		<set>
+			<if test="s.id != null">
+				ID=#{s.id},
+			</if>
+			<if test="s.userId != null">
+				USER_ID=#{s.userId},
+			</if>
+			<if test="s.merchantId != null">
+				MERCHANT_ID=#{s.merchantId},
+			</if>
+			<if test="s.certType != null">
+				CERT_TYPE=#{s.certType},
+			</if>
+			<if test="s.certNo != null">
+				CERT_NO=#{s.certNo},
+			</if>
+			<if test="s.certName != null">
+				CERT_NAME=#{s.certName},
+			</if>
+			<if test="s.regChnlId != null">
+				REG_CHNL_ID=#{s.regChnlId},
+			</if>
+			<if test="s.regTime != null">
+				REG_TIME=#{s.regTime}
+			</if>
+		</set>
+		<where>
+			<trim prefix="(" suffix=")" suffixOverrides="AND">
+				<if test="w.id != null">
+					ID=#{w.id} AND
+				</if>
+				<if test="w.userId != null">
+					USER_ID=#{w.userId} AND
+				</if>
+				<if test="w.merchantId != null">
+					MERCHANT_ID=#{w.merchantId} AND
+				</if>
+				<if test="w.certType != null">
+					CERT_TYPE=#{w.certType} AND
+				</if>
+				<if test="w.certNo != null">
+					CERT_NO=#{w.certNo} AND
+				</if>
+				<if test="w.certName != null">
+					CERT_NAME=#{w.certName} AND
+				</if>
+				<if test="w.regChnlId != null">
+					REG_CHNL_ID=#{w.regChnlId} AND
+				</if>
+				<if test="w.regTime != null">
+					REG_TIME=#{w.regTime}
+				</if>
+			</trim>
+		</where>
+	</update>
+
+
+
+
+	<delete id="delete">
+		delete from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</delete>
+
+	<select id="count" parameterType="java.util.Map" resultType="int">
+		select count(1) from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</select>
+
+	<select id="selectOne" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column" />
+		from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</select>
+
+	<select id="selectList" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column" />
+		from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</select>
+
+</mapper>

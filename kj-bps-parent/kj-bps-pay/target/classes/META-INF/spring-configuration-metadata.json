@@ -1,0 +1,112 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.bpaas.bps.pay.config.AlipayAppConfig",
+      "name": "alipay-app",
+      "type": "com.bpaas.bps.pay.config.AlipayAppConfig"
+    },
+    {
+      "sourceType": "com.bpaas.bps.pay.config.WechatAppConfig",
+      "name": "wechat-app",
+      "type": "com.bpaas.bps.pay.config.WechatAppConfig"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "com.bpaas.bps.pay.config.AlipayAppConfig",
+      "name": "alipay-app.alipay-public-key",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.bpaas.bps.pay.config.AlipayAppConfig",
+      "name": "alipay-app.app-id",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.bpaas.bps.pay.config.AlipayAppConfig",
+      "name": "alipay-app.charset",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.bpaas.bps.pay.config.AlipayAppConfig",
+      "name": "alipay-app.format",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.bpaas.bps.pay.config.AlipayAppConfig",
+      "name": "alipay-app.notify-url",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.bpaas.bps.pay.config.AlipayAppConfig",
+      "name": "alipay-app.private-key",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.bpaas.bps.pay.config.AlipayAppConfig",
+      "name": "alipay-app.server-url",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.bpaas.bps.pay.config.AlipayAppConfig",
+      "name": "alipay-app.sign-type",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.bpaas.bps.pay.config.WechatAppConfig",
+      "name": "wechat-app.app-id",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.bpaas.bps.pay.config.WechatAppConfig",
+      "name": "wechat-app.downloadbill",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.bpaas.bps.pay.config.WechatAppConfig",
+      "name": "wechat-app.downloadurl",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.bpaas.bps.pay.config.WechatAppConfig",
+      "name": "wechat-app.getsignkey",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.bpaas.bps.pay.config.WechatAppConfig",
+      "name": "wechat-app.mch-id",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.bpaas.bps.pay.config.WechatAppConfig",
+      "name": "wechat-app.mch-key",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.bpaas.bps.pay.config.WechatAppConfig",
+      "name": "wechat-app.notify-url",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.bpaas.bps.pay.config.WechatAppConfig",
+      "name": "wechat-app.orderquery",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.bpaas.bps.pay.config.WechatAppConfig",
+      "name": "wechat-app.server-url",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.bpaas.bps.pay.config.WechatAppConfig",
+      "name": "wechat-app.signtype",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.bpaas.bps.pay.config.WechatAppConfig",
+      "name": "wechat-app.unifiedorder",
+      "type": "java.lang.String"
+    }
+  ]
+}

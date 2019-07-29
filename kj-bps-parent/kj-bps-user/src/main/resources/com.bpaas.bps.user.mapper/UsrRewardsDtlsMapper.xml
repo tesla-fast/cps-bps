@@ -1,0 +1,661 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bpaas.bps.user.mapper.UsrRewardsDtlsMapper">
+	<resultMap id="BaseResultMap" type="com.bpaas.bps.user.po.UsrRewardsDtlsPo">
+		<result column="ID" property="id" />
+		<result column="USER_ID" property="userId" />
+		<result column="REWARDS_CODE" property="rewardsCode" />
+		<result column="REWARDS_NAME" property="rewardsName" />
+		<result column="REWARDS_TYPE" property="rewardsType" />
+		<result column="REWARDS_DATE" property="rewardsDate" />
+		<result column="REWARDS_FROM" property="rewardsFrom" />
+		<result column="PLAN_ID" property="planId" />
+		<result column="REWARDS_AMT" property="rewardsAmt" />
+		<result column="USED_DESC" property="usedDesc" />
+		<result column="SCOPE_TYPE" property="scopeType" />
+		<result column="TRANS_AMT" property="transAmt" />
+		<result column="START_DATE" property="startDate" />
+		<result column="END_DATE" property="endDate" />
+		<result column="GET_DATE" property="getDate" />
+		<result column="GET_STAT" property="getStat" />
+		<result column="USED_DTLS" property="usedDtls" />
+		<result column="USED_TIME" property="usedTime" />
+		<result column="REWARDS_STATUS" property="rewardsStatus" />
+		<result column="DATELASTMAINT" property="datelastmaint" />
+		<result column="REMARK1" property="remark1" />
+		<result column="REMARK2" property="remark2" />
+		<result column="REMARK3" property="remark3" />
+		<result column="TRANS_CODE" property="transCode" />
+		<result column="CHNL_ID" property="chnlId" />
+	</resultMap>
+
+	<sql id="Table_Name">
+		T_USR_REWARDS_DTLS
+	</sql>
+
+	<sql id="Base_Column">
+		ID,
+		USER_ID,
+		REWARDS_CODE,
+		REWARDS_NAME,
+		REWARDS_TYPE,
+		REWARDS_DATE,
+		REWARDS_FROM,
+		PLAN_ID,
+		REWARDS_AMT,
+		USED_DESC,
+		SCOPE_TYPE,
+		TRANS_AMT,
+		START_DATE,
+		END_DATE,
+		GET_DATE,
+		GET_STAT,
+		USED_DTLS,
+		USED_TIME,
+		REWARDS_STATUS,
+		DATELASTMAINT,
+		REMARK1,
+		REMARK2,
+		REMARK3,
+		TRANS_CODE,
+		CHNL_ID
+	</sql>
+
+	<sql id="Base_Where">
+		<trim suffixOverrides="AND">
+		<if test="id != null">
+			ID= #{id}
+	           AND 
+		</if>
+		<if test="userId != null">
+			USER_ID= #{userId}
+	           AND 
+		</if>
+		<if test="rewardsCode != null">
+			REWARDS_CODE= #{rewardsCode}
+	           AND 
+		</if>
+		<if test="rewardsName != null">
+			REWARDS_NAME= #{rewardsName}
+	           AND 
+		</if>
+		<if test="rewardsType != null">
+			REWARDS_TYPE= #{rewardsType}
+	           AND 
+		</if>
+		<if test="rewardsDate != null">
+			REWARDS_DATE= #{rewardsDate}
+	           AND 
+		</if>
+		<if test="rewardsFrom != null">
+			REWARDS_FROM= #{rewardsFrom}
+	           AND 
+		</if>
+		<if test="planId != null">
+			PLAN_ID= #{planId}
+	           AND 
+		</if>
+		<if test="rewardsAmt != null">
+			REWARDS_AMT= #{rewardsAmt}
+	           AND 
+		</if>
+		<if test="usedDesc != null">
+			USED_DESC= #{usedDesc}
+	           AND 
+		</if>
+		<if test="scopeType != null">
+			SCOPE_TYPE= #{scopeType}
+	           AND 
+		</if>
+		<if test="transAmt != null">
+			TRANS_AMT= #{transAmt}
+	           AND 
+		</if>
+		<if test="startDate != null">
+			START_DATE= #{startDate}
+	           AND 
+		</if>
+		<if test="endDate != null">
+			END_DATE= #{endDate}
+	           AND 
+		</if>
+		<if test="getDate != null">
+			GET_DATE= #{getDate}
+	           AND 
+		</if>
+		<if test="getStat != null">
+			GET_STAT= #{getStat}
+	           AND 
+		</if>
+		<if test="usedDtls != null">
+			USED_DTLS= #{usedDtls}
+	           AND 
+		</if>
+		<if test="usedTime != null">
+			USED_TIME= #{usedTime}
+	           AND 
+		</if>
+		<if test="rewardsStatus != null">
+			REWARDS_STATUS= #{rewardsStatus}
+	           AND 
+		</if>
+		<if test="datelastmaint != null">
+			DATELASTMAINT= #{datelastmaint}
+	           AND 
+		</if>
+		<if test="remark1 != null">
+			REMARK1= #{remark1}
+	           AND 
+		</if>
+		<if test="remark2 != null">
+			REMARK2= #{remark2}
+	           AND 
+		</if>
+		<if test="remark3 != null">
+			REMARK3= #{remark3}
+	           AND 
+		</if>
+		<if test="transCode != null">
+			TRANS_CODE= #{transCode}
+	           AND 
+		</if>
+		<if test="chnlId != null">
+			CHNL_ID= #{chnlId}
+		</if>
+		</trim>
+	</sql>
+	
+    <sql id="Base_Select">
+			select
+		<include refid="Base_Column" />
+		from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</sql>
+
+
+
+	<insert id="insert" >
+		insert into
+		<include refid="Table_Name" />
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+	<if test="id != null">
+		ID,
+	</if>
+	<if test="userId != null">
+		USER_ID,
+	</if>
+	<if test="rewardsCode != null">
+		REWARDS_CODE,
+	</if>
+	<if test="rewardsName != null">
+		REWARDS_NAME,
+	</if>
+	<if test="rewardsType != null">
+		REWARDS_TYPE,
+	</if>
+	<if test="rewardsDate != null">
+		REWARDS_DATE,
+	</if>
+	<if test="rewardsFrom != null">
+		REWARDS_FROM,
+	</if>
+	<if test="planId != null">
+		PLAN_ID,
+	</if>
+	<if test="rewardsAmt != null">
+		REWARDS_AMT,
+	</if>
+	<if test="usedDesc != null">
+		USED_DESC,
+	</if>
+	<if test="scopeType != null">
+		SCOPE_TYPE,
+	</if>
+	<if test="transAmt != null">
+		TRANS_AMT,
+	</if>
+	<if test="startDate != null">
+		START_DATE,
+	</if>
+	<if test="endDate != null">
+		END_DATE,
+	</if>
+	<if test="getDate != null">
+		GET_DATE,
+	</if>
+	<if test="getStat != null">
+		GET_STAT,
+	</if>
+	<if test="usedDtls != null">
+		USED_DTLS,
+	</if>
+	<if test="usedTime != null">
+		USED_TIME,
+	</if>
+	<if test="rewardsStatus != null">
+		REWARDS_STATUS,
+	</if>
+	<if test="datelastmaint != null">
+		DATELASTMAINT,
+	</if>
+	<if test="remark1 != null">
+		REMARK1,
+	</if>
+	<if test="remark2 != null">
+		REMARK2,
+	</if>
+	<if test="remark3 != null">
+		REMARK3,
+	</if>
+	<if test="transCode != null">
+		TRANS_CODE,
+	</if>
+	<if test="chnlId != null">
+		CHNL_ID,
+	</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+	<if test="id != null">
+		#{id},
+	</if>
+	<if test="userId != null">
+		#{userId},
+	</if>
+	<if test="rewardsCode != null">
+		#{rewardsCode},
+	</if>
+	<if test="rewardsName != null">
+		#{rewardsName},
+	</if>
+	<if test="rewardsType != null">
+		#{rewardsType},
+	</if>
+	<if test="rewardsDate != null">
+		#{rewardsDate},
+	</if>
+	<if test="rewardsFrom != null">
+		#{rewardsFrom},
+	</if>
+	<if test="planId != null">
+		#{planId},
+	</if>
+	<if test="rewardsAmt != null">
+		#{rewardsAmt},
+	</if>
+	<if test="usedDesc != null">
+		#{usedDesc},
+	</if>
+	<if test="scopeType != null">
+		#{scopeType},
+	</if>
+	<if test="transAmt != null">
+		#{transAmt},
+	</if>
+	<if test="startDate != null">
+		#{startDate},
+	</if>
+	<if test="endDate != null">
+		#{endDate},
+	</if>
+	<if test="getDate != null">
+		#{getDate},
+	</if>
+	<if test="getStat != null">
+		#{getStat},
+	</if>
+	<if test="usedDtls != null">
+		#{usedDtls},
+	</if>
+	<if test="usedTime != null">
+		#{usedTime},
+	</if>
+	<if test="rewardsStatus != null">
+		#{rewardsStatus},
+	</if>
+	<if test="datelastmaint != null">
+		#{datelastmaint},
+	</if>
+	<if test="remark1 != null">
+		#{remark1},
+	</if>
+	<if test="remark2 != null">
+		#{remark2},
+	</if>
+	<if test="remark3 != null">
+		#{remark3},
+	</if>
+	<if test="transCode != null">
+		#{transCode},
+	</if>
+	<if test="chnlId != null">
+		#{chnlId},
+	</if>
+		</trim>
+	</insert>
+
+	<update id="update" >
+		update
+		<include refid="Table_Name" />
+		<set>
+	<if test="id != null">
+		ID=#{id},
+	</if>
+	<if test="userId != null">
+		USER_ID=#{userId},
+	</if>
+	<if test="rewardsCode != null">
+		REWARDS_CODE=#{rewardsCode},
+	</if>
+	<if test="rewardsName != null">
+		REWARDS_NAME=#{rewardsName},
+	</if>
+	<if test="rewardsType != null">
+		REWARDS_TYPE=#{rewardsType},
+	</if>
+	<if test="rewardsDate != null">
+		REWARDS_DATE=#{rewardsDate},
+	</if>
+	<if test="rewardsFrom != null">
+		REWARDS_FROM=#{rewardsFrom},
+	</if>
+	<if test="planId != null">
+		PLAN_ID=#{planId},
+	</if>
+	<if test="rewardsAmt != null">
+		REWARDS_AMT=#{rewardsAmt},
+	</if>
+	<if test="usedDesc != null">
+		USED_DESC=#{usedDesc},
+	</if>
+	<if test="scopeType != null">
+		SCOPE_TYPE=#{scopeType},
+	</if>
+	<if test="transAmt != null">
+		TRANS_AMT=#{transAmt},
+	</if>
+	<if test="startDate != null">
+		START_DATE=#{startDate},
+	</if>
+	<if test="endDate != null">
+		END_DATE=#{endDate},
+	</if>
+	<if test="getDate != null">
+		GET_DATE=#{getDate},
+	</if>
+	<if test="getStat != null">
+		GET_STAT=#{getStat},
+	</if>
+	<if test="usedDtls != null">
+		USED_DTLS=#{usedDtls},
+	</if>
+	<if test="usedTime != null">
+		USED_TIME=#{usedTime},
+	</if>
+	<if test="rewardsStatus != null">
+		REWARDS_STATUS=#{rewardsStatus},
+	</if>
+	<if test="datelastmaint != null">
+		DATELASTMAINT=#{datelastmaint},
+	</if>
+	<if test="remark1 != null">
+		REMARK1=#{remark1},
+	</if>
+	<if test="remark2 != null">
+		REMARK2=#{remark2},
+	</if>
+	<if test="remark3 != null">
+		REMARK3=#{remark3},
+	</if>
+	<if test="transCode != null">
+		TRANS_CODE=#{transCode},
+	</if>
+	<if test="chnlId != null">
+		CHNL_ID=#{chnlId},
+	</if>
+		</set>
+		where ID=#{id}
+	</update>
+
+	<update id="updateByEntity" >
+		UPDATE
+		<include refid="Table_Name" />
+		<set>
+			<if test="s.id != null">
+                    ID=#{s.id},
+			</if>
+			<if test="s.userId != null">
+                    USER_ID=#{s.userId},
+			</if>
+			<if test="s.rewardsCode != null">
+                    REWARDS_CODE=#{s.rewardsCode},
+			</if>
+			<if test="s.rewardsName != null">
+                    REWARDS_NAME=#{s.rewardsName},
+			</if>
+			<if test="s.rewardsType != null">
+                    REWARDS_TYPE=#{s.rewardsType},
+			</if>
+			<if test="s.rewardsDate != null">
+                    REWARDS_DATE=#{s.rewardsDate},
+			</if>
+			<if test="s.rewardsFrom != null">
+                    REWARDS_FROM=#{s.rewardsFrom},
+			</if>
+			<if test="s.planId != null">
+                    PLAN_ID=#{s.planId},
+			</if>
+			<if test="s.rewardsAmt != null">
+                    REWARDS_AMT=#{s.rewardsAmt},
+			</if>
+			<if test="s.usedDesc != null">
+                    USED_DESC=#{s.usedDesc},
+			</if>
+			<if test="s.scopeType != null">
+                    SCOPE_TYPE=#{s.scopeType},
+			</if>
+			<if test="s.transAmt != null">
+                    TRANS_AMT=#{s.transAmt},
+			</if>
+			<if test="s.startDate != null">
+                    START_DATE=#{s.startDate},
+			</if>
+			<if test="s.endDate != null">
+                    END_DATE=#{s.endDate},
+			</if>
+			<if test="s.getDate != null">
+                    GET_DATE=#{s.getDate},
+			</if>
+			<if test="s.getStat != null">
+                    GET_STAT=#{s.getStat},
+			</if>
+			<if test="s.usedDtls != null">
+                    USED_DTLS=#{s.usedDtls},
+			</if>
+			<if test="s.usedTime != null">
+                    USED_TIME=#{s.usedTime},
+			</if>
+			<if test="s.rewardsStatus != null">
+                    REWARDS_STATUS=#{s.rewardsStatus},
+			</if>
+			<if test="s.datelastmaint != null">
+                    DATELASTMAINT=#{s.datelastmaint},
+			</if>
+			<if test="s.remark1 != null">
+                    REMARK1=#{s.remark1},
+			</if>
+			<if test="s.remark2 != null">
+                    REMARK2=#{s.remark2},
+			</if>
+			<if test="s.remark3 != null">
+                    REMARK3=#{s.remark3},
+			</if>
+			<if test="s.transCode != null">
+                    TRANS_CODE=#{s.transCode},
+			</if>
+			<if test="s.chnlId != null">
+                    CHNL_ID=#{s.chnlId}
+			</if>
+		</set>
+		<where> 
+			<trim prefix="(" suffix=")" suffixOverrides="AND">
+			<if test="w.id != null">
+                    ID=#{w.id}
+                   AND 
+ 			</if>
+			<if test="w.userId != null">
+                    USER_ID=#{w.userId}
+                   AND 
+ 			</if>
+			<if test="w.rewardsCode != null">
+                    REWARDS_CODE=#{w.rewardsCode}
+                   AND 
+ 			</if>
+			<if test="w.rewardsName != null">
+                    REWARDS_NAME=#{w.rewardsName}
+                   AND 
+ 			</if>
+			<if test="w.rewardsType != null">
+                    REWARDS_TYPE=#{w.rewardsType}
+                   AND 
+ 			</if>
+			<if test="w.rewardsDate != null">
+                    REWARDS_DATE=#{w.rewardsDate}
+                   AND 
+ 			</if>
+			<if test="w.rewardsFrom != null">
+                    REWARDS_FROM=#{w.rewardsFrom}
+                   AND 
+ 			</if>
+			<if test="w.planId != null">
+                    PLAN_ID=#{w.planId}
+                   AND 
+ 			</if>
+			<if test="w.rewardsAmt != null">
+                    REWARDS_AMT=#{w.rewardsAmt}
+                   AND 
+ 			</if>
+			<if test="w.usedDesc != null">
+                    USED_DESC=#{w.usedDesc}
+                   AND 
+ 			</if>
+			<if test="w.scopeType != null">
+                    SCOPE_TYPE=#{w.scopeType}
+                   AND 
+ 			</if>
+			<if test="w.transAmt != null">
+                    TRANS_AMT=#{w.transAmt}
+                   AND 
+ 			</if>
+			<if test="w.startDate != null">
+                    START_DATE=#{w.startDate}
+                   AND 
+ 			</if>
+			<if test="w.endDate != null">
+                    END_DATE=#{w.endDate}
+                   AND 
+ 			</if>
+			<if test="w.getDate != null">
+                    GET_DATE=#{w.getDate}
+                   AND 
+ 			</if>
+			<if test="w.getStat != null">
+                    GET_STAT=#{w.getStat}
+                   AND 
+ 			</if>
+			<if test="w.usedDtls != null">
+                    USED_DTLS=#{w.usedDtls}
+                   AND 
+ 			</if>
+			<if test="w.usedTime != null">
+                    USED_TIME=#{w.usedTime}
+                   AND 
+ 			</if>
+			<if test="w.rewardsStatus != null">
+                    REWARDS_STATUS=#{w.rewardsStatus}
+                   AND 
+ 			</if>
+			<if test="w.datelastmaint != null">
+                    DATELASTMAINT=#{w.datelastmaint}
+                   AND 
+ 			</if>
+			<if test="w.remark1 != null">
+                    REMARK1=#{w.remark1}
+                   AND 
+ 			</if>
+			<if test="w.remark2 != null">
+                    REMARK2=#{w.remark2}
+                   AND 
+ 			</if>
+			<if test="w.remark3 != null">
+                    REMARK3=#{w.remark3}
+                   AND 
+ 			</if>
+			<if test="w.transCode != null">
+                    TRANS_CODE=#{w.transCode}
+                   AND 
+ 			</if>
+			<if test="w.chnlId != null">
+                    CHNL_ID=#{w.chnlId}
+ 			</if>
+			</trim>
+		</where>
+	</update>
+
+	<delete id="delete" >
+		delete from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</delete>
+
+	<select id="count" parameterType="java.util.Map" resultType="int">
+		select count(1) from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</select>
+
+	<select id="selectOne"  resultMap="BaseResultMap">
+	  <include refid="Base_Select" />
+	</select>
+
+	<select id="selectList"  resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column" />
+		from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</select>
+
+     <select id="selectForUpdate" resultMap="BaseResultMap" useCache="false">
+		 <include refid="Base_Select" />
+		for update
+	</select>
+	
+	<select id="countUserRewardsDetlsQueryList" resultMap="BaseResultMap" useCache="false">
+		select 
+		<include refid="Base_Column" />
+ 		from
+		<include refid="Table_Name" />
+		<where>
+		USER_ID=#{userId}
+		AND
+		TRANS_CODE=#{transCode}
+		AND
+		REWARDS_TYPE=#{rewardsType}
+		<if test="rewardsDate != null">
+		AND 
+        REWARDS_DATE=#{rewardsDate}
+ 		</if>
+		</where>
+	</select>
+
+</mapper>

@@ -1,0 +1,742 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bpaas.bps.pay.mapper.wechat.WechatPayDetailAllRegMapper" >
+  <resultMap id="BaseResultMap" type="com.bpaas.bps.pay.po.wechat.WechatPayDetailAllRegPo" >
+    <result column="id" property="id"  />
+    <result column="billdate" property="billdate"  />
+    <result column="bill_type" property="billType" />
+    <result column="trandate" property="trandate"  />
+    <result column="appid" property="appid"  />
+    <result column="mch_id" property="mchId"  />
+    <result column="sub_mch_id" property="subMchId"  />
+    <result column="device_info" property="deviceInfo"  />
+    <result column="transaction_id" property="transactionId"  />
+    <result column="out_trade_no" property="outTradeNo"  />
+    <result column="openid" property="openid"  />
+    <result column="trade_type" property="tradeType"  />
+    <result column="trade_state" property="tradeState"  />
+    <result column="payer_bankcode" property="payerBankcode"  />
+    <result column="fee_type" property="feeType"  />
+    <result column="clear_fee" property="clearFee"  />
+    <result column="coupon_fee" property="couponFee"  />
+    <result column="refund_id" property="refundId"  />
+    <result column="out_refund_no" property="outRefundNo"  />
+    <result column="refund_fee" property="refundFee"  />
+    <result column="coupon_refund_fee" property="couponRefundFee"  />
+    <result column="refund_type" property="refundType"  />
+    <result column="refund_status" property="refundStatus"  />
+    <result column="body" property="body"  />
+    <result column="attach" property="attach"  />
+    <result column="fee_amt" property="feeAmt"  />
+    <result column="rate" property="rate"  />
+    <result column="order_fee" property="orderFee"  />
+    <result column="req_refund_fee" property="reqRefundFee"  />
+    <result column="rateMark" property="ratemark"  />
+    <result column="chkflag" property="chkflag"  />
+    <result column="chktime" property="chktime"  />
+    <result column="remark1" property="remark1"  />
+    <result column="remark2" property="remark2"  />
+    <result column="remark3" property="remark3"  />
+    <result column="remark4" property="remark4"  />
+    <result column="remark5" property="remark5"  />
+  </resultMap>
+  <sql id="Base_Column" >
+    id, billdate, bill_type, trandate, appid, mch_id, sub_mch_id, device_info, transaction_id, 
+    out_trade_no, openid, trade_type, trade_state, payer_bankcode, fee_type, clear_fee, 
+    coupon_fee, refund_id, out_refund_no, refund_fee, coupon_refund_fee, refund_type, 
+    refund_status, body, attach, fee_amt, rate, order_fee, req_refund_fee, rateMark, 
+    chkflag, chktime, remark1, remark2, remark3, remark4, remark5
+  </sql>
+  
+  <sql id="Table_Name">
+		t_wechatpay_detail_all_reg
+   </sql>
+  
+  <sql id="Base_Where">
+	<trim suffixOverrides="AND">
+		<if test="id != null" >
+        id = #{id}
+	           AND
+      </if>
+      <if test="billdate != null" >
+        billdate = #{billdate}
+	           AND
+      </if>
+      <if test="billType != null" >
+        bill_type = #{billType}
+	           AND
+      </if>
+      <if test="trandate != null" >
+        trandate = #{trandate}
+	           AND
+      </if>
+      <if test="appid != null" >
+        appid = #{appid}
+	           AND
+      </if>
+      <if test="mchId != null" >
+        mch_id = #{mchId}
+	           AND
+      </if>
+      <if test="subMchId != null" >
+        sub_mch_id = #{subMchId}
+	           AND
+      </if>
+      <if test="deviceInfo != null" >
+        device_info = #{deviceInfo}
+	           AND
+      </if>
+      <if test="transactionId != null" >
+        transaction_id = #{transactionId}
+	           AND
+      </if>
+      <if test="outTradeNo != null" >
+        out_trade_no = #{outTradeNo}
+	           AND
+      </if>
+      <if test="openid != null" >
+        openid = #{openid}
+	           AND
+      </if>
+      <if test="tradeType != null" >
+        trade_type = #{tradeType}
+	           AND
+      </if>
+      <if test="tradeState != null" >
+        trade_state = #{tradeState}
+	           AND
+      </if>
+      <if test="payerBankcode != null" >
+        payer_bankcode = #{payerBankcode}
+	           AND
+      </if>
+      <if test="feeType != null" >
+        fee_type = #{feeType}
+	           AND
+      </if>
+      <if test="clearFee != null" >
+        clear_fee = #{clearFee}
+	           AND
+      </if>
+      <if test="couponFee != null" >
+        coupon_fee = #{couponFee}
+	           AND
+      </if>
+      <if test="refundId != null" >
+        refund_id = #{refundId}
+	           AND
+      </if>
+      <if test="outRefundNo != null" >
+        out_refund_no = #{outRefundNo}
+	           AND
+      </if>
+      <if test="refundFee != null" >
+        refund_fee = #{refundFee}
+	           AND
+      </if>
+      <if test="couponRefundFee != null" >
+        coupon_refund_fee = #{couponRefundFee}
+	           AND
+      </if>
+      <if test="refundType != null" >
+        refund_type = #{refundType}
+	           AND
+      </if>
+      <if test="refundStatus != null" >
+        refund_status = #{refundStatus}
+	           AND
+      </if>
+      <if test="body != null" >
+        body = #{body}
+	           AND
+      </if>
+      <if test="attach != null" >
+        attach = #{attach}
+	           AND
+	   </if>
+      <if test="feeAmt != null" >
+        fee_amt = #{feeAmt}
+	           AND
+      </if>
+      <if test="rate != null" >
+        rate = #{rate}
+	           AND
+      </if>
+      <if test="orderFee != null" >
+        order_fee = #{orderFee}
+	           AND
+      </if>
+      <if test="reqRefundFee != null" >
+        req_refund_fee = #{reqRefundFee}
+	           AND
+      </if>
+      <if test="ratemark != null" >
+        rateMark = #{ratemark}
+	           AND
+      </if>
+      <if test="chkflag != null" >
+        chkflag = #{chkflag}
+	           AND
+      </if>
+      <if test="chktime != null" >
+        chktime = #{chktime}
+	           AND
+      </if>
+      <if test="remark1 != null" >
+        remark1 = #{remark1}
+	           AND
+      </if>
+      <if test="remark2 != null" >
+        remark2 = #{remark2}
+	           AND
+      </if>
+      <if test="remark3 != null" >
+        remark3 = #{remark3}
+	           AND
+      </if>
+      <if test="remark4 != null" >
+        remark4 = #{remark4}
+	           AND
+      </if>
+      <if test="remark5 != null" >
+        remark5 = #{remark5}
+      </if>
+  	</trim>
+  </sql>
+  
+  <insert id="insert" >
+    insert into 
+    <include refid="Table_Name" />
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+    	<if test="id != null">
+				ID,
+			</if>
+      <if test="billdate != null" >
+        billdate,
+      </if>
+      <if test="billType != null" >
+        bill_type,
+      </if>
+      <if test="trandate != null" >
+        trandate,
+      </if>
+      <if test="appid != null" >
+        appid,
+      </if>
+      <if test="mchId != null" >
+        mch_id,
+      </if>
+      <if test="subMchId != null" >
+        sub_mch_id,
+      </if>
+      <if test="deviceInfo != null" >
+        device_info,
+      </if>
+      <if test="transactionId != null" >
+        transaction_id,
+      </if>
+      <if test="outTradeNo != null" >
+        out_trade_no,
+      </if>
+      <if test="openid != null" >
+        openid,
+      </if>
+      <if test="tradeType != null" >
+        trade_type,
+      </if>
+      <if test="tradeState != null" >
+        trade_state,
+      </if>
+      <if test="payerBankcode != null" >
+        payer_bankcode,
+      </if>
+      <if test="feeType != null" >
+        fee_type,
+      </if>
+      <if test="clearFee != null" >
+        clear_fee,
+      </if>
+      <if test="couponFee != null" >
+        coupon_fee,
+      </if>
+      <if test="refundId != null" >
+        refund_id,
+      </if>
+      <if test="outRefundNo != null" >
+        out_refund_no,
+      </if>
+      <if test="refundFee != null" >
+        refund_fee,
+      </if>
+      <if test="couponRefundFee != null" >
+        coupon_refund_fee,
+      </if>
+      <if test="refundType != null" >
+        refund_type,
+      </if>
+      <if test="refundStatus != null" >
+        refund_status,
+      </if>
+      <if test="body != null" >
+        body,
+      </if>
+      <if test="attach != null" >
+        attach,
+      </if>
+      <if test="feeAmt != null" >
+        fee_amt,
+      </if>
+      <if test="rate != null" >
+        rate,
+      </if>
+      <if test="orderFee != null" >
+        order_fee,
+      </if>
+      <if test="reqRefundFee != null" >
+        req_refund_fee,
+      </if>
+      <if test="ratemark != null" >
+        rateMark,
+      </if>
+      <if test="chkflag != null" >
+        chkflag,
+      </if>
+      <if test="chktime != null" >
+        chktime,
+      </if>
+      <if test="remark1 != null" >
+        remark1,
+      </if>
+      <if test="remark2 != null" >
+        remark2,
+      </if>
+      <if test="remark3 != null" >
+        remark3,
+      </if>
+      <if test="remark4 != null" >
+        remark4,
+      </if>
+      <if test="remark5 != null" >
+        remark5,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id},
+      </if>
+      <if test="billdate != null" >
+        #{billdate},
+      </if>
+      <if test="billType != null" >
+        #{billType},
+      </if>
+      <if test="trandate != null" >
+        #{trandate},
+      </if>
+      <if test="appid != null" >
+        #{appid},
+      </if>
+      <if test="mchId != null" >
+        #{mchId},
+      </if>
+      <if test="subMchId != null" >
+        #{subMchId},
+      </if>
+      <if test="deviceInfo != null" >
+        #{deviceInfo},
+      </if>
+      <if test="transactionId != null" >
+        #{transactionId},
+      </if>
+      <if test="outTradeNo != null" >
+        #{outTradeNo},
+      </if>
+      <if test="openid != null" >
+        #{openid},
+      </if>
+      <if test="tradeType != null" >
+        #{tradeType},
+      </if>
+      <if test="tradeState != null" >
+        #{tradeState},
+      </if>
+      <if test="payerBankcode != null" >
+        #{payerBankcode},
+      </if>
+      <if test="feeType != null" >
+        #{feeType},
+      </if>
+      <if test="clearFee != null" >
+        #{clearFee},
+      </if>
+      <if test="couponFee != null" >
+        #{couponFee},
+      </if>
+      <if test="refundId != null" >
+        #{refundId},
+      </if>
+      <if test="outRefundNo != null" >
+        #{outRefundNo},
+      </if>
+      <if test="refundFee != null" >
+        #{refundFee},
+      </if>
+      <if test="couponRefundFee != null" >
+        #{couponRefundFee},
+      </if>
+      <if test="refundType != null" >
+        #{refundType},
+      </if>
+      <if test="refundStatus != null" >
+        #{refundStatus},
+      </if>
+      <if test="body != null" >
+        #{body},
+      </if>
+      <if test="attach != null" >
+        #{attach},
+      </if>
+      <if test="feeAmt != null" >
+        #{feeAmt},
+      </if>
+      <if test="rate != null" >
+        #{rate},
+      </if>
+      <if test="orderFee != null" >
+        #{orderFee},
+      </if>
+      <if test="reqRefundFee != null" >
+        #{reqRefundFee},
+      </if>
+      <if test="ratemark != null" >
+        #{ratemark},
+      </if>
+      <if test="chkflag != null" >
+        #{chkflag},
+      </if>
+      <if test="chktime != null" >
+        #{chktime},
+      </if>
+      <if test="remark1 != null" >
+        #{remark1},
+      </if>
+      <if test="remark2 != null" >
+        #{remark2},
+      </if>
+      <if test="remark3 != null" >
+        #{remark3},
+      </if>
+      <if test="remark4 != null" >
+        #{remark4},
+      </if>
+      <if test="remark5 != null" >
+        #{remark5},
+      </if>
+    </trim>
+  </insert>
+  
+  
+  <update id="updateByEntity">
+    update t
+    <include refid="Table_Name" />
+    <set >
+      <if test="s.billdate != null" >
+        billdate = #{s.billdate},
+      </if>
+      <if test="s.billType != null" >
+        bill_type = #{s.billType},
+      </if>
+      <if test="s.trandate != null" >
+        trandate = #{s.trandate},
+      </if>
+      <if test="s.appid != null" >
+        appid = #{s.appid},
+      </if>
+      <if test="s.mchId != null" >
+        mch_id = #{s.mchId},
+      </if>
+      <if test="s.subMchId != null" >
+        sub_mch_id = #{s.subMchId},
+      </if>
+      <if test="s.deviceInfo != null" >
+        device_info = #{s.deviceInfo},
+      </if>
+      <if test="s.transactionId != null" >
+        transaction_id = #{s.transactionId},
+      </if>
+      <if test="s.outTradeNo != null" >
+        out_trade_no = #{s.outTradeNo},
+      </if>
+      <if test="s.openid != null" >
+        openid = #{s.openid},
+      </if>
+      <if test="s.tradeType != null" >
+        trade_type = #{s.tradeType},
+      </if>
+      <if test="s.tradeState != null" >
+        trade_state = #{s.tradeState},
+      </if>
+      <if test="s.payerBankcode != null" >
+        payer_bankcode = #{s.payerBankcode},
+      </if>
+      <if test="s.feeType != null" >
+        fee_type = #{s.feeType},
+      </if>
+      <if test="s.clearFee != null" >
+        clear_fee = #{s.clearFee},
+      </if>
+      <if test="s.couponFee != null" >
+        coupon_fee = #{s.couponFee},
+      </if>
+      <if test="s.refundId != null" >
+        refund_id = #{s.refundId},
+      </if>
+      <if test="s.outRefundNo != null" >
+        out_refund_no = #{s.outRefundNo},
+      </if>
+      <if test="s.refundFee != null" >
+        refund_fee = #{s.refundFee},
+      </if>
+      <if test="s.couponRefundFee != null" >
+        coupon_refund_fee = #{s.couponRefundFee},
+      </if>
+      <if test="s.refundType != null" >
+        refund_type = #{s.refundType},
+      </if>
+      <if test="s.refundStatus != null" >
+        refund_status = #{s.refundStatus},
+      </if>
+      <if test="s.body != null" >
+        body = #{s.body},
+      </if>
+      <if test="s.attach != null" >
+        attach = #{s.attach},
+      </if>
+      <if test="s.feeAmt != null" >
+        fee_amt = #{s.feeAmt},
+      </if>
+      <if test="s.rate != null" >
+        rate = #{s.rate},
+      </if>
+      <if test="s.orderFee != null" >
+        order_fee = #{s.orderFee},
+      </if>
+      <if test="s.reqRefundFee != null" >
+        req_refund_fee = #{s.reqRefundFee},
+      </if>
+      <if test="s.ratemark != null" >
+        rateMark = #{s.ratemark},
+      </if>
+      <if test="s.chkflag != null" >
+        chkflag = #{s.chkflag},
+      </if>
+      <if test="s.chktime != null" >
+        chktime = #{s.chktime},
+      </if>
+      <if test="s.remark1 != null" >
+        remark1 = #{s.remark1},
+      </if>
+      <if test="s.remark2 != null" >
+        remark2 = #{s.remark2},
+      </if>
+      <if test="s.remark3 != null" >
+        remark3 = #{s.remark3},
+      </if>
+      <if test="s.remark4 != null" >
+        remark4 = #{s.remark4},
+      </if>
+      <if test="s.remark5 != null" >
+        remark5 = #{s.remark5},
+      </if>
+    </set>
+      <where> 
+		<trim prefix="(" suffix=")" suffixOverrides="AND">
+			<if test="w.id != null" >
+        id = #{w.id}
+	           AND
+      </if>
+      <if test="w.billdate != null" >
+        billdate = #{w.billdate}
+	           AND
+      </if>
+      <if test="w.billType != null" >
+        bill_type = #{w.billType}
+	           AND
+      </if>
+      <if test="w.trandate != null" >
+        trandate = #{w.trandate}
+	           AND
+      </if>
+      <if test="w.appid != null" >
+        appid = #{w.appid}
+	           AND
+      </if>
+      <if test="w.mchId != null" >
+        mch_id = #{w.mchId}
+	           AND
+      </if>
+      <if test="w.subMchId != null" >
+        sub_mch_id = #{w.subMchId}
+	           AND
+      </if>
+      <if test="w.deviceInfo != null" >
+        device_info = #{w.deviceInfo}
+	           AND
+      </if>
+      <if test="w.transactionId != null" >
+        transaction_id = #{w.transactionId}
+	           AND
+      </if>
+      <if test="w.outTradeNo != null" >
+        out_trade_no = #{w.outTradeNo}
+	           AND
+      </if>
+      <if test="w.openid != null" >
+        openid = #{w.openid}
+	           AND
+      </if>
+      <if test="w.tradeType != null" >
+        trade_type = #{w.tradeType}
+	           AND
+      </if>
+      <if test="w.tradeState != null" >
+        trade_state = #{w.tradeState}
+	           AND
+      </if>
+      <if test="w.payerBankcode != null" >
+        payer_bankcode = #{w.payerBankcode}
+	           AND
+      </if>
+      <if test="w.feeType != null" >
+        fee_type = #{w.feeType}
+	           AND
+      </if>
+      <if test="w.clearFee != null" >
+        clear_fee = #{w.clearFee}
+	           AND
+      </if>
+      <if test="w.couponFee != null" >
+        coupon_fee = #{w.couponFee}
+	           AND
+      </if>
+      <if test="w.refundId != null" >
+        refund_id = #{w.refundId}
+	           AND
+      </if>
+      <if test="w.outRefundNo != null" >
+        out_refund_no = #{w.outRefundNo}
+	           AND
+      </if>
+      <if test="w.refundFee != null" >
+        refund_fee = #{w.refundFee}
+	           AND
+      </if>
+      <if test="w.couponRefundFee != null" >
+        coupon_refund_fee = #{w.couponRefundFee}
+	           AND
+      </if>
+      <if test="w.refundType != null" >
+        refund_type = #{w.refundType}
+	           AND
+      </if>
+      <if test="w.refundStatus != null" >
+        refund_status = #{w.refundStatus}
+	           AND
+      </if>
+      <if test="w.body != null" >
+        body = #{w.body}
+	           AND
+      </if>
+      <if test="w.attach != null" >
+        attach = #{w.attach}
+	           AND
+	           </if>
+      <if test="w.feeAmt != null" >
+        fee_amt = #{w.feeAmt}
+	           AND
+      </if>
+      <if test="w.rate != null" >
+        rate = #{w.rate}
+	           AND
+      </if>
+      <if test="w.orderFee != null" >
+        order_fee = #{w.orderFee}
+	           AND
+      </if>
+      <if test="w.reqRefundFee != null" >
+        req_refund_fee = #{w.reqRefundFee}
+	           AND
+      </if>
+      <if test="w.ratemark != null" >
+        rateMark = #{w.ratemark}
+	           AND
+      </if>
+      <if test="w.chkflag != null" >
+        chkflag = #{w.chkflag}
+	           AND
+      </if>
+      <if test="w.chktime != null" >
+        chktime = #{w.chktime}
+	           AND
+      </if>
+      <if test="w.remark1 != null" >
+        remark1 = #{w.remark1}
+	           AND
+      </if>
+      <if test="w.remark2 != null" >
+        remark2 = #{w.remark2}
+	           AND
+      </if>
+      <if test="w.remark3 != null" >
+        remark3 = #{w.remark3}
+	           AND
+      </if>
+      <if test="w.remark4 != null" >
+        remark4 = #{w.remark4}
+	           AND
+      </if>
+      <if test="w.remark5 != null" >
+        remark5 = #{w.remark5}
+      </if>
+		</trim>
+		</where>
+  </update>
+  
+  <delete id="delete" >
+		delete from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</delete>
+
+	<select id="count" parameterType="java.util.Map" resultType="int">
+		select count(1) from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</select>
+
+	<select id="selectOne"  resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column" />
+		from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</select>
+
+	<select id="selectList"  resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column" />
+		from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+		<include refid="com.fPaaS1.dipper.mybatis.common.Comm_Order_By"/>
+	</select>
+
+</mapper>

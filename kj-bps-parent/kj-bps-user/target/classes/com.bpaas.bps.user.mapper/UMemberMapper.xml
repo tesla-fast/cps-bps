@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bpaas.bps.user.mapper.UMemberMapper">
+    <resultMap id="BaseResultMap" type="com.bpaas.bps.user.po.UMemberPo">
+        <id column="id" jdbcType="BIGINT" property="id" />
+        <result column="user_id" jdbcType="VARCHAR" property="userId" />
+        <result column="member_level_id" jdbcType="BIGINT" property="memberLevelId" />
+        <result column="username" jdbcType="VARCHAR" property="username" />
+        <result column="login_pwd" jdbcType="VARCHAR" property="loginPwd" />
+        <result column="last_logpwd_modifytime" jdbcType="TIMESTAMP" property="lastLogpwdModifytime" />
+        <result column="trade_pwd" jdbcType="VARCHAR" property="tradePwd" />
+        <result column="last_tradepwd_modifytime" jdbcType="TIMESTAMP" property="lastTradepwdModifytime" />
+        <result column="gasture_pwd" jdbcType="VARCHAR" property="gasturePwd" />
+        <result column="last_gasturepwd_modifytime" jdbcType="TIMESTAMP" property="lastGasturepwdModifytime" />
+        <result column="nickname" jdbcType="VARCHAR" property="nickname" />
+        <result column="phone" jdbcType="VARCHAR" property="phone" />
+        <result column="idno" jdbcType="VARCHAR" property="idno" />
+        <result column="status" jdbcType="INTEGER" property="status" />
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+        <result column="reg_chl_id" jdbcType="CHAR" property="regChlId" />
+        <result column="icon" jdbcType="VARCHAR" property="icon" />
+        <result column="gender" jdbcType="INTEGER" property="gender" />
+        <result column="birthday" jdbcType="DATE" property="birthday" />
+        <result column="city" jdbcType="VARCHAR" property="city" />
+        <result column="job" jdbcType="VARCHAR" property="job" />
+        <result column="personalized_signature" jdbcType="VARCHAR" property="personalizedSignature" />
+        <result column="source_type" jdbcType="INTEGER" property="sourceType" />
+        <result column="isrealnameauth" jdbcType="SMALLINT" property="isrealnameauth" />
+        <result column="integration" jdbcType="INTEGER" property="integration" />
+        <result column="growth" jdbcType="INTEGER" property="growth" />
+        <result column="luckey_count" jdbcType="INTEGER" property="luckeyCount" />
+        <result column="history_integration" jdbcType="INTEGER" property="historyIntegration" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+    id, user_id, member_level_id, username, login_pwd, last_logpwd_modifytime, trade_pwd,
+    last_tradepwd_modifytime, gasture_pwd, last_gasturepwd_modifytime, nickname, phone,
+    idno, status, create_time, reg_chl_id, icon, gender, birthday, city, job, personalized_signature,
+    source_type, isrealnameauth, integration, growth, luckey_count, history_integration
+    </sql>
+
+    <sql id="Base_Where">
+        <trim suffixOverrides="AND">
+        <if test="userId != null">
+          user_id = #{userId}
+          AND
+        </if>
+        <if test="memberLevelId != null">
+          member_level_id = #{memberLevelId}
+          AND
+        </if>
+        <if test="username != null">
+          username = #{username}
+          AND
+        </if>
+        <if test="loginPwd != null">
+          login_pwd = #{loginPwd}
+          AND
+        </if>
+        <if test="lastLogpwdModifytime != null">
+          last_logpwd_modifytime = #{lastLogpwdModifytime}
+          AND
+        </if>
+        <if test="tradePwd != null">
+          trade_pwd = #{tradePwd}
+          AND
+        </if>
+        <if test="lastTradepwdModifytime != null">
+          last_tradepwd_modifytime = #{lastTradepwdModifytime}
+          AND
+        </if>
+        <if test="gasturePwd != null">
+          gasture_pwd = #{gasturePwd}
+          AND
+        </if>
+        <if test="lastGasturepwdModifytime != null">
+          last_gasturepwd_modifytime = #{lastGasturepwdModifytime}
+          AND
+        </if>
+        <if test="nickname">
+          nickname = #{nickname}
+          AND
+        </if>
+        <if test="phone != null">
+          phone = #{phone}
+          AND
+        </if>
+        <if test="idno != null">
+          idno = #{idno}
+          AND
+        </if>
+        <if test="status != null">
+          status = #{status}
+          AND
+        </if>
+        <if test="createTime != null">
+          create_time = #{createTime}
+          AND
+        </if>
+        <if test="regChlId != null">
+          reg_chl_id = #{regChlId}
+          AND
+        </if>
+        <if test="icon != null">
+          icon = #{icon}
+          AND
+        </if>
+        <if test="gender != null">
+          gender = #{gender}
+          AND
+        </if>
+        <if test="birthday != null">
+          birthday = #{birthday}
+          AND
+        </if>
+        <if test="city != null">
+          city = #{city}
+          AND
+        </if>
+        <if test="job != null">
+          job = #{job}
+          AND
+        </if>
+        <if test="personalizedSignature != null">
+          personalized_signature = #{personalizedSignature}
+          AND
+        </if>
+        <if test="sourceType != null">
+          source_type = #{sourceType}
+          AND
+        </if>
+        <if test="isrealnameauth != null">
+          isrealnameauth = #{isrealnameauth}
+          AND
+        </if>
+        <if test="integration != null">
+          integration = #{integration}
+          AND
+        </if>
+        <if test="growth != null">
+          growth = #{growth}
+          AND
+        </if>
+        <if test="luckeyCount != null">
+          luckey_count = #{luckeyCount}
+          AND
+        </if>
+        <if test="historyIntegration != null">
+          history_integration = #{historyIntegration}
+        </if>
+        </trim>
+    </sql>
+
+    <insert id="insert" parameterType="com.bpaas.bps.user.po.UMemberPo">
+    insert into tbl_user_member (id, user_id, member_level_id,
+      username, login_pwd, last_logpwd_modifytime,
+      trade_pwd, last_tradepwd_modifytime, gasture_pwd,
+      last_gasturepwd_modifytime, nickname, phone,
+      idno, status, create_time,
+      reg_chl_id, icon, gender,
+      birthday, city, job, personalized_signature,
+      source_type, isrealnameauth, integration,
+      growth, luckey_count, history_integration
+      )
+    values (#{id,jdbcType=BIGINT}, #{userId,jdbcType=VARCHAR}, #{memberLevelId,jdbcType=BIGINT},
+      #{username,jdbcType=VARCHAR}, #{loginPwd,jdbcType=VARCHAR}, #{lastLogpwdModifytime,jdbcType=TIMESTAMP},
+      #{tradePwd,jdbcType=VARCHAR}, #{lastTradepwdModifytime,jdbcType=TIMESTAMP}, #{gasturePwd,jdbcType=VARCHAR},
+      #{lastGasturepwdModifytime,jdbcType=TIMESTAMP}, #{nickname,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR},
+      #{idno,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP},
+      #{regChlId,jdbcType=CHAR}, #{icon,jdbcType=VARCHAR}, #{gender,jdbcType=INTEGER},
+      #{birthday,jdbcType=DATE}, #{city,jdbcType=VARCHAR}, #{job,jdbcType=VARCHAR}, #{personalizedSignature,jdbcType=VARCHAR},
+      #{sourceType,jdbcType=INTEGER}, #{isrealnameauth,jdbcType=SMALLINT}, #{integration,jdbcType=INTEGER},
+      #{growth,jdbcType=INTEGER}, #{luckeyCount,jdbcType=INTEGER}, #{historyIntegration,jdbcType=INTEGER}
+      )
+    </insert>
+
+    <select id="findMember" parameterType="com.bpaas.bps.user.po.UMemberPo" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from tbl_user_member
+        where
+        phone = #{phone,jdbcType=VARCHAR}
+    </select>
+
+</mapper>

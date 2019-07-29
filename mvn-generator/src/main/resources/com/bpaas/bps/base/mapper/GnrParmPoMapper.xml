@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bpaas.bps.base.mapper.GnrParmPoMapper" >
+  <resultMap id="BaseResultMap" type="com.bpaas.bps.base.po.gnr.GnrParmPo" >
+    <id column="ID" property="id" jdbcType="VARCHAR" />
+    <result column="PARM_ID" property="parmId" jdbcType="VARCHAR" />
+    <result column="PARM_FLAG" property="parmFlag" jdbcType="CHAR" />
+    <result column="PARM_TYPE" property="parmType" jdbcType="CHAR" />
+    <result column="PARM_NAME" property="parmName" jdbcType="VARCHAR" />
+    <result column="PARM_DESC" property="parmDesc" jdbcType="VARCHAR" />
+    <result column="PARM_VALUE" property="parmValue" jdbcType="VARCHAR" />
+    <result column="LAST_UPDATE_TIME" property="lastUpdateTime" jdbcType="TIMESTAMP" />
+    <result column="LAST_OPER" property="lastOper" jdbcType="VARCHAR" />
+    <result column="REMARK1" property="remark1" jdbcType="VARCHAR" />
+    <result column="REMARK2" property="remark2" jdbcType="VARCHAR" />
+    <result column="REMARK3" property="remark3" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ID, PARM_ID, PARM_FLAG, PARM_TYPE, PARM_NAME, PARM_DESC, PARM_VALUE, LAST_UPDATE_TIME, 
+    LAST_OPER, REMARK1, REMARK2, REMARK3
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_gnr_parm
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from t_gnr_parm
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.bpaas.bps.base.po.gnr.GnrParmPo" >
+    insert into t_gnr_parm (ID, PARM_ID, PARM_FLAG, 
+      PARM_TYPE, PARM_NAME, PARM_DESC, 
+      PARM_VALUE, LAST_UPDATE_TIME, LAST_OPER, 
+      REMARK1, REMARK2, REMARK3
+      )
+    values (#{id,jdbcType=VARCHAR}, #{parmId,jdbcType=VARCHAR}, #{parmFlag,jdbcType=CHAR}, 
+      #{parmType,jdbcType=CHAR}, #{parmName,jdbcType=VARCHAR}, #{parmDesc,jdbcType=VARCHAR}, 
+      #{parmValue,jdbcType=VARCHAR}, #{lastUpdateTime,jdbcType=TIMESTAMP}, #{lastOper,jdbcType=VARCHAR}, 
+      #{remark1,jdbcType=VARCHAR}, #{remark2,jdbcType=VARCHAR}, #{remark3,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.bpaas.bps.base.po.gnr.GnrParmPo" >
+    insert into t_gnr_parm
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="parmId != null" >
+        PARM_ID,
+      </if>
+      <if test="parmFlag != null" >
+        PARM_FLAG,
+      </if>
+      <if test="parmType != null" >
+        PARM_TYPE,
+      </if>
+      <if test="parmName != null" >
+        PARM_NAME,
+      </if>
+      <if test="parmDesc != null" >
+        PARM_DESC,
+      </if>
+      <if test="parmValue != null" >
+        PARM_VALUE,
+      </if>
+      <if test="lastUpdateTime != null" >
+        LAST_UPDATE_TIME,
+      </if>
+      <if test="lastOper != null" >
+        LAST_OPER,
+      </if>
+      <if test="remark1 != null" >
+        REMARK1,
+      </if>
+      <if test="remark2 != null" >
+        REMARK2,
+      </if>
+      <if test="remark3 != null" >
+        REMARK3,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="parmId != null" >
+        #{parmId,jdbcType=VARCHAR},
+      </if>
+      <if test="parmFlag != null" >
+        #{parmFlag,jdbcType=CHAR},
+      </if>
+      <if test="parmType != null" >
+        #{parmType,jdbcType=CHAR},
+      </if>
+      <if test="parmName != null" >
+        #{parmName,jdbcType=VARCHAR},
+      </if>
+      <if test="parmDesc != null" >
+        #{parmDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="parmValue != null" >
+        #{parmValue,jdbcType=VARCHAR},
+      </if>
+      <if test="lastUpdateTime != null" >
+        #{lastUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastOper != null" >
+        #{lastOper,jdbcType=VARCHAR},
+      </if>
+      <if test="remark1 != null" >
+        #{remark1,jdbcType=VARCHAR},
+      </if>
+      <if test="remark2 != null" >
+        #{remark2,jdbcType=VARCHAR},
+      </if>
+      <if test="remark3 != null" >
+        #{remark3,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bpaas.bps.base.po.gnr.GnrParmPo" >
+    update t_gnr_parm
+    <set >
+      <if test="parmId != null" >
+        PARM_ID = #{parmId,jdbcType=VARCHAR},
+      </if>
+      <if test="parmFlag != null" >
+        PARM_FLAG = #{parmFlag,jdbcType=CHAR},
+      </if>
+      <if test="parmType != null" >
+        PARM_TYPE = #{parmType,jdbcType=CHAR},
+      </if>
+      <if test="parmName != null" >
+        PARM_NAME = #{parmName,jdbcType=VARCHAR},
+      </if>
+      <if test="parmDesc != null" >
+        PARM_DESC = #{parmDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="parmValue != null" >
+        PARM_VALUE = #{parmValue,jdbcType=VARCHAR},
+      </if>
+      <if test="lastUpdateTime != null" >
+        LAST_UPDATE_TIME = #{lastUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastOper != null" >
+        LAST_OPER = #{lastOper,jdbcType=VARCHAR},
+      </if>
+      <if test="remark1 != null" >
+        REMARK1 = #{remark1,jdbcType=VARCHAR},
+      </if>
+      <if test="remark2 != null" >
+        REMARK2 = #{remark2,jdbcType=VARCHAR},
+      </if>
+      <if test="remark3 != null" >
+        REMARK3 = #{remark3,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bpaas.bps.base.po.gnr.GnrParmPo" >
+    update t_gnr_parm
+    set PARM_ID = #{parmId,jdbcType=VARCHAR},
+      PARM_FLAG = #{parmFlag,jdbcType=CHAR},
+      PARM_TYPE = #{parmType,jdbcType=CHAR},
+      PARM_NAME = #{parmName,jdbcType=VARCHAR},
+      PARM_DESC = #{parmDesc,jdbcType=VARCHAR},
+      PARM_VALUE = #{parmValue,jdbcType=VARCHAR},
+      LAST_UPDATE_TIME = #{lastUpdateTime,jdbcType=TIMESTAMP},
+      LAST_OPER = #{lastOper,jdbcType=VARCHAR},
+      REMARK1 = #{remark1,jdbcType=VARCHAR},
+      REMARK2 = #{remark2,jdbcType=VARCHAR},
+      REMARK3 = #{remark3,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

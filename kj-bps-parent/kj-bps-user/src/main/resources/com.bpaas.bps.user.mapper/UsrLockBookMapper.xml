@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bpaas.bps.user.mapper.UsrLockBookMapper">
+	<resultMap id="BaseResultMap" type="com.bpaas.bps.user.po.UsrLockBookPo">
+		<id column="ID" property="id" />
+		<result column="LOCK_TIME" property="lockTime" />
+		<result column="USER_ID" property="userId" />
+		<result column="LOCK_FLAG" property="lockFlag" />
+		<result column="LOCK_FUNCTION" property="lockFunction" />
+		<result column="LOCK_WAY" property="lockWay" />
+		<result column="LOCK_SOURCE" property="lockSource" />
+		<result column="LOCK_REASON" property="lockReason" />
+		<result column="LOCK_OPER" property="lockOper" />
+		<result column="LOCK_MODE" property="lockMode" />
+		<result column="PART_LOCK_HOUR" property="partLockHour" />
+		<result column="UNLOCK_TIME" property="unlockTime" />
+		<result column="UNLOCK_OPER" property="unlockOper" />
+		<result column="UNLOCK_REASON" property="unlockReason" />
+		<result column="REMARK1" property="remark1" />
+		<result column="REMARK2" property="remark2" />
+		<result column="REMARK3" property="remark3" />
+	</resultMap>
+
+	<sql id="Table_Name">
+		T_USR_LOCK_BOOK
+	</sql>
+
+	<sql id="Base_Column">
+		ID,
+		LOCK_TIME,
+		USER_ID,
+		LOCK_FLAG,
+		LOCK_FUNCTION,
+		LOCK_WAY,
+		LOCK_SOURCE,
+		LOCK_REASON,
+		LOCK_OPER,
+		LOCK_MODE,
+		PART_LOCK_HOUR,
+		UNLOCK_TIME,
+		UNLOCK_OPER,
+		UNLOCK_REASON,
+		REMARK1,
+		REMARK2,
+		REMARK3
+	</sql>
+
+	<sql id="Base_Where">
+		<trim suffixOverrides="AND">
+		<if test="id != null">
+			ID= #{id}
+	           AND 
+		</if>
+		<if test="lockTime != null">
+			LOCK_TIME= #{lockTime}
+	           AND 
+		</if>
+		<if test="userId != null">
+			USER_ID= #{userId}
+	           AND 
+		</if>
+		<if test="lockFlag != null">
+			LOCK_FLAG= #{lockFlag}
+	           AND 
+		</if>
+		<if test="lockFunction != null">
+			LOCK_FUNCTION= #{lockFunction}
+	           AND 
+		</if>
+		<if test="lockWay != null">
+			LOCK_WAY= #{lockWay}
+	           AND 
+		</if>
+		<if test="lockSource != null">
+			LOCK_SOURCE= #{lockSource}
+	           AND 
+		</if>
+		<if test="lockReason != null">
+			LOCK_REASON= #{lockReason}
+	           AND 
+		</if>
+		<if test="lockOper != null">
+			LOCK_OPER= #{lockOper}
+	           AND 
+		</if>
+		<if test="lockMode != null">
+			LOCK_MODE= #{lockMode}
+	           AND 
+		</if>
+		<if test="partLockHour != null">
+			PART_LOCK_HOUR= #{partLockHour}
+	           AND 
+		</if>
+		<if test="unlockTime != null">
+			UNLOCK_TIME= #{unlockTime}
+	           AND 
+		</if>
+		<if test="unlockOper != null">
+			UNLOCK_OPER= #{unlockOper}
+	           AND 
+		</if>
+		<if test="unlockReason != null">
+			UNLOCK_REASON= #{unlockReason}
+	           AND 
+		</if>
+		<if test="remark1 != null">
+			REMARK1= #{remark1}
+	           AND 
+		</if>
+		<if test="remark2 != null">
+			REMARK2= #{remark2}
+	           AND 
+		</if>
+		<if test="remark3 != null">
+			REMARK3= #{remark3}
+		</if>
+		</trim>
+	</sql>
+
+	<insert id="insert" >
+		insert into
+		<include refid="Table_Name" />
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+	<if test="id != null">
+		ID,
+	</if>
+	<if test="lockTime != null">
+		LOCK_TIME,
+	</if>
+	<if test="userId != null">
+		USER_ID,
+	</if>
+	<if test="lockFlag != null">
+		LOCK_FLAG,
+	</if>
+	<if test="lockFunction != null">
+		LOCK_FUNCTION,
+	</if>
+	<if test="lockWay != null">
+		LOCK_WAY,
+	</if>
+	<if test="lockSource != null">
+		LOCK_SOURCE,
+	</if>
+	<if test="lockReason != null">
+		LOCK_REASON,
+	</if>
+	<if test="lockOper != null">
+		LOCK_OPER,
+	</if>
+	<if test="lockMode != null">
+		LOCK_MODE,
+	</if>
+	<if test="partLockHour != null">
+		PART_LOCK_HOUR,
+	</if>
+	<if test="unlockTime != null">
+		UNLOCK_TIME,
+	</if>
+	<if test="unlockOper != null">
+		UNLOCK_OPER,
+	</if>
+	<if test="unlockReason != null">
+		UNLOCK_REASON,
+	</if>
+	<if test="remark1 != null">
+		REMARK1,
+	</if>
+	<if test="remark2 != null">
+		REMARK2,
+	</if>
+	<if test="remark3 != null">
+		REMARK3,
+	</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+	<if test="id != null">
+		#{id},
+	</if>
+	<if test="lockTime != null">
+		#{lockTime},
+	</if>
+	<if test="userId != null">
+		#{userId},
+	</if>
+	<if test="lockFlag != null">
+		#{lockFlag},
+	</if>
+	<if test="lockFunction != null">
+		#{lockFunction},
+	</if>
+	<if test="lockWay != null">
+		#{lockWay},
+	</if>
+	<if test="lockSource != null">
+		#{lockSource},
+	</if>
+	<if test="lockReason != null">
+		#{lockReason},
+	</if>
+	<if test="lockOper != null">
+		#{lockOper},
+	</if>
+	<if test="lockMode != null">
+		#{lockMode},
+	</if>
+	<if test="partLockHour != null">
+		#{partLockHour},
+	</if>
+	<if test="unlockTime != null">
+		#{unlockTime},
+	</if>
+	<if test="unlockOper != null">
+		#{unlockOper},
+	</if>
+	<if test="unlockReason != null">
+		#{unlockReason},
+	</if>
+	<if test="remark1 != null">
+		#{remark1},
+	</if>
+	<if test="remark2 != null">
+		#{remark2},
+	</if>
+	<if test="remark3 != null">
+		#{remark3},
+	</if>
+		</trim>
+	</insert>
+
+	<update id="update" >
+		update
+		<include refid="Table_Name" />
+		<set>
+	<if test="id != null">
+		ID=#{id},
+	</if>
+	<if test="lockTime != null">
+		LOCK_TIME=#{lockTime},
+	</if>
+	<if test="userId != null">
+		USER_ID=#{userId},
+	</if>
+	<if test="lockFlag != null">
+		LOCK_FLAG=#{lockFlag},
+	</if>
+	<if test="lockFunction != null">
+		LOCK_FUNCTION=#{lockFunction},
+	</if>
+	<if test="lockWay != null">
+		LOCK_WAY=#{lockWay},
+	</if>
+	<if test="lockSource != null">
+		LOCK_SOURCE=#{lockSource},
+	</if>
+	<if test="lockReason != null">
+		LOCK_REASON=#{lockReason},
+	</if>
+	<if test="lockOper != null">
+		LOCK_OPER=#{lockOper},
+	</if>
+	<if test="lockMode != null">
+		LOCK_MODE=#{lockMode},
+	</if>
+	<if test="partLockHour != null">
+		PART_LOCK_HOUR=#{partLockHour},
+	</if>
+	<if test="unlockTime != null">
+		UNLOCK_TIME=#{unlockTime},
+	</if>
+	<if test="unlockOper != null">
+		UNLOCK_OPER=#{unlockOper},
+	</if>
+	<if test="unlockReason != null">
+		UNLOCK_REASON=#{unlockReason},
+	</if>
+	<if test="remark1 != null">
+		REMARK1=#{remark1},
+	</if>
+	<if test="remark2 != null">
+		REMARK2=#{remark2},
+	</if>
+	<if test="remark3 != null">
+		REMARK3=#{remark3},
+	</if>
+		</set>
+		where 
+			      ID=#{id}
+	</update>
+
+	<update id="updateByEntity" >
+		UPDATE
+		<include refid="Table_Name" />
+		<set>
+			<if test="s.lockTime != null">
+                    LOCK_TIME=#{s.lockTime},
+			</if>
+			<if test="s.userId != null">
+                    USER_ID=#{s.userId},
+			</if>
+			<if test="s.lockFlag != null">
+                    LOCK_FLAG=#{s.lockFlag},
+			</if>
+			<if test="s.lockFunction != null">
+                    LOCK_FUNCTION=#{s.lockFunction},
+			</if>
+			<if test="s.lockWay != null">
+                    LOCK_WAY=#{s.lockWay},
+			</if>
+			<if test="s.lockSource != null">
+                    LOCK_SOURCE=#{s.lockSource},
+			</if>
+			<if test="s.lockReason != null">
+                    LOCK_REASON=#{s.lockReason},
+			</if>
+			<if test="s.lockOper != null">
+                    LOCK_OPER=#{s.lockOper},
+			</if>
+			<if test="s.lockMode != null">
+                    LOCK_MODE=#{s.lockMode},
+			</if>
+			<if test="s.partLockHour != null">
+                    PART_LOCK_HOUR=#{s.partLockHour},
+			</if>
+			<if test="s.unlockTime != null">
+                    UNLOCK_TIME=#{s.unlockTime},
+			</if>
+			<if test="s.unlockOper != null">
+                    UNLOCK_OPER=#{s.unlockOper},
+			</if>
+			<if test="s.unlockReason != null">
+                    UNLOCK_REASON=#{s.unlockReason},
+			</if>
+			<if test="s.remark1 != null">
+                    REMARK1=#{s.remark1},
+			</if>
+			<if test="s.remark2 != null">
+                    REMARK2=#{s.remark2},
+			</if>
+			<if test="s.remark3 != null">
+                    REMARK3=#{s.remark3}
+			</if>
+		</set>
+		<where> 
+			<trim prefix="(" suffix=")" suffixOverrides="AND">
+			<if test="w.id != null">
+                    ID=#{w.id}
+                   AND 
+ 			</if>
+			<if test="w.lockTime != null">
+                    LOCK_TIME=#{w.lockTime}
+                   AND 
+ 			</if>
+			<if test="w.userId != null">
+                    USER_ID=#{w.userId}
+                   AND 
+ 			</if>
+			<if test="w.lockFlag != null">
+                    LOCK_FLAG=#{w.lockFlag}
+                   AND 
+ 			</if>
+			<if test="w.lockFunction != null">
+                    LOCK_FUNCTION=#{w.lockFunction}
+                   AND 
+ 			</if>
+			<if test="w.lockWay != null">
+                    LOCK_WAY=#{w.lockWay}
+                   AND 
+ 			</if>
+			<if test="w.lockSource != null">
+                    LOCK_SOURCE=#{w.lockSource}
+                   AND 
+ 			</if>
+			<if test="w.lockReason != null">
+                    LOCK_REASON=#{w.lockReason}
+                   AND 
+ 			</if>
+			<if test="w.lockOper != null">
+                    LOCK_OPER=#{w.lockOper}
+                   AND 
+ 			</if>
+			<if test="w.lockMode != null">
+                    LOCK_MODE=#{w.lockMode}
+                   AND 
+ 			</if>
+			<if test="w.partLockHour != null">
+                    PART_LOCK_HOUR=#{w.partLockHour}
+                   AND 
+ 			</if>
+			<if test="w.unlockTime != null">
+                    UNLOCK_TIME=#{w.unlockTime}
+                   AND 
+ 			</if>
+			<if test="w.unlockOper != null">
+                    UNLOCK_OPER=#{w.unlockOper}
+                   AND 
+ 			</if>
+			<if test="w.unlockReason != null">
+                    UNLOCK_REASON=#{w.unlockReason}
+                   AND 
+ 			</if>
+			<if test="w.remark1 != null">
+                    REMARK1=#{w.remark1}
+                   AND 
+ 			</if>
+			<if test="w.remark2 != null">
+                    REMARK2=#{w.remark2}
+                   AND 
+ 			</if>
+			<if test="w.remark3 != null">
+                    REMARK3=#{w.remark3}
+ 			</if>
+			</trim>
+		</where>
+	</update>
+
+	<delete id="delete" >
+		delete from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</delete>
+
+	<select id="count" parameterType="java.util.Map" resultType="int">
+		select count(1) from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</select>
+
+	<select id="selectOne"  resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column" />
+		from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</select>
+
+	<select id="selectList"  resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column" />
+		from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</select>
+
+
+</mapper>

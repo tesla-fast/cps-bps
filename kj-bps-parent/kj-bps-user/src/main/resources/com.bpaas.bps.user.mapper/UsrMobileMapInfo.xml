@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bpaas.bps.user.mapper.UsrMobileMapInfoMapper">
+	<resultMap id="BaseResultMap" type="com.bpaas.bps.user.po.UsrMobileMapInfoPo">
+		<id column="ID" property="id" />
+		<result column="MOBILE" property="mobile" />
+		<result column="LOGIN_MOBILE" property="loginMobile" />
+		<result column="USER_ID" property="userId" />
+		<result column="STATUS" property="status" />
+	</resultMap>
+
+	<sql id="Table_Name">
+		T_USR_MOBILE_MAP_INFO
+	</sql>
+
+	<sql id="Base_Column">
+		ID,
+		MOBILE,
+		LOGIN_MOBILE,
+		USER_ID,
+		STATUS
+	</sql>
+
+	<sql id="Base_Where">
+		<trim suffixOverrides="AND">
+		<if test="id != null">
+			ID= #{id}
+	           AND 
+		</if>
+		<if test="mobile != null">
+			MOBILE= #{mobile}
+	           AND 
+		</if>
+		<if test="loginMobile != null">
+			LOGIN_MOBILE= #{loginMobile}
+	           AND 
+		</if>
+		<if test="userId != null">
+			USER_ID= #{userId}
+	           AND 
+		</if>
+		<if test="status != null">
+			STATUS= #{status}
+		</if>
+		</trim>
+	</sql>
+	
+    <sql id="Base_Select">
+			select
+		<include refid="Base_Column" />
+		from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</sql>
+
+	<insert id="insert" >
+		insert into
+		<include refid="Table_Name" />
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+	<if test="id != null">
+		ID,
+	</if>
+	<if test="mobile != null">
+		MOBILE,
+	</if>
+	<if test="loginMobile != null">
+		LOGIN_MOBILE,
+	</if>
+	<if test="userId != null">
+		USER_ID,
+	</if>
+	<if test="status != null">
+		STATUS
+	</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+	<if test="id != null">
+		#{id},
+	</if>
+	<if test="mobile != null">
+		#{mobile},
+	</if>
+	<if test="loginMobile != null">
+		#{loginMobile},
+	</if>
+	<if test="userId != null">
+		#{userId},
+		</if>
+	<if test="status != null">
+		#{status}
+	</if>
+		</trim>
+	</insert>
+
+	<update id="update" >
+		update
+		<include refid="Table_Name" />
+		<set>
+	<if test="id != null">
+		ID=#{id},
+	</if>
+	<if test="mobile != null">
+		MOBILE=#{mobile},
+	</if>
+	<if test="loginMobile != null">
+		LOGIN_MOBILE=#{loginMobile},
+	</if>
+	<if test="userId != null">
+		USER_ID=#{userId},
+	</if>
+	<if test="status != null">
+		STATUS=#{status},
+	</if>
+		</set>
+		where 
+			      ID=#{id}
+	</update>
+
+	<update id="updateByEntity" >
+		UPDATE
+		<include refid="Table_Name" />
+		<set>
+			<if test="s.mobile != null">
+                    MOBILE=#{s.mobile},
+			</if>
+			<if test="s.loginMobile != null">
+                    LOGIN_MOBILE=#{s.loginMobile},
+			</if>
+			<if test="s.userId != null">
+                    USER_ID=#{s.userId},
+			</if>
+			<if test="s.status != null">
+                    CERT_NO=#{s.status}
+			</if>
+		</set>
+		<where> 
+			<trim prefix="(" suffix=")" suffixOverrides="AND">
+			<if test="w.id != null">
+                    ID=#{w.id}
+                   AND 
+ 			</if>
+			<if test="w.mobile != null">
+                    MOBILE=#{w.mobile}
+                   AND 
+ 			</if>
+			<if test="w.loginMobile != null">
+                    LOGIN_MOBILE=#{w.loginMobile}
+                   AND 
+ 			</if>
+ 			<if test="w.userId != null">
+                    USER_ID=#{w.userId}
+                   AND 
+ 			</if>
+			<if test="w.status != null">
+                    STATUS=#{w.status}
+ 			</if>
+			</trim>
+		</where>
+	</update>
+
+	<delete id="delete" >
+		delete from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</delete>
+
+	<select id="count" parameterType="java.util.Map" resultType="int">
+		select count(1) from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</select>
+
+	<select id="selectOne"  resultMap="BaseResultMap">
+	  <include refid="Base_Select" />
+	</select>
+
+	<select id="selectList"  resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column" />
+		from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</select>
+	
+	<select id="queryConfidence"  resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column" />
+		from
+		<include refid="Table_Name" />
+		<where>
+			 USER_ID=#{userId}
+		</where>
+	</select>
+
+</mapper>

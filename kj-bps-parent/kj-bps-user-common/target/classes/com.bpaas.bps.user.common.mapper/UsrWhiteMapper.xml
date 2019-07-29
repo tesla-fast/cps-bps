@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bpaas.bps.user.common.mapper.UsrWhiteMapper">
+	<resultMap id="BaseResultMap" type="com.bpaas.bps.user.common.po.UsrWhitePo">
+		<id column="wuid" property="wuid" />
+		<result column="mobile" property="mobile" />
+		<result column="flag" property="flag" />
+	</resultMap>
+
+	<sql id="Table_Name">
+		t_whiteuser
+	</sql>
+	<sql id="Base_Column">
+		wuid,
+		mobile,
+		flag
+	</sql>
+
+	<sql id="Base_Where">
+		<trim suffixOverrides="AND">
+			<if test="wuid != 0">
+				wuid= #{wuid}
+				AND
+			</if>
+			<if test="mobile != null">
+				mobile= #{mobile}
+				AND
+			</if>
+			<if test="flag != null">
+				flag= #{flag}
+			</if>
+		</trim>
+	</sql>
+
+	<insert id="insert">
+		insert into
+		<include refid="Table_Name" />
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="wuid != null">
+				wuid,
+			</if>
+			<if test="mobile != null">
+				mobile,
+			</if>
+			<if test="flag != null">
+				flag,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="wuid != null">
+				#{wuid},
+			</if>
+			<if test="mobile != null">
+				#{mobile},
+			</if>
+			<if test="flag != null">
+				#{flag},
+			</if>
+		</trim>
+	</insert>
+	
+	<delete id="delete" >
+		delete from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</delete>
+	
+	<select id="selectOne"  resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column" />
+		from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</select>
+
+	<select id="selectList"  resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column" />
+		from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</select>
+	
+	<select id="selectForUpdate" resultMap="BaseResultMap" useCache="false">
+		select
+		<include refid="Base_Column" />
+		from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+		for update
+	</select>
+</mapper>

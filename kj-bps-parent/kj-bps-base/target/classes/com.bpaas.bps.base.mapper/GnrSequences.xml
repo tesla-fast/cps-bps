@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bpaas.bps.base.mapper.GnrSeqMapper">
+    <resultMap id="BaseResultMap" type="com.bpaas.bps.base.po.gnr.GnrSequencesPo">
+        <id column="ID" property="id" jdbcType="VARCHAR"/>
+        <result column="NAME" property="name" jdbcType="VARCHAR"/>
+        <result column="CURRVAL" property="currval" jdbcType="INTEGER"/>
+        <result column="NEXTVAL" property="nextval" jdbcType="INTEGER"/>
+        <result column="INCREASE" property="increase" jdbcType="INTEGER"/>
+        <result column="INITVAL" property="initval" jdbcType="INTEGER"/>
+        <result column="MAXVAL" property="maxval" jdbcType="INTEGER"/>
+        <result column="CYCLE" property="cycle" jdbcType="CHAR"/>
+    </resultMap>
+
+    <sql id="Table_Name">
+		T_GNR_SEQUENCES
+	</sql>
+
+    <sql id="Base_Column_List">
+    ID, NAME, CURRVAL, NEXTVAL, INCREASE, INITVAL, MAXVAL, CYCLE
+    </sql>
+
+    <sql id="Base_Where">
+        <trim prefix="(" suffix=")" suffixOverrides="AND">
+            <if test="name != null">
+                NAME= #{name}
+                AND
+            </if>
+            <if test="currval != null">
+                CURRVAL= #{currval}
+                AND
+            </if>
+            <if test="nextval != null">
+                NEXTVAL= #{nextval}
+                AND
+            </if>
+            <if test="increase != null">
+                INCREASE= #{increase}
+                AND
+            </if>
+            <if test="initval != null">
+                INITVAL= #{initval}
+                AND
+            </if>
+            <if test="maxval != null">
+                MAXVAL= #{maxval}
+                AND
+            </if>
+            <if test="cycle != null">
+                CYCLE= #{cycle}
+                AND
+            </if>
+            <if test="id != null">
+                ID= #{id}
+            </if>
+        </trim>
+    </sql>
+
+    <select id="select" resultMap="BaseResultMap" parameterType="com.bpaas.bps.base.po.gnr.GnrSequencesPo">
+        select
+        <include refid="Base_Column_List"/>
+        from
+        <include refid="Table_Name"/>
+        <where>
+            <include refid="Base_Where"/>
+        </where>
+    </select>
+
+    <insert id="insert" parameterType="com.bpaas.bps.base.po.gnr.GnrSequencesPo">
+    insert into t_gnr_sequences (ID, NAME, CURRVAL,
+      NEXTVAL, INCREASE, INITVAL,
+      MAXVAL, CYCLE)
+    values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{currval,jdbcType=INTEGER},
+      #{nextval,jdbcType=INTEGER}, #{increase,jdbcType=INTEGER}, #{initval,jdbcType=INTEGER},
+      #{maxval,jdbcType=INTEGER}, #{cycle,jdbcType=CHAR})
+    </insert>
+
+    <update id="update" parameterType="com.bpaas.bps.base.po.gnr.GnrSequencesPo">
+        update
+        <include refid="Table_Name"/>
+        <set>
+            <if test="name != null">
+                NAME=#{name},
+            </if>
+            <if test="currval != null">
+                CURRVAL=#{currval},
+            </if>
+            <if test="nextval != null">
+                NEXTVAL=#{nextval},
+            </if>
+            <if test="increase != null">
+                INCREASE=#{increase},
+            </if>
+            <if test="initval != null">
+                INITVAL=#{initval},
+            </if>
+            <if test="maxval != null">
+                MAXVAL=#{maxval},
+            </if>
+            <if test="cycle != null">
+                CYCLE=#{cycle},
+            </if>
+            <if test="id != null">
+                ID=#{id},
+            </if>
+        </set>
+        where NAME=#{name}
+    </update>
+
+
+</mapper>

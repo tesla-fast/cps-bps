@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bpaas.bps.pay.mapper.wechat.WechatOrderMapper">
+	<resultMap id="BaseResultMap" type="com.bpaas.bps.pay.po.wechat.WechatOrderPo">
+		<id column="id" property="id" />
+		<result column="transaction_id" property="transaction_id" />
+		<result column="outTradeNo" property="outTradeNo" />
+		<result column="body" property="body" />
+		<result column="totalFee" property="totalFee" />
+		<result column="spbillCreateIp" property="spbillCreateIp" />
+		<result column="trade_type" property="trade_type" />
+		<result column="openId" property="openId" />
+		<result column="status" property="status" />
+		<result column="create_time" property="create_time" />
+		<result column="update_flag" property="update_flag" />
+		<result column="update_time" property="update_time" />
+		<result column="time_end" property="time_end" />
+		<result column="result_code" property="result_code" />
+	</resultMap>
+
+	<sql id="Table_Name">
+		t_wxpayment
+	</sql>
+	<sql id="Base_Column">
+		id,
+		transaction_id,
+		outTradeNo,
+		body,
+		totalFee,
+		spbillCreateIp,
+		trade_type,
+		openId,
+		status,
+		create_time,
+		update_flag,
+		update_time,
+		time_end,
+		result_code
+	</sql>
+
+	<sql id="Base_Where">
+		<trim suffixOverrides="AND">
+			<if test="transaction_id != null">
+				transaction_id= #{transaction_id}
+				AND
+			</if>
+			<if test="outTradeNo != null">
+				outTradeNo= #{outTradeNo}
+				AND
+			</if>
+			<if test="body != null">
+				body= #{body}
+				AND
+			</if>
+			<if test="totalFee != null">
+				totalFee= #{totalFee}
+				AND
+			</if>
+			<if test="spbillCreateIp != null">
+				spbillCreateIp= #{spbillCreateIp}
+				AND
+			</if>
+			<if test="trade_type != null">
+				trade_type= #{trade_type}
+				AND
+			</if>
+			<if test="openId != null">
+				openId= #{openId}
+				AND
+			</if>
+			<if test="status != null">
+				status= #{status}
+				AND
+			</if>
+			<if test="create_time != null">
+				create_time= #{create_time}
+				AND
+			</if>
+			<if test="update_flag != null">
+				update_flag= #{update_flag}
+				AND
+			</if>
+			<if test="update_time != null">
+				update_time= #{update_time}
+				AND
+			</if>
+			<if test="time_end != null">
+				time_end= #{time_end}
+				AND
+			</if>
+			<if test="result_code != null">
+				result_code= #{result_code}
+			</if>
+		</trim>
+	</sql>
+
+	<insert id="insert">
+		insert into
+		<include refid="Table_Name" />
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="transaction_id != null">
+				transaction_id,
+			</if>
+			<if test="outTradeNo != null">
+				outTradeNo,
+			</if>
+			<if test="body != null">
+				body,
+			</if>
+			<if test="totalFee != null">
+				totalFee,
+			</if>
+			<if test="spbillCreateIp != null">
+				spbillCreateIp,
+			</if>
+			<if test="trade_type != null">
+				trade_type,
+			</if>
+			<if test="openId != null">
+				openId,
+			</if>
+			<if test="status != null">
+				status,
+			</if>
+			<if test="create_time != null">
+				create_time,
+			</if>
+			<if test="update_flag != null">
+				update_flag,
+			</if>
+			<if test="update_time != null">
+				update_time,
+			</if>
+			<if test="time_end != null">
+				time_end,
+			</if>
+			<if test="result_code != null">
+				result_code,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="transaction_id != null">
+				#{transaction_id},
+			</if>
+			<if test="outTradeNo != null">
+				#{outTradeNo},
+			</if>
+			<if test="body != null">
+				#{body},
+			</if>
+			<if test="totalFee != null">
+				#{totalFee},
+			</if>
+			<if test="spbillCreateIp != null">
+				#{spbillCreateIp},
+			</if>
+			<if test="trade_type != null">
+				#{trade_type},
+			</if>
+			<if test="openId != null">
+				#{openId},
+			</if>			
+			<if test="status != null">
+				#{status},
+			</if>
+			<if test="create_time != null">
+				#{create_time},
+			</if>
+			<if test="update_flag != null">
+				#{update_flag},
+			</if>
+			<if test="update_time != null">
+				#{update_time},
+			</if>
+			<if test="time_end != null">
+				#{time_end},
+			</if>
+			<if test="result_code != null">
+				#{result_code},
+			</if>
+		</trim>
+	</insert>
+	
+	<update id="update" >
+		update
+		<include refid="Table_Name" />
+		<set>
+			<if test="transaction_id != null">
+				transaction_id=#{transaction_id},
+			</if>
+			<if test="outTradeNo != null">
+				outTradeNo=#{outTradeNo},
+			</if>
+			<if test="body != null">
+				body=#{body},
+			</if>
+			<if test="totalFee != null">
+				totalFee=#{totalFee},
+			</if>
+			<if test="spbillCreateIp != null">
+				spbillCreateIp=#{spbillCreateIp},
+			</if>
+			<if test="trade_type != null">
+				trade_type=#{trade_type},
+			</if>
+			<if test="openId != null">
+				openId=#{openId},
+			</if>
+			<if test="status != null">
+				status=#{status},
+			</if>
+			<if test="create_time != null">
+				create_time=#{create_time},
+			</if>
+			<if test="update_flag != null">
+				update_flag=#{update_flag},
+			</if>
+			<if test="update_time != null">
+				update_time=#{update_time},
+			</if>
+			<if test="time_end != null">
+				time_end=#{time_end},
+			</if>
+			<if test="result_code != null">
+				result_code=#{result_code},
+			</if>
+		</set>
+		where 
+			      outTradeNo=#{outTradeNo}
+	</update>
+	
+	<delete id="delete" >
+		delete from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</delete>
+	
+	<select id="selectOne"  resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column" />
+		from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</select>
+
+	<select id="selectList"  resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column" />
+		from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+		order by createtime desc
+	</select>
+	
+	<select id="selectForUpdate" resultMap="BaseResultMap" useCache="false">
+		select
+		<include refid="Base_Column" />
+		from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+		for update
+	</select>
+</mapper>

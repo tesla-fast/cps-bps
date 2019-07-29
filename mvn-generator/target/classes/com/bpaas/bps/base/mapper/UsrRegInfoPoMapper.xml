@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bpaas.bps.base.mapper.UsrRegInfoPoMapper" >
+  <resultMap id="BaseResultMap" type="com.bpaas.bps.base.po.gnr.UsrRegInfoPo" >
+    <id column="ID" property="id" jdbcType="VARCHAR" />
+    <result column="USER_ID" property="userId" jdbcType="VARCHAR" />
+    <result column="MOBILE" property="mobile" jdbcType="VARCHAR" />
+    <result column="USER_NAME" property="userName" jdbcType="VARCHAR" />
+    <result column="USER_NICK_NAME" property="userNickName" jdbcType="VARCHAR" />
+    <result column="HEAD_PIC" property="headPic" jdbcType="VARCHAR" />
+    <result column="LOGIN_PWD" property="loginPwd" jdbcType="VARCHAR" />
+    <result column="LAST_LOGPWD_MODIFYTIME" property="lastLogpwdModifytime" jdbcType="TIMESTAMP" />
+    <result column="TRADE_PWD" property="tradePwd" jdbcType="VARCHAR" />
+    <result column="LAST_TRADEPWD_MODIFYTIME" property="lastTradepwdModifytime" jdbcType="TIMESTAMP" />
+    <result column="UNION_PLAT_TYPE" property="unionPlatType" jdbcType="CHAR" />
+    <result column="UNION_PLAT_NO" property="unionPlatNo" jdbcType="VARCHAR" />
+    <result column="REG_TIME" property="regTime" jdbcType="TIMESTAMP" />
+    <result column="REG_CHNL_ID" property="regChnlId" jdbcType="CHAR" />
+    <result column="USER_CERT_LEVEL" property="userCertLevel" jdbcType="CHAR" />
+    <result column="USER_VALUE_LEVEL" property="userValueLevel" jdbcType="CHAR" />
+    <result column="BRANCH_ID" property="branchId" jdbcType="VARCHAR" />
+    <result column="USER_STAT" property="userStat" jdbcType="CHAR" />
+    <result column="USER_LOCK_FLAG" property="userLockFlag" jdbcType="CHAR" />
+    <result column="BLACKLIST_FLAG" property="blacklistFlag" jdbcType="CHAR" />
+    <result column="BLACKLIST_TYPE" property="blacklistType" jdbcType="CHAR" />
+    <result column="SECURITY_TYPE" property="securityType" jdbcType="CHAR" />
+    <result column="ACTIVE_TIME" property="activeTime" jdbcType="TIMESTAMP" />
+    <result column="ACTIVE_CHNL_ID" property="activeChnlId" jdbcType="CHAR" />
+    <result column="CLOSE_TIME" property="closeTime" jdbcType="TIMESTAMP" />
+    <result column="CLOSE_CHNL_ID" property="closeChnlId" jdbcType="CHAR" />
+    <result column="REMARK1" property="remark1" jdbcType="VARCHAR" />
+    <result column="REMARK2" property="remark2" jdbcType="VARCHAR" />
+    <result column="CALL_CENTER_PWD" property="callCenterPwd" jdbcType="VARCHAR" />
+    <result column="LAST_LOGIN_TIME" property="lastLoginTime" jdbcType="TIMESTAMP" />
+    <result column="GASTURE_PWD" property="gasturePwd" jdbcType="VARCHAR" />
+    <result column="LAST_GASTUREPWD_MODIFYTIME" property="lastGasturepwdModifytime" jdbcType="TIMESTAMP" />
+    <result column="LAST_UPDATE_TIME" property="lastUpdateTime" jdbcType="TIMESTAMP" />
+    <result column="IF_CALL_PWD" property="ifCallPwd" jdbcType="CHAR" />
+    <result column="FINGERPRINT_PWD" property="fingerprintPwd" jdbcType="VARCHAR" />
+    <result column="LOGIN_KEY" property="loginKey" jdbcType="VARCHAR" />
+    <result column="USER_LEVEL" property="userLevel" jdbcType="CHAR" />
+    <result column="GASTURE_PWD_FLAG" property="gasturePwdFlag" jdbcType="CHAR" />
+    <result column="FINGERPRINT_PWD_FLAG" property="fingerprintPwdFlag" jdbcType="CHAR" />
+    <result column="FACE_PWD_FLAG" property="facePwdFlag" jdbcType="CHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ID, USER_ID, MOBILE, USER_NAME, USER_NICK_NAME, HEAD_PIC, LOGIN_PWD, LAST_LOGPWD_MODIFYTIME, 
+    TRADE_PWD, LAST_TRADEPWD_MODIFYTIME, UNION_PLAT_TYPE, UNION_PLAT_NO, REG_TIME, REG_CHNL_ID, 
+    USER_CERT_LEVEL, USER_VALUE_LEVEL, BRANCH_ID, USER_STAT, USER_LOCK_FLAG, BLACKLIST_FLAG, 
+    BLACKLIST_TYPE, SECURITY_TYPE, ACTIVE_TIME, ACTIVE_CHNL_ID, CLOSE_TIME, CLOSE_CHNL_ID, 
+    REMARK1, REMARK2, CALL_CENTER_PWD, LAST_LOGIN_TIME, GASTURE_PWD, LAST_GASTUREPWD_MODIFYTIME, 
+    LAST_UPDATE_TIME, IF_CALL_PWD, FINGERPRINT_PWD, LOGIN_KEY, USER_LEVEL, GASTURE_PWD_FLAG, 
+    FINGERPRINT_PWD_FLAG, FACE_PWD_FLAG
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_usr_reg_info
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from t_usr_reg_info
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.bpaas.bps.base.po.gnr.UsrRegInfoPo" >
+    insert into t_usr_reg_info (ID, USER_ID, MOBILE, 
+      USER_NAME, USER_NICK_NAME, HEAD_PIC, 
+      LOGIN_PWD, LAST_LOGPWD_MODIFYTIME, TRADE_PWD, 
+      LAST_TRADEPWD_MODIFYTIME, UNION_PLAT_TYPE, UNION_PLAT_NO, 
+      REG_TIME, REG_CHNL_ID, USER_CERT_LEVEL, 
+      USER_VALUE_LEVEL, BRANCH_ID, USER_STAT, 
+      USER_LOCK_FLAG, BLACKLIST_FLAG, BLACKLIST_TYPE, 
+      SECURITY_TYPE, ACTIVE_TIME, ACTIVE_CHNL_ID, 
+      CLOSE_TIME, CLOSE_CHNL_ID, REMARK1, 
+      REMARK2, CALL_CENTER_PWD, LAST_LOGIN_TIME, 
+      GASTURE_PWD, LAST_GASTUREPWD_MODIFYTIME, 
+      LAST_UPDATE_TIME, IF_CALL_PWD, FINGERPRINT_PWD, 
+      LOGIN_KEY, USER_LEVEL, GASTURE_PWD_FLAG, 
+      FINGERPRINT_PWD_FLAG, FACE_PWD_FLAG)
+    values (#{id,jdbcType=VARCHAR}, #{userId,jdbcType=VARCHAR}, #{mobile,jdbcType=VARCHAR}, 
+      #{userName,jdbcType=VARCHAR}, #{userNickName,jdbcType=VARCHAR}, #{headPic,jdbcType=VARCHAR}, 
+      #{loginPwd,jdbcType=VARCHAR}, #{lastLogpwdModifytime,jdbcType=TIMESTAMP}, #{tradePwd,jdbcType=VARCHAR}, 
+      #{lastTradepwdModifytime,jdbcType=TIMESTAMP}, #{unionPlatType,jdbcType=CHAR}, #{unionPlatNo,jdbcType=VARCHAR}, 
+      #{regTime,jdbcType=TIMESTAMP}, #{regChnlId,jdbcType=CHAR}, #{userCertLevel,jdbcType=CHAR}, 
+      #{userValueLevel,jdbcType=CHAR}, #{branchId,jdbcType=VARCHAR}, #{userStat,jdbcType=CHAR}, 
+      #{userLockFlag,jdbcType=CHAR}, #{blacklistFlag,jdbcType=CHAR}, #{blacklistType,jdbcType=CHAR}, 
+      #{securityType,jdbcType=CHAR}, #{activeTime,jdbcType=TIMESTAMP}, #{activeChnlId,jdbcType=CHAR}, 
+      #{closeTime,jdbcType=TIMESTAMP}, #{closeChnlId,jdbcType=CHAR}, #{remark1,jdbcType=VARCHAR}, 
+      #{remark2,jdbcType=VARCHAR}, #{callCenterPwd,jdbcType=VARCHAR}, #{lastLoginTime,jdbcType=TIMESTAMP}, 
+      #{gasturePwd,jdbcType=VARCHAR}, #{lastGasturepwdModifytime,jdbcType=TIMESTAMP}, 
+      #{lastUpdateTime,jdbcType=TIMESTAMP}, #{ifCallPwd,jdbcType=CHAR}, #{fingerprintPwd,jdbcType=VARCHAR}, 
+      #{loginKey,jdbcType=VARCHAR}, #{userLevel,jdbcType=CHAR}, #{gasturePwdFlag,jdbcType=CHAR}, 
+      #{fingerprintPwdFlag,jdbcType=CHAR}, #{facePwdFlag,jdbcType=CHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.bpaas.bps.base.po.gnr.UsrRegInfoPo" >
+    insert into t_usr_reg_info
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="userId != null" >
+        USER_ID,
+      </if>
+      <if test="mobile != null" >
+        MOBILE,
+      </if>
+      <if test="userName != null" >
+        USER_NAME,
+      </if>
+      <if test="userNickName != null" >
+        USER_NICK_NAME,
+      </if>
+      <if test="headPic != null" >
+        HEAD_PIC,
+      </if>
+      <if test="loginPwd != null" >
+        LOGIN_PWD,
+      </if>
+      <if test="lastLogpwdModifytime != null" >
+        LAST_LOGPWD_MODIFYTIME,
+      </if>
+      <if test="tradePwd != null" >
+        TRADE_PWD,
+      </if>
+      <if test="lastTradepwdModifytime != null" >
+        LAST_TRADEPWD_MODIFYTIME,
+      </if>
+      <if test="unionPlatType != null" >
+        UNION_PLAT_TYPE,
+      </if>
+      <if test="unionPlatNo != null" >
+        UNION_PLAT_NO,
+      </if>
+      <if test="regTime != null" >
+        REG_TIME,
+      </if>
+      <if test="regChnlId != null" >
+        REG_CHNL_ID,
+      </if>
+      <if test="userCertLevel != null" >
+        USER_CERT_LEVEL,
+      </if>
+      <if test="userValueLevel != null" >
+        USER_VALUE_LEVEL,
+      </if>
+      <if test="branchId != null" >
+        BRANCH_ID,
+      </if>
+      <if test="userStat != null" >
+        USER_STAT,
+      </if>
+      <if test="userLockFlag != null" >
+        USER_LOCK_FLAG,
+      </if>
+      <if test="blacklistFlag != null" >
+        BLACKLIST_FLAG,
+      </if>
+      <if test="blacklistType != null" >
+        BLACKLIST_TYPE,
+      </if>
+      <if test="securityType != null" >
+        SECURITY_TYPE,
+      </if>
+      <if test="activeTime != null" >
+        ACTIVE_TIME,
+      </if>
+      <if test="activeChnlId != null" >
+        ACTIVE_CHNL_ID,
+      </if>
+      <if test="closeTime != null" >
+        CLOSE_TIME,
+      </if>
+      <if test="closeChnlId != null" >
+        CLOSE_CHNL_ID,
+      </if>
+      <if test="remark1 != null" >
+        REMARK1,
+      </if>
+      <if test="remark2 != null" >
+        REMARK2,
+      </if>
+      <if test="callCenterPwd != null" >
+        CALL_CENTER_PWD,
+      </if>
+      <if test="lastLoginTime != null" >
+        LAST_LOGIN_TIME,
+      </if>
+      <if test="gasturePwd != null" >
+        GASTURE_PWD,
+      </if>
+      <if test="lastGasturepwdModifytime != null" >
+        LAST_GASTUREPWD_MODIFYTIME,
+      </if>
+      <if test="lastUpdateTime != null" >
+        LAST_UPDATE_TIME,
+      </if>
+      <if test="ifCallPwd != null" >
+        IF_CALL_PWD,
+      </if>
+      <if test="fingerprintPwd != null" >
+        FINGERPRINT_PWD,
+      </if>
+      <if test="loginKey != null" >
+        LOGIN_KEY,
+      </if>
+      <if test="userLevel != null" >
+        USER_LEVEL,
+      </if>
+      <if test="gasturePwdFlag != null" >
+        GASTURE_PWD_FLAG,
+      </if>
+      <if test="fingerprintPwdFlag != null" >
+        FINGERPRINT_PWD_FLAG,
+      </if>
+      <if test="facePwdFlag != null" >
+        FACE_PWD_FLAG,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null" >
+        #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null" >
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="userNickName != null" >
+        #{userNickName,jdbcType=VARCHAR},
+      </if>
+      <if test="headPic != null" >
+        #{headPic,jdbcType=VARCHAR},
+      </if>
+      <if test="loginPwd != null" >
+        #{loginPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="lastLogpwdModifytime != null" >
+        #{lastLogpwdModifytime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="tradePwd != null" >
+        #{tradePwd,jdbcType=VARCHAR},
+      </if>
+      <if test="lastTradepwdModifytime != null" >
+        #{lastTradepwdModifytime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="unionPlatType != null" >
+        #{unionPlatType,jdbcType=CHAR},
+      </if>
+      <if test="unionPlatNo != null" >
+        #{unionPlatNo,jdbcType=VARCHAR},
+      </if>
+      <if test="regTime != null" >
+        #{regTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="regChnlId != null" >
+        #{regChnlId,jdbcType=CHAR},
+      </if>
+      <if test="userCertLevel != null" >
+        #{userCertLevel,jdbcType=CHAR},
+      </if>
+      <if test="userValueLevel != null" >
+        #{userValueLevel,jdbcType=CHAR},
+      </if>
+      <if test="branchId != null" >
+        #{branchId,jdbcType=VARCHAR},
+      </if>
+      <if test="userStat != null" >
+        #{userStat,jdbcType=CHAR},
+      </if>
+      <if test="userLockFlag != null" >
+        #{userLockFlag,jdbcType=CHAR},
+      </if>
+      <if test="blacklistFlag != null" >
+        #{blacklistFlag,jdbcType=CHAR},
+      </if>
+      <if test="blacklistType != null" >
+        #{blacklistType,jdbcType=CHAR},
+      </if>
+      <if test="securityType != null" >
+        #{securityType,jdbcType=CHAR},
+      </if>
+      <if test="activeTime != null" >
+        #{activeTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="activeChnlId != null" >
+        #{activeChnlId,jdbcType=CHAR},
+      </if>
+      <if test="closeTime != null" >
+        #{closeTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="closeChnlId != null" >
+        #{closeChnlId,jdbcType=CHAR},
+      </if>
+      <if test="remark1 != null" >
+        #{remark1,jdbcType=VARCHAR},
+      </if>
+      <if test="remark2 != null" >
+        #{remark2,jdbcType=VARCHAR},
+      </if>
+      <if test="callCenterPwd != null" >
+        #{callCenterPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="lastLoginTime != null" >
+        #{lastLoginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gasturePwd != null" >
+        #{gasturePwd,jdbcType=VARCHAR},
+      </if>
+      <if test="lastGasturepwdModifytime != null" >
+        #{lastGasturepwdModifytime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastUpdateTime != null" >
+        #{lastUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ifCallPwd != null" >
+        #{ifCallPwd,jdbcType=CHAR},
+      </if>
+      <if test="fingerprintPwd != null" >
+        #{fingerprintPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="loginKey != null" >
+        #{loginKey,jdbcType=VARCHAR},
+      </if>
+      <if test="userLevel != null" >
+        #{userLevel,jdbcType=CHAR},
+      </if>
+      <if test="gasturePwdFlag != null" >
+        #{gasturePwdFlag,jdbcType=CHAR},
+      </if>
+      <if test="fingerprintPwdFlag != null" >
+        #{fingerprintPwdFlag,jdbcType=CHAR},
+      </if>
+      <if test="facePwdFlag != null" >
+        #{facePwdFlag,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bpaas.bps.base.po.gnr.UsrRegInfoPo" >
+    update t_usr_reg_info
+    <set >
+      <if test="userId != null" >
+        USER_ID = #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null" >
+        MOBILE = #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null" >
+        USER_NAME = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="userNickName != null" >
+        USER_NICK_NAME = #{userNickName,jdbcType=VARCHAR},
+      </if>
+      <if test="headPic != null" >
+        HEAD_PIC = #{headPic,jdbcType=VARCHAR},
+      </if>
+      <if test="loginPwd != null" >
+        LOGIN_PWD = #{loginPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="lastLogpwdModifytime != null" >
+        LAST_LOGPWD_MODIFYTIME = #{lastLogpwdModifytime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="tradePwd != null" >
+        TRADE_PWD = #{tradePwd,jdbcType=VARCHAR},
+      </if>
+      <if test="lastTradepwdModifytime != null" >
+        LAST_TRADEPWD_MODIFYTIME = #{lastTradepwdModifytime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="unionPlatType != null" >
+        UNION_PLAT_TYPE = #{unionPlatType,jdbcType=CHAR},
+      </if>
+      <if test="unionPlatNo != null" >
+        UNION_PLAT_NO = #{unionPlatNo,jdbcType=VARCHAR},
+      </if>
+      <if test="regTime != null" >
+        REG_TIME = #{regTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="regChnlId != null" >
+        REG_CHNL_ID = #{regChnlId,jdbcType=CHAR},
+      </if>
+      <if test="userCertLevel != null" >
+        USER_CERT_LEVEL = #{userCertLevel,jdbcType=CHAR},
+      </if>
+      <if test="userValueLevel != null" >
+        USER_VALUE_LEVEL = #{userValueLevel,jdbcType=CHAR},
+      </if>
+      <if test="branchId != null" >
+        BRANCH_ID = #{branchId,jdbcType=VARCHAR},
+      </if>
+      <if test="userStat != null" >
+        USER_STAT = #{userStat,jdbcType=CHAR},
+      </if>
+      <if test="userLockFlag != null" >
+        USER_LOCK_FLAG = #{userLockFlag,jdbcType=CHAR},
+      </if>
+      <if test="blacklistFlag != null" >
+        BLACKLIST_FLAG = #{blacklistFlag,jdbcType=CHAR},
+      </if>
+      <if test="blacklistType != null" >
+        BLACKLIST_TYPE = #{blacklistType,jdbcType=CHAR},
+      </if>
+      <if test="securityType != null" >
+        SECURITY_TYPE = #{securityType,jdbcType=CHAR},
+      </if>
+      <if test="activeTime != null" >
+        ACTIVE_TIME = #{activeTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="activeChnlId != null" >
+        ACTIVE_CHNL_ID = #{activeChnlId,jdbcType=CHAR},
+      </if>
+      <if test="closeTime != null" >
+        CLOSE_TIME = #{closeTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="closeChnlId != null" >
+        CLOSE_CHNL_ID = #{closeChnlId,jdbcType=CHAR},
+      </if>
+      <if test="remark1 != null" >
+        REMARK1 = #{remark1,jdbcType=VARCHAR},
+      </if>
+      <if test="remark2 != null" >
+        REMARK2 = #{remark2,jdbcType=VARCHAR},
+      </if>
+      <if test="callCenterPwd != null" >
+        CALL_CENTER_PWD = #{callCenterPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="lastLoginTime != null" >
+        LAST_LOGIN_TIME = #{lastLoginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gasturePwd != null" >
+        GASTURE_PWD = #{gasturePwd,jdbcType=VARCHAR},
+      </if>
+      <if test="lastGasturepwdModifytime != null" >
+        LAST_GASTUREPWD_MODIFYTIME = #{lastGasturepwdModifytime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastUpdateTime != null" >
+        LAST_UPDATE_TIME = #{lastUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ifCallPwd != null" >
+        IF_CALL_PWD = #{ifCallPwd,jdbcType=CHAR},
+      </if>
+      <if test="fingerprintPwd != null" >
+        FINGERPRINT_PWD = #{fingerprintPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="loginKey != null" >
+        LOGIN_KEY = #{loginKey,jdbcType=VARCHAR},
+      </if>
+      <if test="userLevel != null" >
+        USER_LEVEL = #{userLevel,jdbcType=CHAR},
+      </if>
+      <if test="gasturePwdFlag != null" >
+        GASTURE_PWD_FLAG = #{gasturePwdFlag,jdbcType=CHAR},
+      </if>
+      <if test="fingerprintPwdFlag != null" >
+        FINGERPRINT_PWD_FLAG = #{fingerprintPwdFlag,jdbcType=CHAR},
+      </if>
+      <if test="facePwdFlag != null" >
+        FACE_PWD_FLAG = #{facePwdFlag,jdbcType=CHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bpaas.bps.base.po.gnr.UsrRegInfoPo" >
+    update t_usr_reg_info
+    set USER_ID = #{userId,jdbcType=VARCHAR},
+      MOBILE = #{mobile,jdbcType=VARCHAR},
+      USER_NAME = #{userName,jdbcType=VARCHAR},
+      USER_NICK_NAME = #{userNickName,jdbcType=VARCHAR},
+      HEAD_PIC = #{headPic,jdbcType=VARCHAR},
+      LOGIN_PWD = #{loginPwd,jdbcType=VARCHAR},
+      LAST_LOGPWD_MODIFYTIME = #{lastLogpwdModifytime,jdbcType=TIMESTAMP},
+      TRADE_PWD = #{tradePwd,jdbcType=VARCHAR},
+      LAST_TRADEPWD_MODIFYTIME = #{lastTradepwdModifytime,jdbcType=TIMESTAMP},
+      UNION_PLAT_TYPE = #{unionPlatType,jdbcType=CHAR},
+      UNION_PLAT_NO = #{unionPlatNo,jdbcType=VARCHAR},
+      REG_TIME = #{regTime,jdbcType=TIMESTAMP},
+      REG_CHNL_ID = #{regChnlId,jdbcType=CHAR},
+      USER_CERT_LEVEL = #{userCertLevel,jdbcType=CHAR},
+      USER_VALUE_LEVEL = #{userValueLevel,jdbcType=CHAR},
+      BRANCH_ID = #{branchId,jdbcType=VARCHAR},
+      USER_STAT = #{userStat,jdbcType=CHAR},
+      USER_LOCK_FLAG = #{userLockFlag,jdbcType=CHAR},
+      BLACKLIST_FLAG = #{blacklistFlag,jdbcType=CHAR},
+      BLACKLIST_TYPE = #{blacklistType,jdbcType=CHAR},
+      SECURITY_TYPE = #{securityType,jdbcType=CHAR},
+      ACTIVE_TIME = #{activeTime,jdbcType=TIMESTAMP},
+      ACTIVE_CHNL_ID = #{activeChnlId,jdbcType=CHAR},
+      CLOSE_TIME = #{closeTime,jdbcType=TIMESTAMP},
+      CLOSE_CHNL_ID = #{closeChnlId,jdbcType=CHAR},
+      REMARK1 = #{remark1,jdbcType=VARCHAR},
+      REMARK2 = #{remark2,jdbcType=VARCHAR},
+      CALL_CENTER_PWD = #{callCenterPwd,jdbcType=VARCHAR},
+      LAST_LOGIN_TIME = #{lastLoginTime,jdbcType=TIMESTAMP},
+      GASTURE_PWD = #{gasturePwd,jdbcType=VARCHAR},
+      LAST_GASTUREPWD_MODIFYTIME = #{lastGasturepwdModifytime,jdbcType=TIMESTAMP},
+      LAST_UPDATE_TIME = #{lastUpdateTime,jdbcType=TIMESTAMP},
+      IF_CALL_PWD = #{ifCallPwd,jdbcType=CHAR},
+      FINGERPRINT_PWD = #{fingerprintPwd,jdbcType=VARCHAR},
+      LOGIN_KEY = #{loginKey,jdbcType=VARCHAR},
+      USER_LEVEL = #{userLevel,jdbcType=CHAR},
+      GASTURE_PWD_FLAG = #{gasturePwdFlag,jdbcType=CHAR},
+      FINGERPRINT_PWD_FLAG = #{fingerprintPwdFlag,jdbcType=CHAR},
+      FACE_PWD_FLAG = #{facePwdFlag,jdbcType=CHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

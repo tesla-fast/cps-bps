@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bpaas.bps.pay.mapper.wechat.WechatPayTotalRegMapper" >
+  <resultMap id="BaseResultMap" type="com.bpaas.bps.pay.po.wechat.WechatPayTotalRegPo" >
+    <result column="id" property="id" jdbcType="VARCHAR" />
+    <result column="bill_date" property="billDate" jdbcType="VARCHAR" />
+    <result column="bill_type" property="billType" jdbcType="VARCHAR" />
+    <result column="order_sumNum" property="orderSumnum" jdbcType="INTEGER" />
+    <result column="order_clearSumAmt" property="orderClearsumamt" jdbcType="DECIMAL" />
+    <result column="refund_sumAmt" property="refundSumamt" jdbcType="DECIMAL" />
+    <result column="coupon_sumAmt" property="couponSumamt" jdbcType="DECIMAL" />
+    <result column="fee_sumAmt" property="feeSumamt" jdbcType="DECIMAL" />
+    <result column="order_sumAmt" property="orderSumamt" jdbcType="DECIMAL" />
+    <result column="req_refund_sumAmt" property="reqRefundSumamt" jdbcType="DECIMAL" />
+    <result column="front_sumNum" property="frontSumnum" jdbcType="INTEGER" />
+    <result column="front_clear_sum_amt" property="frontClearSumAmt" jdbcType="DECIMAL" />
+    <result column="front_refund_sum_amt" property="frontRefundSumAmt" jdbcType="DECIMAL" />
+    <result column="front_coupon_sumAmt" property="frontCouponSumamt" jdbcType="DECIMAL" />
+    <result column="front_fee_sumAmt" property="frontFeeSumamt" jdbcType="DECIMAL" />
+    <result column="front_order_sumAmt" property="frontOrderSumamt" jdbcType="DECIMAL" />
+    <result column="front_req_refund_sumAmt" property="frontReqRefundSumamt" jdbcType="DECIMAL" />
+    <result column="chkflag" property="chkflag" jdbcType="CHAR" />
+    <result column="chktime" property="chktime" jdbcType="TIMESTAMP" />
+    <result column="remark1" property="remark1" jdbcType="VARCHAR" />
+    <result column="remark2" property="remark2" jdbcType="VARCHAR" />
+    <result column="remark3" property="remark3" jdbcType="VARCHAR" />
+    <result column="remark4" property="remark4" jdbcType="VARCHAR" />
+    <result column="remark5" property="remark5" jdbcType="VARCHAR" />
+  </resultMap>
+  
+  <sql id="Base_Column" >
+    id, bill_date, bill_type, order_sumNum, order_clearSumAmt, refund_sumAmt, coupon_sumAmt, 
+    fee_sumAmt, order_sumAmt, req_refund_sumAmt, front_sumNum, front_clear_sum_amt, front_refund_sum_amt, 
+    front_coupon_sumAmt, front_fee_sumAmt, front_order_sumAmt, front_req_refund_sumAmt, 
+    chkflag, chktime, remark1, remark2, remark3, remark4, remark5
+  </sql>
+  
+  <sql id="Table_Name">
+		t_wechatpay_total_reg
+	</sql>
+  
+  <sql id="Base_Where">
+		<trim suffixOverrides="AND">
+			<if test="record.id != null" >
+        id = #{record.id} AND
+      </if>
+      <if test="record.billDate != null" >
+        bill_date = #{record.billDate} AND
+      </if>
+      <if test="record.billType != null" >
+        bill_type = #{record.billType} AND
+      </if>
+      <if test="record.orderSumnum != null" >
+        order_sumNum = #{record.orderSumnum} AND
+      </if>
+      <if test="record.orderClearsumamt != null" >
+        order_clearSumAmt = #{record.orderClearsumamt} AND
+      </if>
+      <if test="record.refundSumamt != null" >
+        refund_sumAmt = #{record.refundSumamt} AND
+      </if>
+      <if test="record.couponSumamt != null" >
+        coupon_sumAmt = #{record.couponSumamt} AND
+      </if>
+      <if test="record.feeSumamt != null" >
+        fee_sumAmt = #{record.feeSumamt} AND
+      </if>
+      <if test="record.orderSumamt != null" >
+        order_sumAmt = #{record.orderSumamt} AND
+      </if>
+      <if test="record.reqRefundSumamt != null" >
+        req_refund_sumAmt = #{record.reqRefundSumamt} AND
+      </if>
+      <if test="record.frontSumnum != null" >
+        front_sumNum = #{record.frontSumnum} AND
+      </if>
+      <if test="record.frontClearSumAmt != null" >
+        front_clear_sum_amt = #{record.frontClearSumAmt} AND
+      </if>
+      <if test="record.frontRefundSumAmt != null" >
+        front_refund_sum_amt = #{record.frontRefundSumAmt} AND
+      </if>
+      <if test="record.frontCouponSumamt != null" >
+        front_coupon_sumAmt = #{record.frontCouponSumamt} AND
+      </if>
+      <if test="record.frontFeeSumamt != null" >
+        front_fee_sumAmt = #{record.frontFeeSumamt} AND
+      </if>
+      <if test="record.frontOrderSumamt != null" >
+        front_order_sumAmt = #{record.frontOrderSumamt} AND
+      </if>
+      <if test="record.frontReqRefundSumamt != null" >
+        front_req_refund_sumAmt = #{record.frontReqRefundSumamt} AND
+      </if>
+      <if test="record.chkflag != null" >
+        chkflag = #{record.chkflag} AND
+      </if>
+      <if test="record.chktime != null" >
+        chktime = #{record.chktime} AND
+      </if>
+      <if test="record.remark1 != null" >
+        remark1 = #{record.remark1} AND
+      </if>
+      <if test="record.remark2 != null" >
+        remark2 = #{record.remark2} AND
+      </if>
+      <if test="record.remark3 != null" >
+        remark3 = #{record.remark3} AND
+      </if>
+      <if test="record.remark4 != null" >
+        remark4 = #{record.remark4} AND
+      </if>
+      <if test="record.remark5 != null" >
+        remark5 = #{record.remark5}
+      </if>
+		</trim>
+	</sql>
+  
+  <insert id="insert" >
+    insert into 
+    <include refid="Table_Name" />
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="billDate != null" >
+        bill_date,
+      </if>
+      <if test="billType != null" >
+        bill_type,
+      </if>
+      <if test="orderSumnum != null" >
+        order_sumNum,
+      </if>
+      <if test="orderClearsumamt != null" >
+        order_clearSumAmt,
+      </if>
+      <if test="refundSumamt != null" >
+        refund_sumAmt,
+      </if>
+      <if test="couponSumamt != null" >
+        coupon_sumAmt,
+      </if>
+      <if test="feeSumamt != null" >
+        fee_sumAmt,
+      </if>
+      <if test="orderSumamt != null" >
+        order_sumAmt,
+      </if>
+      <if test="reqRefundSumamt != null" >
+        req_refund_sumAmt,
+      </if>
+      <if test="frontSumnum != null" >
+        front_sumNum,
+      </if>
+      <if test="frontClearSumAmt != null" >
+        front_clear_sum_amt,
+      </if>
+      <if test="frontRefundSumAmt != null" >
+        front_refund_sum_amt,
+      </if>
+      <if test="frontCouponSumamt != null" >
+        front_coupon_sumAmt,
+      </if>
+      <if test="frontFeeSumamt != null" >
+        front_fee_sumAmt,
+      </if>
+      <if test="frontOrderSumamt != null" >
+        front_order_sumAmt,
+      </if>
+      <if test="frontReqRefundSumamt != null" >
+        front_req_refund_sumAmt,
+      </if>
+      <if test="chkflag != null" >
+        chkflag,
+      </if>
+      <if test="chktime != null" >
+        chktime,
+      </if>
+      <if test="remark1 != null" >
+        remark1,
+      </if>
+      <if test="remark2 != null" >
+        remark2,
+      </if>
+      <if test="remark3 != null" >
+        remark3,
+      </if>
+      <if test="remark4 != null" >
+        remark4,
+      </if>
+      <if test="remark5 != null" >
+        remark5,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id},
+      </if>
+      <if test="billDate != null" >
+        #{billDate},
+      </if>
+      <if test="billType != null" >
+        #{billType},
+      </if>
+      <if test="orderSumnum != null" >
+        #{orderSumnum},
+      </if>
+      <if test="orderClearsumamt != null" >
+        #{orderClearsumamt},
+      </if>
+      <if test="refundSumamt != null" >
+        #{refundSumamt},
+      </if>
+      <if test="couponSumamt != null" >
+        #{couponSumamt},
+      </if>
+      <if test="feeSumamt != null" >
+        #{feeSumamt},
+      </if>
+      <if test="orderSumamt != null" >
+        #{orderSumamt},
+      </if>
+      <if test="reqRefundSumamt != null" >
+        #{reqRefundSumamt},
+      </if>
+      <if test="frontSumnum != null" >
+        #{frontSumnum},
+      </if>
+      <if test="frontClearSumAmt != null" >
+        #{frontClearSumAmt},
+      </if>
+      <if test="frontRefundSumAmt != null" >
+        #{frontRefundSumAmt},
+      </if>
+      <if test="frontCouponSumamt != null" >
+        #{frontCouponSumamt},
+      </if>
+      <if test="frontFeeSumamt != null" >
+        #{frontFeeSumamt},
+      </if>
+      <if test="frontOrderSumamt != null" >
+        #{frontOrderSumamt},
+      </if>
+      <if test="frontReqRefundSumamt != null" >
+        #{frontReqRefundSumamt},
+      </if>
+      <if test="chkflag != null" >
+        #{chkflag},
+      </if>
+      <if test="chktime != null" >
+        #{chktime},
+      </if>
+      <if test="remark1 != null" >
+        #{remark1},
+      </if>
+      <if test="remark2 != null" >
+        #{remark2},
+      </if>
+      <if test="remark3 != null" >
+        #{remark3},
+      </if>
+      <if test="remark4 != null" >
+        #{remark4},
+      </if>
+      <if test="remark5 != null" >
+        #{remark5},
+      </if>
+    </trim>
+  </insert>
+  
+  
+  <update id="updateByEntity">
+    update t
+    <include refid="Table_Name" />
+    <set >
+      <if test="s.billDate != null" >
+        bill_date = #{s.billDate},
+      </if>
+      <if test="s.billType != null" >
+        bill_type = #{s.billType},
+      </if>
+      <if test="s.orderSumnum != null" >
+        order_sumNum = #{s.orderSumnum},
+      </if>
+      <if test="s.orderClearsumamt != null" >
+        order_clearSumAmt = #{s.orderClearsumamt},
+      </if>
+      <if test="s.refundSumamt != null" >
+        refund_sumAmt = #{s.refundSumamt},
+      </if>
+      <if test="s.couponSumamt != null" >
+        coupon_sumAmt = #{s.couponSumamt},
+      </if>
+      <if test="s.feeSumamt != null" >
+        fee_sumAmt = #{s.feeSumamt},
+      </if>
+      <if test="s.orderSumamt != null" >
+        order_sumAmt = #{s.orderSumamt},
+      </if>
+      <if test="s.reqRefundSumamt != null" >
+        req_refund_sumAmt = #{s.reqRefundSumamt},
+      </if>
+      <if test="s.frontSumnum != null" >
+        front_sumNum = #{s.frontSumnum},
+      </if>
+      <if test="s.frontClearSumAmt != null" >
+        front_clear_sum_amt = #{s.frontClearSumAmt},
+      </if>
+      <if test="s.frontRefundSumAmt != null" >
+        front_refund_sum_amt = #{s.frontRefundSumAmt},
+      </if>
+      <if test="s.frontCouponSumamt != null" >
+        front_coupon_sumAmt = #{s.frontCouponSumamt},
+      </if>
+      <if test="s.frontFeeSumamt != null" >
+        front_fee_sumAmt = #{s.frontFeeSumamt},
+      </if>
+      <if test="s.frontOrderSumamt != null" >
+        front_order_sumAmt = #{s.frontOrderSumamt},
+      </if>
+      <if test="s.frontReqRefundSumamt != null" >
+        front_req_refund_sumAmt = #{s.frontReqRefundSumamt},
+      </if>
+      <if test="s.chkflag != null" >
+        chkflag = #{s.chkflag},
+      </if>
+      <if test="s.chktime != null" >
+        chktime = #{s.chktime},
+      </if>
+      <if test="s.remark1 != null" >
+        remark1 = #{s.remark1},
+      </if>
+      <if test="s.remark2 != null" >
+        remark2 = #{s.remark2},
+      </if>
+      <if test="s.remark3 != null" >
+        remark3 = #{s.remark3},
+      </if>
+      <if test="s.remark4 != null" >
+        remark4 = #{s.remark4},
+      </if>
+      <if test="s.remark5 != null" >
+        remark5 = #{s.remark5},
+      </if>
+    </set>
+    <where> 
+		<trim prefix="(" suffix=")" suffixOverrides="AND">
+			<if test="w.id != null" >
+        id = #{w.id} AND
+      </if>
+      <if test="w.billDate != null" >
+        bill_date = #{w.billDate} AND
+      </if>
+      <if test="w.billType != null" >
+        bill_type = #{w.billType} AND
+      </if>
+      <if test="w.orderSumnum != null" >
+        order_sumNum = #{w.orderSumnum} AND
+      </if>
+      <if test="w.orderClearsumamt != null" >
+        order_clearSumAmt = #{w.orderClearsumamt} AND
+      </if>
+      <if test="w.refundSumamt != null" >
+        refund_sumAmt = #{w.refundSumamt} AND
+      </if>
+      <if test="w.couponSumamt != null" >
+        coupon_sumAmt = #{w.couponSumamt} AND
+      </if>
+      <if test="w.feeSumamt != null" >
+        fee_sumAmt = #{w.feeSumamt} AND
+      </if>
+      <if test="w.orderSumamt != null" >
+        order_sumAmt = #{w.orderSumamt} AND
+      </if>
+      <if test="w.reqRefundSumamt != null" >
+        req_refund_sumAmt = #{w.reqRefundSumamt} AND
+      </if>
+      <if test="w.frontSumnum != null" >
+        front_sumNum = #{w.frontSumnum} AND
+      </if>
+      <if test="w.frontClearSumAmt != null" >
+        front_clear_sum_amt = #{w.frontClearSumAmt} AND
+      </if>
+      <if test="w.frontRefundSumAmt != null" >
+        front_refund_sum_amt = #{w.frontRefundSumAmt} AND
+      </if>
+      <if test="w.frontCouponSumamt != null" >
+        front_coupon_sumAmt = #{w.frontCouponSumamt} AND
+      </if>
+      <if test="w.frontFeeSumamt != null" >
+        front_fee_sumAmt = #{w.frontFeeSumamt} AND
+      </if>
+      <if test="w.frontOrderSumamt != null" >
+        front_order_sumAmt = #{w.frontOrderSumamt} AND
+      </if>
+      <if test="w.frontReqRefundSumamt != null" >
+        front_req_refund_sumAmt = #{w.frontReqRefundSumamt} AND
+      </if>
+      <if test="w.chkflag != null" >
+        chkflag = #{w.chkflag} AND
+      </if>
+      <if test="w.chktime != null" >
+        chktime = #{w.chktime} AND
+      </if>
+      <if test="w.remark1 != null" >
+        remark1 = #{w.remark1} AND
+      </if>
+      <if test="w.remark2 != null" >
+        remark2 = #{w.remark2} AND
+      </if>
+      <if test="w.remark3 != null" >
+        remark3 = #{w.remark3} AND
+      </if>
+      <if test="w.remark4 != null" >
+        remark4 = #{w.remark4} AND
+      </if>
+      <if test="w.remark5 != null" >
+        remark5 = #{w.remark5}
+      </if>
+		</trim>
+	</where>
+  </update>
+  
+  <delete id="delete" >
+		delete from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</delete>
+
+	<select id="count" parameterType="java.util.Map" resultType="int">
+		select count(1) from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</select>
+
+	<select id="selectOne"  resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column" />
+		from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</select>
+
+	<select id="selectList"  resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column" />
+		from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+		<include refid="com.fPaaS1.dipper.mybatis.common.Comm_Order_By"/>
+	</select>
+  
+</mapper>

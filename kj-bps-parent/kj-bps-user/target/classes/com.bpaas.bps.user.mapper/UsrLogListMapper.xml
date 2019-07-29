@@ -1,0 +1,568 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bpaas.bps.user.mapper.UsrLogListMapper">
+	<resultMap id="BaseResultMap" type="com.bpaas.bps.user.po.UsrLogListPo">
+		<id column="ID" property="id" />
+		<result column="USER_ID" property="userId" />
+		<result column="CHNL_ID" property="chnlId" />
+		<result column="LOGIN_MODE" property="loginMode" />
+		<result column="IS_MUTIPLUE_LOGIN" property="isMutiplueLogin" />
+		<result column="SESSION_ID" property="sessionId" />
+		<result column="PLATFORM" property="platform" />
+		<result column="LOGIN_TIME" property="loginTime" />
+		<result column="LOGOUT_TIME" property="logoutTime" />
+		<result column="LOGIN_ADDR" property="loginAddr" />
+		<result column="LOGIN_IP" property="loginIp" />
+		<result column="ADDR_GET_FLAG" property="addrGetFlag" />
+		<result column="ADDR_PROV" property="addrProv" />
+		<result column="ADDR_CITY" property="addrCity" />
+		<result column="ADDR_COUNTY" property="addrCounty" />
+		<result column="ADDR_DETAIL" property="addrDetail" />
+		<result column="LOGIN_STAT" property="loginStat" />
+		<result column="FAIL_REASON" property="failReason" />
+		<result column="LOGIN_TIPS" property="loginTips" />
+		<result column="REMARK1" property="remark1" />
+		<result column="REMARK2" property="remark2" />
+		<result column="LOGIN_DEVICE" property="loginDevice" />
+	</resultMap>
+
+	<sql id="Table_Name">
+		T_USR_LOG_LIST
+	</sql>
+
+	<sql id="Base_Column">
+		ID,
+		USER_ID,
+		CHNL_ID,
+		LOGIN_MODE,
+		IS_MUTIPLUE_LOGIN,
+		SESSION_ID,
+		PLATFORM,
+		LOGIN_TIME,
+		LOGOUT_TIME,
+		LOGIN_ADDR,
+		LOGIN_IP,
+		ADDR_GET_FLAG,
+		ADDR_PROV,
+		ADDR_CITY,
+		ADDR_COUNTY,
+		ADDR_DETAIL,
+		LOGIN_STAT,
+		FAIL_REASON,
+		LOGIN_TIPS,
+		REMARK1,
+		REMARK2,
+		LOGIN_DEVICE
+	</sql>
+
+	<sql id="Base_Where">
+		<trim suffixOverrides="AND">
+		<if test="id != null">
+			ID= #{id}
+	           AND 
+		</if>
+		<if test="userId != null">
+			USER_ID= #{userId}
+	           AND 
+		</if>
+		<if test="chnlId != null">
+			CHNL_ID= #{chnlId}
+	           AND 
+		</if>
+		<if test="loginMode != null">
+			LOGIN_MODE= #{loginMode}
+	           AND 
+		</if>
+		<if test="isMutiplueLogin != null">
+			IS_MUTIPLUE_LOGIN= #{isMutiplueLogin}
+	           AND 
+		</if>
+		<if test="sessionId != null">
+			SESSION_ID= #{sessionId}
+	           AND 
+		</if>
+		<if test="platform != null">
+			PLATFORM= #{platform}
+	           AND 
+		</if>
+		<if test="loginTime != null">
+			LOGIN_TIME= #{loginTime}
+	           AND 
+		</if>
+		<if test="logoutTime != null">
+			LOGOUT_TIME= #{logoutTime}
+	           AND 
+		</if>
+		<if test="loginAddr != null">
+			LOGIN_ADDR= #{loginAddr}
+	           AND 
+		</if>
+		<if test="loginIp != null">
+			LOGIN_IP= #{loginIp}
+	           AND 
+		</if>
+		<if test="addrGetFlag != null">
+			ADDR_GET_FLAG= #{addrGetFlag}
+	           AND 
+		</if>
+		<if test="addrProv != null">
+			ADDR_PROV= #{addrProv}
+	           AND 
+		</if>
+		<if test="addrCity != null">
+			ADDR_CITY= #{addrCity}
+	           AND 
+		</if>
+		<if test="addrCounty != null">
+			ADDR_COUNTY= #{addrCounty}
+	           AND 
+		</if>
+		<if test="addrDetail != null">
+			ADDR_DETAIL= #{addrDetail}
+	           AND 
+		</if>
+		<if test="loginStat != null">
+			LOGIN_STAT= #{loginStat}
+	           AND 
+		</if>
+		<if test="failReason != null">
+			FAIL_REASON= #{failReason}
+	           AND 
+		</if>
+		<if test="loginTips != null">
+			LOGIN_TIPS= #{loginTips}
+	           AND 
+		</if>
+		<if test="remark1 != null">
+			REMARK1= #{remark1}
+	           AND 
+		</if>
+		<if test="remark2 != null">
+			REMARK2= #{remark2}
+	           AND 
+		</if>
+		<if test="loginDevice != null">
+			LOGIN_DEVICE= #{loginDevice}
+		</if>
+		</trim>
+	</sql>
+
+	<insert id="insert" >
+		insert into
+		<include refid="Table_Name" />
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+	<if test="id != null">
+		ID,
+	</if>
+	<if test="userId != null">
+		USER_ID,
+	</if>
+	<if test="chnlId != null">
+		CHNL_ID,
+	</if>
+	<if test="loginMode != null">
+		LOGIN_MODE,
+	</if>
+	<if test="isMutiplueLogin != null">
+		IS_MUTIPLUE_LOGIN,
+	</if>
+	<if test="sessionId != null">
+		SESSION_ID,
+	</if>
+	<if test="platform != null">
+		PLATFORM,
+	</if>
+	<if test="loginTime != null">
+		LOGIN_TIME,
+	</if>
+	<if test="logoutTime != null">
+		LOGOUT_TIME,
+	</if>
+	<if test="loginAddr != null">
+		LOGIN_ADDR,
+	</if>
+	<if test="loginIp != null">
+		LOGIN_IP,
+	</if>
+	<if test="addrGetFlag != null">
+		ADDR_GET_FLAG,
+	</if>
+	<if test="addrProv != null">
+		ADDR_PROV,
+	</if>
+	<if test="addrCity != null">
+		ADDR_CITY,
+	</if>
+	<if test="addrCounty != null">
+		ADDR_COUNTY,
+	</if>
+	<if test="addrDetail != null">
+		ADDR_DETAIL,
+	</if>
+	<if test="loginStat != null">
+		LOGIN_STAT,
+	</if>
+	<if test="failReason != null">
+		FAIL_REASON,
+	</if>
+	<if test="loginTips != null">
+		LOGIN_TIPS,
+	</if>
+	<if test="remark1 != null">
+		REMARK1,
+	</if>
+	<if test="remark2 != null">
+		REMARK2,
+	</if>
+	<if test="loginDevice != null">
+		LOGIN_DEVICE,
+	</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+	<if test="id != null">
+		#{id},
+	</if>
+	<if test="userId != null">
+		#{userId},
+	</if>
+	<if test="chnlId != null">
+		#{chnlId},
+	</if>
+	<if test="loginMode != null">
+		#{loginMode},
+	</if>
+	<if test="isMutiplueLogin != null">
+		#{isMutiplueLogin},
+	</if>
+	<if test="sessionId != null">
+		#{sessionId},
+	</if>
+	<if test="platform != null">
+		#{platform},
+	</if>
+	<if test="loginTime != null">
+		#{loginTime},
+	</if>
+	<if test="logoutTime != null">
+		#{logoutTime},
+	</if>
+	<if test="loginAddr != null">
+		#{loginAddr},
+	</if>
+	<if test="loginIp != null">
+		#{loginIp},
+	</if>
+	<if test="addrGetFlag != null">
+		#{addrGetFlag},
+	</if>
+	<if test="addrProv != null">
+		#{addrProv},
+	</if>
+	<if test="addrCity != null">
+		#{addrCity},
+	</if>
+	<if test="addrCounty != null">
+		#{addrCounty},
+	</if>
+	<if test="addrDetail != null">
+		#{addrDetail},
+	</if>
+	<if test="loginStat != null">
+		#{loginStat},
+	</if>
+	<if test="failReason != null">
+		#{failReason},
+	</if>
+	<if test="loginTips != null">
+		#{loginTips},
+	</if>
+	<if test="remark1 != null">
+		#{remark1},
+	</if>
+	<if test="remark2 != null">
+		#{remark2},
+	</if>
+	<if test="loginDevice != null">
+		#{loginDevice},
+	</if>
+		</trim>
+	</insert>
+
+	<update id="update" >
+		update
+		<include refid="Table_Name" />
+		<set>
+	<if test="id != null">
+		ID=#{id},
+	</if>
+	<if test="userId != null">
+		USER_ID=#{userId},
+	</if>
+	<if test="chnlId != null">
+		CHNL_ID=#{chnlId},
+	</if>
+	<if test="loginMode != null">
+		LOGIN_MODE=#{loginMode},
+	</if>
+	<if test="isMutiplueLogin != null">
+		IS_MUTIPLUE_LOGIN=#{isMutiplueLogin},
+	</if>
+	<if test="sessionId != null">
+		SESSION_ID=#{sessionId},
+	</if>
+	<if test="platform != null">
+		PLATFORM=#{platform},
+	</if>
+	<if test="loginTime != null">
+		LOGIN_TIME=#{loginTime},
+	</if>
+	<if test="logoutTime != null">
+		LOGOUT_TIME=#{logoutTime},
+	</if>
+	<if test="loginAddr != null">
+		LOGIN_ADDR=#{loginAddr},
+	</if>
+	<if test="loginIp != null">
+		LOGIN_IP=#{loginIp},
+	</if>
+	<if test="addrGetFlag != null">
+		ADDR_GET_FLAG=#{addrGetFlag},
+	</if>
+	<if test="addrProv != null">
+		ADDR_PROV=#{addrProv},
+	</if>
+	<if test="addrCity != null">
+		ADDR_CITY=#{addrCity},
+	</if>
+	<if test="addrCounty != null">
+		ADDR_COUNTY=#{addrCounty},
+	</if>
+	<if test="addrDetail != null">
+		ADDR_DETAIL=#{addrDetail},
+	</if>
+	<if test="loginStat != null">
+		LOGIN_STAT=#{loginStat},
+	</if>
+	<if test="failReason != null">
+		FAIL_REASON=#{failReason},
+	</if>
+	<if test="loginTips != null">
+		LOGIN_TIPS=#{loginTips},
+	</if>
+	<if test="remark1 != null">
+		REMARK1=#{remark1},
+	</if>
+	<if test="remark2 != null">
+		REMARK2=#{remark2},
+	</if>
+	<if test="loginDevice != null">
+		LOGIN_DEVICE=#{loginDevice},
+	</if>
+		</set>
+		where 
+			      ID=#{id}
+	</update>
+
+	<update id="updateByEntity" >
+		UPDATE
+		<include refid="Table_Name" />
+		<set>
+			<if test="s.userId != null">
+                    USER_ID=#{s.userId},
+			</if>
+			<if test="s.chnlId != null">
+                    CHNL_ID=#{s.chnlId},
+			</if>
+			<if test="s.loginMode != null">
+                    LOGIN_MODE=#{s.loginMode},
+			</if>
+			<if test="s.isMutiplueLogin != null">
+                    IS_MUTIPLUE_LOGIN=#{s.isMutiplueLogin},
+			</if>
+			<if test="s.sessionId != null">
+                    SESSION_ID=#{s.sessionId},
+			</if>
+			<if test="s.platform != null">
+                    PLATFORM=#{s.platform},
+			</if>
+			<if test="s.loginTime != null">
+                    LOGIN_TIME=#{s.loginTime},
+			</if>
+			<if test="s.logoutTime != null">
+                    LOGOUT_TIME=#{s.logoutTime},
+			</if>
+			<if test="s.loginAddr != null">
+                    LOGIN_ADDR=#{s.loginAddr},
+			</if>
+			<if test="s.loginIp != null">
+                    LOGIN_IP=#{s.loginIp},
+			</if>
+			<if test="s.addrGetFlag != null">
+                    ADDR_GET_FLAG=#{s.addrGetFlag},
+			</if>
+			<if test="s.addrProv != null">
+                    ADDR_PROV=#{s.addrProv},
+			</if>
+			<if test="s.addrCity != null">
+                    ADDR_CITY=#{s.addrCity},
+			</if>
+			<if test="s.addrCounty != null">
+                    ADDR_COUNTY=#{s.addrCounty},
+			</if>
+			<if test="s.addrDetail != null">
+                    ADDR_DETAIL=#{s.addrDetail},
+			</if>
+			<if test="s.loginStat != null">
+                    LOGIN_STAT=#{s.loginStat},
+			</if>
+			<if test="s.failReason != null">
+                    FAIL_REASON=#{s.failReason},
+			</if>
+			<if test="s.loginTips != null">
+                    LOGIN_TIPS=#{s.loginTips},
+			</if>
+			<if test="s.remark1 != null">
+                    REMARK1=#{s.remark1},
+			</if>
+			<if test="s.remark2 != null">
+                    REMARK2=#{s.remark2},
+			</if>
+			<if test="s.loginDevice != null">
+                    LOGIN_DEVICE=#{s.loginDevice}
+			</if>
+		</set>
+		<where> 
+			<trim prefix="(" suffix=")" suffixOverrides="AND">
+			<if test="w.id != null">
+                    ID=#{w.id}
+                   AND 
+ 			</if>
+			<if test="w.userId != null">
+                    USER_ID=#{w.userId}
+                   AND 
+ 			</if>
+			<if test="w.chnlId != null">
+                    CHNL_ID=#{w.chnlId}
+                   AND 
+ 			</if>
+			<if test="w.loginMode != null">
+                    LOGIN_MODE=#{w.loginMode}
+                   AND 
+ 			</if>
+			<if test="w.isMutiplueLogin != null">
+                    IS_MUTIPLUE_LOGIN=#{w.isMutiplueLogin}
+                   AND 
+ 			</if>
+			<if test="w.sessionId != null">
+                    SESSION_ID=#{w.sessionId}
+                   AND 
+ 			</if>
+			<if test="w.platform != null">
+                    PLATFORM=#{w.platform}
+                   AND 
+ 			</if>
+			<if test="w.loginTime != null">
+                    LOGIN_TIME=#{w.loginTime}
+                   AND 
+ 			</if>
+			<if test="w.logoutTime != null">
+                    LOGOUT_TIME=#{w.logoutTime}
+                   AND 
+ 			</if>
+			<if test="w.loginAddr != null">
+                    LOGIN_ADDR=#{w.loginAddr}
+                   AND 
+ 			</if>
+			<if test="w.loginIp != null">
+                    LOGIN_IP=#{w.loginIp}
+                   AND 
+ 			</if>
+			<if test="w.addrGetFlag != null">
+                    ADDR_GET_FLAG=#{w.addrGetFlag}
+                   AND 
+ 			</if>
+			<if test="w.addrProv != null">
+                    ADDR_PROV=#{w.addrProv}
+                   AND 
+ 			</if>
+			<if test="w.addrCity != null">
+                    ADDR_CITY=#{w.addrCity}
+                   AND 
+ 			</if>
+			<if test="w.addrCounty != null">
+                    ADDR_COUNTY=#{w.addrCounty}
+                   AND 
+ 			</if>
+			<if test="w.addrDetail != null">
+                    ADDR_DETAIL=#{w.addrDetail}
+                   AND 
+ 			</if>
+			<if test="w.loginStat != null">
+                    LOGIN_STAT=#{w.loginStat}
+                   AND 
+ 			</if>
+			<if test="w.failReason != null">
+                    FAIL_REASON=#{w.failReason}
+                   AND 
+ 			</if>
+			<if test="w.loginTips != null">
+                    LOGIN_TIPS=#{w.loginTips}
+                   AND 
+ 			</if>
+			<if test="w.remark1 != null">
+                    REMARK1=#{w.remark1}
+                   AND 
+ 			</if>
+			<if test="w.remark2 != null">
+                    REMARK2=#{w.remark2}
+                   AND 
+ 			</if>
+			<if test="w.loginDevice != null">
+                    LOGIN_DEVICE=#{w.loginDevice}
+ 			</if>
+			</trim>
+		</where>
+	</update>
+
+	<delete id="delete" >
+		delete from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</delete>
+
+	<select id="count" parameterType="java.util.Map" resultType="int">
+		select count(1) from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</select>
+
+	<select id="selectOne"  resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column" />
+		from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</select>
+
+	<select id="selectList"  resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column" />
+		from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+		<if test="loginTime != null">
+			ORDER BY LOGIN_TIME DESC    
+		</if>
+	</select>
+
+
+</mapper>

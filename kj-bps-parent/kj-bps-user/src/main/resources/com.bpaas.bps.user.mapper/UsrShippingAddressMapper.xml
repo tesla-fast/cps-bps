@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bpaas.bps.user.mapper.UsrShippingAddressMapper">
+	<resultMap id="BaseResultMap" type="com.bpaas.bps.user.po.UsrShippingAddressPo">
+		<id column="shippingAddressId" property="shippingAddressId" />
+		<result column="userId" property="userId" />
+		<result column="shippingUserName" property="shippingUserName" />
+		<result column="contactMobile" property="contactMobile" />
+		<result column="country" property="country" />
+		<result column="city" property="city" />
+		<result column="state" property="state" />
+		<result column="address" property="address" />
+		<result column="zipcode" property="zipcode" />
+		<result column="defaultFlag" property="defaultFlag" />
+	</resultMap>
+
+	<sql id="Table_Name">
+		T_USER_SHIPPINGADDRESS
+	</sql>
+	<sql id="Base_Column">
+		shippingAddressId,
+		userId,
+		shippingUserName,
+		contactMobile,
+		country,
+		city,
+		state,
+		address,
+		zipcode,
+		defaultFlag
+	</sql>
+
+	<sql id="Base_Where">
+		<trim suffixOverrides="AND">
+			<if test="shippingAddressId != 0">
+				shippingAddressId= #{shippingAddressId}
+				AND
+			</if>
+			<if test="userId != null">
+				userId= #{userId}
+				AND
+			</if>
+			<if test="shippingUserName != null">
+				shippingUserName= #{shippingUserName}
+				AND
+			</if>
+			<if test="contactMobile != null">
+				contactMobile= #{contactMobile}
+				AND
+			</if>
+			<if test="country != null">
+				country= #{country}
+				AND
+			</if>
+			<if test="city != null">
+				city= #{city}
+				AND
+			</if>
+			<if test="state != null">
+				state= #{state}
+				AND
+			</if>
+			<if test="address != null">
+				address= #{address}
+				AND
+			</if>
+			<if test="zipcode != null">
+				zipcode= #{zipcode}
+				AND
+			</if>
+			<if test="defaultFlag != null">
+				defaultFlag= #{defaultFlag}
+			</if>
+		</trim>
+	</sql>
+
+	<insert id="insert">
+		insert into
+		<include refid="Table_Name" />
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="shippingAddressId != null">
+				shippingAddressId,
+			</if>
+			<if test="userId != null">
+				userId,
+			</if>
+			<if test="shippingUserName != null">
+				shippingUserName,
+			</if>
+			<if test="contactMobile != null">
+				contactMobile,
+			</if>
+			<if test="country != null">
+				country,
+			</if>
+			<if test="city != null">
+				city,
+			</if>
+			<if test="state != null">
+				state,
+			</if>
+			<if test="address != null">
+				address,
+			</if>
+			<if test="zipcode != null">
+				zipcode,
+			</if>
+			<if test="defaultFlag != null">
+				defaultFlag,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="shippingAddressId != null">
+				#{shippingAddressId},
+			</if>
+			<if test="userId != null">
+				#{userId},
+			</if>
+			<if test="shippingUserName != null">
+				#{shippingUserName},
+			</if>
+			<if test="contactMobile != null">
+				#{contactMobile},
+			</if>
+			<if test="country != null">
+				#{country},
+			</if>
+			<if test="city != null">
+				#{city},
+			</if>
+			<if test="state != null">
+				#{state},
+			</if>
+			<if test="address != null">
+				#{address},
+			</if>
+			<if test="zipcode != null">
+				#{zipcode},
+			</if>
+			<if test="defaultFlag != null">
+				#{defaultFlag},
+			</if>
+		</trim>
+	</insert>
+
+	<update id="update">
+		update
+		<include refid="Table_Name" />
+		<set>
+			<if test="shippingAddressId != 0">
+				shippingAddressId=#{shippingAddressId},
+			</if>
+			<if test="userId != null">
+				userId=#{userId},
+			</if>
+			<if test="shippingUserName != null">
+				shippingUserName=#{shippingUserName},
+			</if>
+			<if test="contactMobile != null">
+				contactMobile=#{contactMobile},
+			</if>
+			<if test="country != null">
+				country=#{country},
+			</if>
+			<if test="city != null">
+				city=#{city},
+			</if>
+			<if test="state != null">
+				state=#{state},
+			</if>
+			<if test="address != null">
+				address=#{address},
+			</if>
+			<if test="zipcode != null">
+				zipcode=#{zipcode},
+			</if>
+			<if test="defaultFlag != null">
+				defaultFlag=#{defaultFlag},
+			</if>
+		</set>
+		where
+		shippingAddressId=#{shippingAddressId}
+	</update>
+
+	<delete id="delete">
+		delete from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</delete>
+
+	<select id="selectOne" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column" />
+		from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</select>
+
+	<select id="selectList" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column" />
+		from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</select>
+
+	<select id="selectForUpdate" resultMap="BaseResultMap" useCache="false">
+		select
+		<include refid="Base_Column" />
+		from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+		for update
+	</select>
+</mapper>

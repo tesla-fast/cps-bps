@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bpaas.bps.pay.mapper.alipay.AlipayOrderMapper">
+  <resultMap id="BaseResultMap" type="com.bpaas.bps.pay.po.alipay.AlipayOrderPo">
+    <result column="id" jdbcType="VARCHAR" property="id" />
+    <result column="Out_Trade_No" jdbcType="VARCHAR" property="outTradeNo" />
+    <result column="Trade_Status" jdbcType="CHAR" property="tradeStatus" />
+    <result column="Total_Amount" jdbcType="DECIMAL" property="totalAmount" />
+    <result column="Receipt_Amount" jdbcType="DECIMAL" property="receiptAmount" />
+    <result column="Invoice_Amount" jdbcType="DECIMAL" property="invoiceAmount" />
+    <result column="Buyer_PayAmount" jdbcType="DECIMAL" property="buyerPayamount" />
+    <result column="Refund_Fee" jdbcType="DECIMAL" property="refundFee" />
+    <result column="Notify_Time" jdbcType="TIMESTAMP" property="notifyTime" />
+    <result column="Gmt_Create" jdbcType="TIMESTAMP" property="gmtCreate" />
+    <result column="Gmt_Payment" jdbcType="TIMESTAMP" property="gmtPayment" />
+    <result column="Gmt_Refund" jdbcType="TIMESTAMP" property="gmtRefund" />
+    <result column="Gmt_Close" jdbcType="TIMESTAMP" property="gmtClose" />
+    <result column="Trade_No" jdbcType="VARCHAR" property="tradeNo" />
+    <result column="OutBiz_No" jdbcType="VARCHAR" property="outbizNo" />
+    <result column="Buyer_LogonId" jdbcType="VARCHAR" property="buyerLogonid" />
+    <result column="Seller_Id" jdbcType="VARCHAR" property="sellerId" />
+    <result column="Seller_Email" jdbcType="VARCHAR" property="sellerEmail" />
+    <result column="remark1" jdbcType="VARCHAR" property="remark1" />
+    <result column="remark2" jdbcType="VARCHAR" property="remark2" />
+    <result column="remark3" jdbcType="VARCHAR" property="remark3" />
+    <result column="remark4" jdbcType="VARCHAR" property="remark4" />
+    <result column="remark5" jdbcType="VARCHAR" property="remark5" />
+    <result column="remark6" jdbcType="VARCHAR" property="remark6" />
+  </resultMap>
+
+	<sql id="Table_Name">
+		t_alipay_order
+	</sql>
+	<sql id="Base_Column">
+		id, Out_Trade_No, Trade_Status, Total_Amount, Receipt_Amount, Invoice_Amount, Buyer_PayAmount, 
+    Refund_Fee, Notify_Time, Gmt_Create, Gmt_Payment, Gmt_Refund, Gmt_Close, Trade_No, 
+    OutBiz_No, Buyer_LogonId, Seller_Id, Seller_Email, remark1, remark2, remark3, remark4, 
+    remark5, remark6
+	</sql>
+
+	<sql id="Base_Where">
+	<trim suffixOverrides="AND">
+		<if test="id != null">
+       	 	id = #{id}
+       	 	 AND 
+      </if>
+      <if test="outTradeNo != null">
+        Out_Trade_No = #{outTradeNo}
+         AND 
+      </if>
+      <if test="tradeStatus != null">
+        Trade_Status = #{tradeStatus}
+         AND 
+      </if>
+      <if test="totalAmount != null">
+        Total_Amount = #{totalAmount}
+         AND 
+      </if>
+      <if test="receiptAmount != null">
+        Receipt_Amount = #{receiptAmount}
+         AND 
+      </if>
+      <if test="invoiceAmount != null">
+        Invoice_Amount = #{invoiceAmount}
+         AND 
+      </if>
+      <if test="buyerPayamount != null">
+        Buyer_PayAmount = #{buyerPayamount}
+         AND 
+      </if>
+      <if test="refundFee != null">
+        Refund_Fee = #{refundFee} AND 
+      </if>
+      <if test="notifyTime != null">
+        Notify_Time = #{notifyTime}
+         AND 
+      </if>
+      <if test="gmtCreate != null">
+        Gmt_Create = #{gmtCreate}
+         AND 
+      </if>
+      <if test="gmtPayment != null">
+        Gmt_Payment = #{gmtPayment}
+         AND 
+      </if>
+      <if test="gmtRefund != null">
+        Gmt_Refund = #{gmtRefund}
+         AND 
+      </if>
+      <if test="gmtClose != null">
+        Gmt_Close = #{gmtClose}
+         AND 
+      </if>
+      <if test="tradeNo != null">
+        Trade_No = #{tradeNo}
+         AND 
+      </if>
+      <if test="outbizNo != null">
+        OutBiz_No = #{outbizNo}
+         AND 
+      </if>
+      <if test="buyerLogonid != null">
+        Buyer_LogonId = #{buyerLogonid}
+         AND 
+      </if>
+      <if test="sellerId != null">
+        Seller_Id = #{sellerId}
+         AND 
+      </if>
+      <if test="sellerEmail != null">
+        Seller_Email = #{sellerEmail}
+         AND 
+      </if>
+      <if test="remark1 != null">
+        remark1 = #{remark1}
+         AND 
+      </if>
+      <if test="remark2 != null">
+        remark2 = #{remark2}
+         AND 
+      </if>
+      <if test="remark3 != null">
+        remark3 = #{remark3}
+         AND 
+      </if>
+      <if test="remark4 != null">
+        remark4 = #{remark4}
+         AND 
+      </if>
+      <if test="remark5 != null">
+        remark5 = #{remark5}
+         AND 
+      </if>
+      <if test="remark6 != null">
+        remark6 = #{remark6}
+      </if>
+		</trim>
+	</sql>
+	
+	 <sql id="Base_Select">
+			select
+		<include refid="Base_Column" />
+		from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</sql>
+
+	<insert id="insert" parameterType="com.bpaas.bps.pay.po.alipay.AlipayOrderPo">
+		insert into
+		<include refid="Table_Name" />
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+	        id,
+	      </if>
+	      <if test="outTradeNo != null">
+	        Out_Trade_No,
+	      </if>
+	      <if test="tradeStatus != null">
+	        Trade_Status,
+	      </if>
+	      <if test="totalAmount != null">
+	        Total_Amount,
+	      </if>
+	      <if test="receiptAmount != null">
+	        Receipt_Amount,
+	      </if>
+	      <if test="invoiceAmount != null">
+	        Invoice_Amount,
+	      </if>
+	      <if test="buyerPayamount != null">
+	        Buyer_PayAmount,
+	      </if>
+	      <if test="refundFee != null">
+	        Refund_Fee,
+	      </if>
+	      <if test="notifyTime != null">
+	        Notify_Time,
+	      </if>
+	      <if test="gmtCreate != null">
+	        Gmt_Create,
+	      </if>
+	      <if test="gmtPayment != null">
+	        Gmt_Payment,
+	      </if>
+	      <if test="gmtRefund != null">
+	        Gmt_Refund,
+	      </if>
+	      <if test="gmtClose != null">
+	        Gmt_Close,
+	      </if>
+	      <if test="tradeNo != null">
+	        Trade_No,
+	      </if>
+	      <if test="outbizNo != null">
+	        OutBiz_No,
+	      </if>
+	      <if test="buyerLogonid != null">
+	        Buyer_LogonId,
+	      </if>
+	      <if test="sellerId != null">
+	        Seller_Id,
+	      </if>
+	      <if test="sellerEmail != null">
+	        Seller_Email,
+	      </if>
+	      <if test="remark1 != null">
+	        remark1,
+	      </if>
+	      <if test="remark2 != null">
+	        remark2,
+	      </if>
+	      <if test="remark3 != null">
+	        remark3,
+	      </if>
+	      <if test="remark4 != null">
+	        remark4,
+	      </if>
+	      <if test="remark5 != null">
+	        remark5,
+	      </if>
+	      <if test="remark6 != null">
+	        remark6
+	      </if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+	        #{id},
+	      </if>
+	      <if test="outTradeNo != null">
+	       #{outTradeNo},
+	      </if>
+	      <if test="tradeStatus != null">
+	        #{tradeStatus},
+	      </if>
+	      <if test="totalAmount != null">
+	        #{totalAmount},
+	      </if>
+	      <if test="receiptAmount != null">
+	       #{receiptAmount},
+	      </if>
+	      <if test="invoiceAmount != null">
+	        #{invoiceAmount},
+	      </if>
+	      <if test="buyerPayamount != null">
+	        #{buyerPayamount},
+	      </if>
+	      <if test="refundFee != null">
+	        #{refundFee},
+	      </if>
+	      <if test="notifyTime != null">
+	        #{notifyTime},
+	      </if>
+	      <if test="gmtCreate != null">
+	        #{gmtCreate},
+	      </if>
+	      <if test="gmtPayment != null">
+	        #{gmtPayment},
+	      </if>
+	      <if test="gmtRefund != null">
+	        #{gmtRefund},
+	      </if>
+	      <if test="gmtClose != null">
+	        #{gmtClose},
+	      </if>
+	      <if test="tradeNo != null">
+	        #{tradeNo},
+	      </if>
+	      <if test="outbizNo != null">
+	        #{outbizNo},
+	      </if>
+	      <if test="buyerLogonid != null">
+	        #{buyerLogonid},
+	      </if>
+	      <if test="sellerId != null">
+	        #{sellerId},
+	      </if>
+	      <if test="sellerEmail != null">
+	        #{sellerEmail},
+	      </if>
+	      <if test="remark1 != null">
+	        #{remark1},
+	      </if>
+	      <if test="remark2 != null">
+	        #{remark2},
+	      </if>
+	      <if test="remark3 != null">
+	        #{remark3},
+	      </if>
+	      <if test="remark4 != null">
+	        #{remark4},
+	      </if>
+	      <if test="remark5 != null">
+	        #{remark5},
+	      </if>
+	      <if test="remark6 != null">
+	        #{remark6}
+	      </if>
+		</trim>
+	</insert>
+	
+	<update id="update" parameterType="com.bpaas.bps.pay.po.alipay.AlipayOrderPo">
+		update
+		<include refid="Table_Name" />
+		<set>
+			<if test="id != null">
+        id = #{id},
+      </if>
+      <if test="outTradeNo != null">
+        Out_Trade_No = #{outTradeNo},
+      </if>
+      <if test="tradeStatus != null">
+        Trade_Status = #{tradeStatus},
+      </if>
+      <if test="totalAmount != null">
+        Total_Amount = #{totalAmount},
+      </if>
+      <if test="receiptAmount != null">
+        Receipt_Amount = #{receiptAmount},
+      </if>
+      <if test="invoiceAmount != null">
+        Invoice_Amount = #{invoiceAmount},
+      </if>
+      <if test="buyerPayamount != null">
+        Buyer_PayAmount = #{buyerPayamount},
+      </if>
+      <if test="refundFee != null">
+        Refund_Fee = #{refundFee},
+      </if>
+      <if test="notifyTime != null">
+        Notify_Time = #{notifyTime},
+      </if>
+      <if test="gmtCreate != null">
+        Gmt_Create = #{gmtCreate},
+      </if>
+      <if test="gmtPayment != null">
+        Gmt_Payment = #{gmtPayment},
+      </if>
+      <if test="gmtRefund != null">
+        Gmt_Refund = #{gmtRefund},
+      </if>
+      <if test="gmtClose != null">
+        Gmt_Close = #{gmtClose},
+      </if>
+      <if test="tradeNo != null">
+        Trade_No = #{tradeNo},
+      </if>
+      <if test="outbizNo != null">
+        OutBiz_No = #{outbizNo},
+      </if>
+      <if test="buyerLogonid != null">
+        Buyer_LogonId = #{buyerLogonid},
+      </if>
+      <if test="sellerId != null">
+        Seller_Id = #{sellerId},
+      </if>
+      <if test="sellerEmail != null">
+        Seller_Email = #{sellerEmail},
+      </if>
+      <if test="remark1 != null">
+        remark1 = #{remark1},
+      </if>
+      <if test="remark2 != null">
+        remark2 = #{remark2},
+      </if>
+      <if test="remark3 != null">
+        remark3 = #{remark3},
+      </if>
+      <if test="remark4 != null">
+        remark4 = #{remark4},
+      </if>
+      <if test="remark5 != null">
+        remark5 = #{remark5},
+      </if>
+      <if test="remark6 != null">
+        remark6 = #{remark6},
+      </if>
+		</set>
+		where 
+			      ID=#{id}
+	</update>
+	
+	<delete id="delete" parameterType="com.bpaas.bps.pay.po.alipay.AlipayOrderPo">
+		delete from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</delete>
+	
+	<select id="selectOne"  parameterType="com.bpaas.bps.pay.po.alipay.AlipayOrderPo" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column" />
+		from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</select>
+
+	<select id="selectList"  parameterType="com.bpaas.bps.pay.po.alipay.AlipayOrderPo" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column" />
+		from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+		<include refid="com.fPaaS1.dipper.mybatis.common.Comm_Order_By"/>
+	</select>
+	
+	<select id="selectForUpdate" resultMap="BaseResultMap" useCache="false">
+		select
+		<include refid="Base_Column" />
+		from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+		for update
+	</select>
+	
+	<update id="updateByEntity" parameterType="com.bpaas.bps.pay.po.alipay.AlipayOrderPo">
+		UPDATE
+		<include refid="Table_Name" />
+		<set>
+      <if test="s.outTradeNo != null">
+        Out_Trade_No = #{s.outTradeNo},
+      </if>
+      <if test="s.tradeStatus != null">
+        Trade_Status = #{s.tradeStatus},
+      </if>
+      <if test="s.totalAmount != null">
+        Total_Amount = #{s.totalAmount},
+      </if>
+      <if test="s.receiptAmount != null">
+        Receipt_Amount = #{s.receiptAmount},
+      </if>
+      <if test="s.invoiceAmount != null">
+        Invoice_Amount = #{s.invoiceAmount},
+      </if>
+      <if test="s.buyerPayamount != null">
+        Buyer_PayAmount = #{s.buyerPayamount},
+      </if>
+      <if test="s.refundFee != null">
+        Refund_Fee = #{s.refundFee},
+      </if>
+      <if test="s.notifyTime != null">
+        Notify_Time = #{s.notifyTime},
+      </if>
+      <if test="s.gmtCreate != null">
+        Gmt_Create = #{s.gmtCreate},
+      </if>
+      <if test="s.gmtPayment != null">
+        Gmt_Payment = #{s.gmtPayment},
+      </if>
+      <if test="s.gmtRefund != null">
+        Gmt_Refund = #{s.gmtRefund},
+      </if>
+      <if test="s.gmtClose != null">
+        Gmt_Close = #{s.gmtClose},
+      </if>
+      <if test="s.tradeNo != null">
+        Trade_No = #{s.tradeNo},
+      </if>
+      <if test="s.outbizNo != null">
+        OutBiz_No = #{s.outbizNo},
+      </if>
+      <if test="s.buyerLogonid != null">
+        Buyer_LogonId = #{s.buyerLogonid},
+      </if>
+      <if test="s.sellerId != null">
+        Seller_Id = #{s.sellerId},
+      </if>
+      <if test="s.sellerEmail != null">
+        Seller_Email = #{s.sellerEmail},
+      </if>
+      <if test="s.remark1 != null">
+        remark1 = #{s.remark1},
+      </if>
+      <if test="s.remark2 != null">
+        remark2 = #{s.remark2},
+      </if>
+      <if test="s.remark3 != null">
+        remark3 = #{s.remark3},
+      </if>
+      <if test="s.remark4 != null">
+        remark4 = #{s.remark4},
+      </if>
+      <if test="s.remark5 != null">
+        remark5 = #{remark5},
+      </if>
+      <if test="s.remark6 != null">
+        remark6 = #{s.remark6}
+      </if>
+		</set>
+		<where> 
+			<trim prefix="(" suffix=")" suffixOverrides="AND">
+			<if test="w.id != null">
+                    ID=#{w.id}
+                   AND 
+ 			</if>
+      <if test="w.outTradeNo != null">
+        Out_Trade_No = #{w.outTradeNo}
+         AND 
+      </if>
+      <if test="w.tradeStatus != null">
+        Trade_Status = #{w.tradeStatus}
+         AND 
+      </if>
+      <if test="w.totalAmount != null">
+        Total_Amount = #{w.totalAmount}
+         AND 
+      </if>
+      <if test="w.receiptAmount != null">
+        Receipt_Amount = #{w.receiptAmount}
+         AND 
+      </if>
+      <if test="w.invoiceAmount != null">
+        Invoice_Amount = #{w.invoiceAmount}
+         AND 
+      </if>
+      <if test="w.buyerPayamount != null">
+        Buyer_PayAmount = #{w.buyerPayamount}
+         AND 
+      </if>
+      <if test="w.refundFee != null">
+        Refund_Fee = #{w.refundFee} AND 
+      </if>
+      <if test="w.notifyTime != null">
+        Notify_Time = #{w.notifyTime}
+         AND 
+      </if>
+      <if test="w.gmtCreate != null">
+        Gmt_Create = #{w.gmtCreate}
+         AND 
+      </if>
+      <if test="w.gmtPayment != null">
+        Gmt_Payment = #{w.gmtPayment}
+         AND 
+      </if>
+      <if test="w.gmtRefund != null">
+        Gmt_Refund = #{w.gmtRefund}
+         AND 
+      </if>
+      <if test="w.gmtClose != null">
+        Gmt_Close = #{w.gmtClose}
+         AND 
+      </if>
+      <if test="w.tradeNo != null">
+        Trade_No = #{w.tradeNo}
+         AND 
+      </if>
+      <if test="w.outbizNo != null">
+        OutBiz_No = #{w.outbizNo}
+         AND 
+      </if>
+      <if test="w.buyerLogonid != null">
+        Buyer_LogonId = #{w.buyerLogonid}
+         AND 
+      </if>
+      <if test="w.sellerId != null">
+        Seller_Id = #{w.sellerId}
+         AND 
+      </if>
+      <if test="w.sellerEmail != null">
+        Seller_Email = #{w.sellerEmail}
+         AND 
+      </if>
+      <if test="w.remark1 != null">
+        remark1 = #{w.remark1}
+         AND 
+      </if>
+      <if test="w.remark2 != null">
+        remark2 = #{w.remark2}
+         AND 
+      </if>
+      <if test="w.remark3 != null">
+        remark3 = #{w.remark3}
+         AND 
+      </if>
+      <if test="w.remark4 != null">
+        remark4 = #{w.remark4}
+         AND 
+      </if>
+      <if test="w.remark5 != null">
+        remark5 = #{w.remark5}
+         AND 
+      </if>
+      <if test="w.remark6 != null">
+        remark6 = #{w.remark6}
+      </if>
+			</trim>
+		</where>
+	</update>
+	
+	
+</mapper>

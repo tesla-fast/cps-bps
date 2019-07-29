@@ -1,0 +1,960 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bpaas.bps.user.common.mapper.UsrBaseInfoMapper">
+	<resultMap id="BaseResultMap" type="com.bpaas.bps.user.common.po.UsrBaseInfoPo">
+		<id column="ID" property="id" />
+		<result column="USER_ID" property="userId" />
+		<result column="CERT_TYPE" property="certType" />
+		<result column="CERT_NO" property="certNo" />
+		<result column="CERT_NAME" property="certName" />
+		<result column="CERT_EXP_FLAG" property="certExpFlag" />
+		<result column="CERT_EXP_BEGIN" property="certExpBegin" />
+		<result column="CERT_EXP_END" property="certExpEnd" />
+		<result column="SEX" property="sex" />
+		<result column="BIRTHDAY" property="birthday" />
+		<result column="COUNTRY" property="country" />
+		<result column="NATION" property="nation" />
+		<result column="BACKGROUND" property="background" />
+		<result column="RELIGION" property="religion" />
+		<result column="MARRIAGE" property="marriage" />
+		<result column="EDU_BG" property="eduBg" />
+		<result column="JOB" property="job" />
+		<result column="EMAIL" property="email" />
+		<result column="QQ" property="qq" />
+		<result column="WEIXIN" property="weixin" />
+		<result column="SIGN" property="sign" />
+		<result column="PRE_INFO" property="preInfo" />
+		<result column="ECIF_CUST_NO" property="ecifCustNo" />
+		<result column="LAST_UPDATE_TIME" property="lastUpdateTime" />
+		<result column="REMARK1" property="remark1" />
+		<result column="REMARK2" property="remark2" />
+		<result column="REMARK3" property="remark3" />
+		<result column="POST_CODE" property="postCode" />
+		<result column="MONTHLY_INCOME" property="monthlyIncome" />
+		<result column="TELEPHONE" property="telephone" />
+		<result column="IS_FUND" property="isFund" />
+		<result column="CAREER_TYPE" property="careerType" />
+		<result column="OCR_ORG" property="ocrOrg" />
+		<result column="OCR_ADDRESS_ZONE" property="ocrAddressZone" />
+		<result column="CONFIDENCE" property="confidence" />
+		<result column="DIST_CODE" property="distCode" />
+		<result column="PIC_HEAD" property="picHead" />
+		<result column="PIC_CERT_FRONT" property="picCertFront" />
+		<result column="PIC_CERT_BACK" property="picCertBack" />
+	</resultMap>
+
+	<sql id="Table_Name">
+		T_USR_BASE_INFO
+	</sql>
+
+	<sql id="Base_Column">
+		ID,
+		USER_ID,
+		CERT_TYPE,
+		CERT_NO,
+		CERT_NAME,
+		CERT_EXP_FLAG,
+		CERT_EXP_BEGIN,
+		CERT_EXP_END,
+		SEX,
+		BIRTHDAY,
+		COUNTRY,
+		NATION,
+		BACKGROUND,
+		RELIGION,
+		MARRIAGE,
+		EDU_BG,
+		JOB,
+		EMAIL,
+		QQ,
+		WEIXIN,
+		SIGN,
+		PRE_INFO,
+		ECIF_CUST_NO,
+		LAST_UPDATE_TIME,
+		REMARK1,
+		REMARK2,
+		REMARK3,
+		POST_CODE,
+		MONTHLY_INCOME,
+		TELEPHONE,
+		IS_FUND,
+		CAREER_TYPE,
+		OCR_ORG,
+		OCR_ADDRESS_ZONE,
+		CONFIDENCE,
+		DIST_CODE,
+		PIC_HEAD,
+		PIC_CERT_FRONT,
+		PIC_CERT_BACK
+	</sql>
+
+	<sql id="Base_Where">
+		<trim suffixOverrides="AND">
+		<if test="id != null">
+			ID= #{id}
+	           AND 
+		</if>
+		<if test="userId != null">
+			USER_ID= #{userId}
+	           AND 
+		</if>
+		<if test="certType != null">
+			CERT_TYPE= #{certType}
+	           AND 
+		</if>
+		<if test="certNo != null">
+			CERT_NO= #{certNo}
+	           AND 
+		</if>
+		<if test="certName != null">
+			CERT_NAME= #{certName}
+	           AND 
+		</if>
+		<if test="certExpFlag != null">
+			CERT_EXP_FLAG= #{certExpFlag}
+	           AND 
+		</if>
+		<if test="certExpBegin != null">
+			CERT_EXP_BEGIN= #{certExpBegin}
+	           AND 
+		</if>
+		<if test="certExpEnd != null">
+			CERT_EXP_END= #{certExpEnd}
+	           AND 
+		</if>
+		<if test="sex != null">
+			SEX= #{sex}
+	           AND 
+		</if>
+		<if test="birthday != null">
+			BIRTHDAY= #{birthday}
+	           AND 
+		</if>
+		<if test="country != null">
+			COUNTRY= #{country}
+	           AND 
+		</if>
+		<if test="nation != null">
+			NATION= #{nation}
+	           AND 
+		</if>
+		<if test="background != null">
+			BACKGROUND= #{background}
+	           AND 
+		</if>
+		<if test="religion != null">
+			RELIGION= #{religion}
+	           AND 
+		</if>
+		<if test="marriage != null">
+			MARRIAGE= #{marriage}
+	           AND 
+		</if>
+		<if test="eduBg != null">
+			EDU_BG= #{eduBg}
+	           AND 
+		</if>
+		<if test="job != null">
+			JOB= #{job}
+	           AND 
+		</if>
+		<if test="email != null">
+			EMAIL= #{email}
+	           AND 
+		</if>
+		<if test="qq != null">
+			QQ= #{qq}
+	           AND 
+		</if>
+		<if test="weixin != null">
+			WEIXIN= #{weixin}
+	           AND 
+		</if>
+		<if test="sign != null">
+			SIGN= #{sign}
+	           AND 
+		</if>
+		<if test="preInfo != null">
+			PRE_INFO= #{preInfo}
+	           AND 
+		</if>
+		<if test="ecifCustNo != null">
+			ECIF_CUST_NO= #{ecifCustNo}
+	           AND 
+		</if>
+		<if test="lastUpdateTime != null">
+			LAST_UPDATE_TIME= #{lastUpdateTime}
+	           AND 
+		</if>
+		<if test="remark1 != null">
+			REMARK1= #{remark1}
+	           AND 
+		</if>
+		<if test="remark2 != null">
+			REMARK2= #{remark2}
+	           AND 
+		</if>
+		<if test="remark3 != null">
+			REMARK3= #{remark3}
+	           AND 
+		</if>
+		<if test="postCode != null">
+			POST_CODE= #{postCode}
+	           AND 
+		</if>
+		<if test="monthlyIncome != null">
+			MONTHLY_INCOME= #{monthlyIncome}
+	           AND 
+		</if>
+		<if test="telephone != null">
+			TELEPHONE= #{telephone}
+	           AND 
+		</if>
+		<if test="isFund != null">
+			IS_FUND= #{isFund}
+	           AND 
+		</if>
+		<if test="careerType != null">
+			CAREER_TYPE= #{careerType}
+	           AND 
+		</if>
+		<if test="ocrOrg != null">
+			OCR_ORG= #{ocrOrg}
+	           AND 
+		</if>
+		<if test="ocrAddressZone != null">
+			OCR_ADDRESS_ZONE= #{ocrAddressZone}
+	           AND 
+		</if>
+		<if test="confidence != null">
+			CONFIDENCE= #{confidence}
+			AND 
+		</if>
+		<if test="distCode != null">
+			DIST_CODE= #{distCode}
+			AND 
+		</if>
+		<if test="picHead != null">
+			PIC_HEAD= #{picHead}
+			AND 
+		</if>
+		<if test="picCertFront != null">
+			PIC_CERT_FRONT= #{picCertFront}
+			AND 
+		</if>
+		<if test="picCertBack != null">
+			PIC_CERT_BACK= #{picCertBack}
+		</if>
+		</trim>
+	</sql>
+	
+    <sql id="Base_Select">
+			select
+		<include refid="Base_Column" />
+		from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</sql>
+
+
+
+	<insert id="insert" >
+		insert into
+		<include refid="Table_Name" />
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+	<if test="id != null">
+		ID,
+	</if>
+	<if test="userId != null">
+		USER_ID,
+	</if>
+	<if test="certType != null">
+		CERT_TYPE,
+	</if>
+	<if test="certNo != null">
+		CERT_NO,
+	</if>
+	<if test="certName != null">
+		CERT_NAME,
+	</if>
+	<if test="certExpFlag != null">
+		CERT_EXP_FLAG,
+	</if>
+	<if test="certExpBegin != null">
+		CERT_EXP_BEGIN,
+	</if>
+	<if test="certExpEnd != null">
+		CERT_EXP_END,
+	</if>
+	<if test="sex != null">
+		SEX,
+	</if>
+	<if test="birthday != null">
+		BIRTHDAY,
+	</if>
+	<if test="country != null">
+		COUNTRY,
+	</if>
+	<if test="nation != null">
+		NATION,
+	</if>
+	<if test="background != null">
+		BACKGROUND,
+	</if>
+	<if test="religion != null">
+		RELIGION,
+	</if>
+	<if test="marriage != null">
+		MARRIAGE,
+	</if>
+	<if test="eduBg != null">
+		EDU_BG,
+	</if>
+	<if test="job != null">
+		JOB,
+	</if>
+	<if test="email != null">
+		EMAIL,
+	</if>
+	<if test="qq != null">
+		QQ,
+	</if>
+	<if test="weixin != null">
+		WEIXIN,
+	</if>
+	<if test="sign != null">
+		SIGN,
+	</if>
+	<if test="preInfo != null">
+		PRE_INFO,
+	</if>
+	<if test="ecifCustNo != null">
+		ECIF_CUST_NO,
+	</if>
+	<if test="lastUpdateTime != null">
+		LAST_UPDATE_TIME,
+	</if>
+	<if test="remark1 != null">
+		REMARK1,
+	</if>
+	<if test="remark2 != null">
+		REMARK2,
+	</if>
+	<if test="remark3 != null">
+		REMARK3,
+	</if>
+	<if test="postCode != null">
+		POST_CODE,
+	</if>
+	<if test="monthlyIncome != null">
+		MONTHLY_INCOME,
+	</if>
+	<if test="telephone != null">
+		TELEPHONE,
+	</if>
+	<if test="isFund != null">
+		IS_FUND,
+	</if>
+	<if test="careerType != null">
+		CAREER_TYPE,
+	</if>
+	<if test="ocrOrg != null">
+		OCR_ORG,
+	</if>
+	<if test="ocrAddressZone != null">
+		OCR_ADDRESS_ZONE,
+	</if>
+	<if test="confidence != null">
+		CONFIDENCE,
+	</if>
+	<if test="distCode != null">
+		DIST_CODE,
+	</if>
+	<if test="picHead != null">
+		PIC_HEAD,
+	</if>
+	<if test="picCertFront != null">
+		PIC_CERT_FRONT,
+	</if>
+	<if test="picCertBack != null">
+		PIC_CERT_BACK
+	</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+	<if test="id != null">
+		#{id},
+	</if>
+	<if test="userId != null">
+		#{userId},
+	</if>
+	<if test="certType != null">
+		#{certType},
+	</if>
+	<if test="certNo != null">
+		#{certNo},
+	</if>
+	<if test="certName != null">
+		#{certName},
+	</if>
+	<if test="certExpFlag != null">
+		#{certExpFlag},
+	</if>
+	<if test="certExpBegin != null">
+		#{certExpBegin},
+	</if>
+	<if test="certExpEnd != null">
+		#{certExpEnd},
+	</if>
+	<if test="sex != null">
+		#{sex},
+	</if>
+	<if test="birthday != null">
+		#{birthday},
+	</if>
+	<if test="country != null">
+		#{country},
+	</if>
+	<if test="nation != null">
+		#{nation},
+	</if>
+	<if test="background != null">
+		#{background},
+	</if>
+	<if test="religion != null">
+		#{religion},
+	</if>
+	<if test="marriage != null">
+		#{marriage},
+	</if>
+	<if test="eduBg != null">
+		#{eduBg},
+	</if>
+	<if test="job != null">
+		#{job},
+	</if>
+	<if test="email != null">
+		#{email},
+	</if>
+	<if test="qq != null">
+		#{qq},
+	</if>
+	<if test="weixin != null">
+		#{weixin},
+	</if>
+	<if test="sign != null">
+		#{sign},
+	</if>
+	<if test="preInfo != null">
+		#{preInfo},
+	</if>
+	<if test="ecifCustNo != null">
+		#{ecifCustNo},
+	</if>
+	<if test="lastUpdateTime != null">
+		#{lastUpdateTime},
+	</if>
+	<if test="remark1 != null">
+		#{remark1},
+	</if>
+	<if test="remark2 != null">
+		#{remark2},
+	</if>
+	<if test="remark3 != null">
+		#{remark3},
+	</if>
+	<if test="postCode != null">
+		#{postCode},
+	</if>
+	<if test="monthlyIncome != null">
+		#{monthlyIncome},
+	</if>
+	<if test="telephone != null">
+		#{telephone},
+	</if>
+	<if test="isFund != null">
+		#{isFund},
+	</if>
+	<if test="careerType != null">
+		#{careerType},
+	</if>
+	<if test="ocrOrg != null">
+		#{ocrOrg},
+	</if>
+	<if test="ocrAddressZone != null">
+		#{ocrAddressZone},
+	</if>
+	<if test="confidence != null">
+		#{confidence},
+	</if>
+	<if test="distCode != null">
+		#{distCode},
+	</if>
+	<if test="picHead != null">
+		#{picHead},
+	</if>
+	<if test="picCertFront != null">
+		#{picCertFront},
+	</if>
+	<if test="picCertBack != null">
+		#{picCertBack},
+	</if>
+		</trim>
+	</insert>
+
+	<update id="update" >
+		update
+		<include refid="Table_Name" />
+		<set>
+	<if test="id != null">
+		ID=#{id},
+	</if>
+	<if test="userId != null">
+		USER_ID=#{userId},
+	</if>
+	<if test="certType != null">
+		CERT_TYPE=#{certType},
+	</if>
+	<if test="certNo != null">
+		CERT_NO=#{certNo},
+	</if>
+	<if test="certName != null">
+		CERT_NAME=#{certName},
+	</if>
+	<if test="certExpFlag != null">
+		CERT_EXP_FLAG=#{certExpFlag},
+	</if>
+	<if test="certExpBegin != null">
+		CERT_EXP_BEGIN=#{certExpBegin},
+	</if>
+	<if test="certExpEnd != null">
+		CERT_EXP_END=#{certExpEnd},
+	</if>
+	<if test="sex != null">
+		SEX=#{sex},
+	</if>
+	<if test="birthday != null">
+		BIRTHDAY=#{birthday},
+	</if>
+	<if test="country != null">
+		COUNTRY=#{country},
+	</if>
+	<if test="nation != null">
+		NATION=#{nation},
+	</if>
+	<if test="background != null">
+		BACKGROUND=#{background},
+	</if>
+	<if test="religion != null">
+		RELIGION=#{religion},
+	</if>
+	<if test="marriage != null">
+		MARRIAGE=#{marriage},
+	</if>
+	<if test="eduBg != null">
+		EDU_BG=#{eduBg},
+	</if>
+	<if test="job != null">
+		JOB=#{job},
+	</if>
+	<if test="email != null">
+		EMAIL=#{email},
+	</if>
+	<if test="qq != null">
+		QQ=#{qq},
+	</if>
+	<if test="weixin != null">
+		WEIXIN=#{weixin},
+	</if>
+	<if test="sign != null">
+		SIGN=#{sign},
+	</if>
+	<if test="preInfo != null">
+		PRE_INFO=#{preInfo},
+	</if>
+	<if test="ecifCustNo != null">
+		ECIF_CUST_NO=#{ecifCustNo},
+	</if>
+	<if test="lastUpdateTime != null">
+		LAST_UPDATE_TIME=#{lastUpdateTime},
+	</if>
+	<if test="remark1 != null">
+		REMARK1=#{remark1},
+	</if>
+	<if test="remark2 != null">
+		REMARK2=#{remark2},
+	</if>
+	<if test="remark3 != null">
+		REMARK3=#{remark3},
+	</if>
+	<if test="postCode != null">
+		POST_CODE=#{postCode},
+	</if>
+	<if test="monthlyIncome != null">
+		MONTHLY_INCOME=#{monthlyIncome},
+	</if>
+	<if test="telephone != null">
+		TELEPHONE=#{telephone},
+	</if>
+	<if test="isFund != null">
+		IS_FUND=#{isFund},
+	</if>
+	<if test="careerType != null">
+		CAREER_TYPE=#{careerType},
+	</if>
+	<if test="ocrOrg != null">
+		OCR_ORG=#{ocrOrg},
+	</if>
+	<if test="ocrAddressZone != null">
+		OCR_ADDRESS_ZONE=#{ocrAddressZone},
+	</if>
+	<if test="confidence != null">
+		CONFIDENCE=#{confidence},
+	</if>
+	<if test="distCode != null">
+		DIST_CODE=#{distCode},
+	</if>
+	<if test="picHead != null">
+		PIC_HEAD=#{picHead},
+	</if>
+	<if test="picCertFront != null">
+		PIC_CERT_FRONT=#{picCertFront},
+	</if>
+	<if test="picCertBack != null">
+		PIC_CERT_BACK=#{picCertBack}
+	</if>
+		</set>
+		where 
+			      ID=#{id}
+	</update>
+
+	<update id="updateByEntity" >
+		UPDATE
+		<include refid="Table_Name" />
+		<set>
+			<if test="s.userId != null">
+                    USER_ID=#{s.userId},
+			</if>
+			<if test="s.certType != null">
+                    CERT_TYPE=#{s.certType},
+			</if>
+			<if test="s.certNo != null">
+                    CERT_NO=#{s.certNo},
+			</if>
+			<if test="s.certName != null">
+                    CERT_NAME=#{s.certName},
+			</if>
+			<if test="s.certExpFlag != null">
+                    CERT_EXP_FLAG=#{s.certExpFlag},
+			</if>
+			<if test="s.certExpBegin != null">
+                    CERT_EXP_BEGIN=#{s.certExpBegin},
+			</if>
+			<if test="s.certExpEnd != null">
+                    CERT_EXP_END=#{s.certExpEnd},
+			</if>
+			<if test="s.sex != null">
+                    SEX=#{s.sex},
+			</if>
+			<if test="s.birthday != null">
+                    BIRTHDAY=#{s.birthday},
+			</if>
+			<if test="s.country != null">
+                    COUNTRY=#{s.country},
+			</if>
+			<if test="s.nation != null">
+                    NATION=#{s.nation},
+			</if>
+			<if test="s.background != null">
+                    BACKGROUND=#{s.background},
+			</if>
+			<if test="s.religion != null">
+                    RELIGION=#{s.religion},
+			</if>
+			<if test="s.marriage != null">
+                    MARRIAGE=#{s.marriage},
+			</if>
+			<if test="s.eduBg != null">
+                    EDU_BG=#{s.eduBg},
+			</if>
+			<if test="s.job != null">
+                    JOB=#{s.job},
+			</if>
+			<if test="s.email != null">
+                    EMAIL=#{s.email},
+			</if>
+			<if test="s.qq != null">
+                    QQ=#{s.qq},
+			</if>
+			<if test="s.weixin != null">
+                    WEIXIN=#{s.weixin},
+			</if>
+			<if test="s.sign != null">
+                    SIGN=#{s.sign},
+			</if>
+			<if test="s.preInfo != null">
+                    PRE_INFO=#{s.preInfo},
+			</if>
+			<if test="s.ecifCustNo != null">
+                    ECIF_CUST_NO=#{s.ecifCustNo},
+			</if>
+			<if test="s.lastUpdateTime != null">
+                    LAST_UPDATE_TIME=#{s.lastUpdateTime},
+			</if>
+			<if test="s.remark1 != null">
+                    REMARK1=#{s.remark1},
+			</if>
+			<if test="s.remark2 != null">
+                    REMARK2=#{s.remark2},
+			</if>
+			<if test="s.remark3 != null">
+                    REMARK3=#{s.remark3},
+			</if>
+			<if test="s.postCode != null">
+                    POST_CODE=#{s.postCode},
+			</if>
+			<if test="s.monthlyIncome != null">
+                    MONTHLY_INCOME=#{s.monthlyIncome},
+			</if>
+			<if test="s.telephone != null">
+                    TELEPHONE=#{s.telephone},
+			</if>
+			<if test="s.isFund != null">
+                    IS_FUND=#{s.isFund},
+			</if>
+			<if test="s.careerType != null">
+                    CAREER_TYPE=#{s.careerType},
+			</if>
+			<if test="s.ocrOrg != null">
+                    OCR_ORG=#{s.ocrOrg},
+			</if>
+			<if test="s.ocrAddressZone != null">
+                    OCR_ADDRESS_ZONE=#{s.ocrAddressZone},
+			</if>
+			<if test="s.confidence != null">
+                    CONFIDENCE=#{s.confidence},
+			</if>
+			<if test="s.distCode != null">
+                    DIST_CODE=#{s.distCode},
+			</if>
+			<if test="s.picHead != null">
+                    PIC_HEAD=#{s.picHead},
+			</if>
+			<if test="s.picCertFront != null">
+                    PIC_CERT_FRONT=#{s.picCertFront},
+			</if>
+			<if test="s.picCertBack != null">
+                    PIC_CERT_BACK=#{s.picCertBack}
+			</if>
+		</set>
+		<where> 
+			<trim prefix="(" suffix=")" suffixOverrides="AND">
+			<if test="w.id != null">
+                    ID=#{w.id}
+                   AND 
+ 			</if>
+			<if test="w.userId != null">
+                    USER_ID=#{w.userId}
+                   AND 
+ 			</if>
+			<if test="w.certType != null">
+                    CERT_TYPE=#{w.certType}
+                   AND 
+ 			</if>
+			<if test="w.certNo != null">
+                    CERT_NO=#{w.certNo}
+                   AND 
+ 			</if>
+			<if test="w.certName != null">
+                    CERT_NAME=#{w.certName}
+                   AND 
+ 			</if>
+			<if test="w.certExpFlag != null">
+                    CERT_EXP_FLAG=#{w.certExpFlag}
+                   AND 
+ 			</if>
+			<if test="w.certExpBegin != null">
+                    CERT_EXP_BEGIN=#{w.certExpBegin}
+                   AND 
+ 			</if>
+			<if test="w.certExpEnd != null">
+                    CERT_EXP_END=#{w.certExpEnd}
+                   AND 
+ 			</if>
+			<if test="w.sex != null">
+                    SEX=#{w.sex}
+                   AND 
+ 			</if>
+			<if test="w.birthday != null">
+                    BIRTHDAY=#{w.birthday}
+                   AND 
+ 			</if>
+			<if test="w.country != null">
+                    COUNTRY=#{w.country}
+                   AND 
+ 			</if>
+			<if test="w.nation != null">
+                    NATION=#{w.nation}
+                   AND 
+ 			</if>
+			<if test="w.background != null">
+                    BACKGROUND=#{w.background}
+                   AND 
+ 			</if>
+			<if test="w.religion != null">
+                    RELIGION=#{w.religion}
+                   AND 
+ 			</if>
+			<if test="w.marriage != null">
+                    MARRIAGE=#{w.marriage}
+                   AND 
+ 			</if>
+			<if test="w.eduBg != null">
+                    EDU_BG=#{w.eduBg}
+                   AND 
+ 			</if>
+			<if test="w.job != null">
+                    JOB=#{w.job}
+                   AND 
+ 			</if>
+			<if test="w.email != null">
+                    EMAIL=#{w.email}
+                   AND 
+ 			</if>
+			<if test="w.qq != null">
+                    QQ=#{w.qq}
+                   AND 
+ 			</if>
+			<if test="w.weixin != null">
+                    WEIXIN=#{w.weixin}
+                   AND 
+ 			</if>
+			<if test="w.sign != null">
+                    SIGN=#{w.sign}
+                   AND 
+ 			</if>
+			<if test="w.preInfo != null">
+                    PRE_INFO=#{w.preInfo}
+                   AND 
+ 			</if>
+			<if test="w.ecifCustNo != null">
+                    ECIF_CUST_NO=#{w.ecifCustNo}
+                   AND 
+ 			</if>
+			<if test="w.lastUpdateTime != null">
+                    LAST_UPDATE_TIME=#{w.lastUpdateTime}
+                   AND 
+ 			</if>
+			<if test="w.remark1 != null">
+                    REMARK1=#{w.remark1}
+                   AND 
+ 			</if>
+			<if test="w.remark2 != null">
+                    REMARK2=#{w.remark2}
+                   AND 
+ 			</if>
+			<if test="w.remark3 != null">
+                    REMARK3=#{w.remark3}
+                   AND 
+ 			</if>
+			<if test="w.postCode != null">
+                    POST_CODE=#{w.postCode}
+                   AND 
+ 			</if>
+			<if test="w.monthlyIncome != null">
+                    MONTHLY_INCOME=#{w.monthlyIncome}
+                   AND 
+ 			</if>
+			<if test="w.telephone != null">
+                    TELEPHONE=#{w.telephone}
+                   AND 
+ 			</if>
+			<if test="w.isFund != null">
+                    IS_FUND=#{w.isFund}
+                   AND 
+ 			</if>
+			<if test="w.careerType != null">
+                    CAREER_TYPE=#{w.careerType}
+                   AND 
+ 			</if>
+			<if test="w.ocrOrg != null">
+                    OCR_ORG=#{w.ocrOrg}
+                   AND 
+ 			</if>
+			<if test="w.ocrAddressZone != null">
+                    OCR_ADDRESS_ZONE=#{w.ocrAddressZone}
+                   AND 
+ 			</if>
+			<if test="w.confidence != null">
+                    CONFIDENCE=#{w.confidence}
+                    AND
+ 			</if>
+			<if test="w.distCode != null">
+                    DIST_CODE=#{w.distCode}
+                    AND
+ 			</if>
+ 			<if test="w.picHead != null">
+                    PIC_HEAD=#{w.picHead}
+                    AND
+ 			</if>
+ 			<if test="w.picCertFront != null">
+                    PIC_CERT_FRONT=#{w.picCertFront}
+                    AND
+ 			</if>
+ 			<if test="w.picCertBack != null">
+                    PIC_CERT_BACK=#{w.picCertBack}
+ 			</if>
+			</trim>
+		</where>
+	</update>
+
+	<delete id="delete" >
+		delete from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</delete>
+
+	<select id="count" parameterType="java.util.Map" resultType="int">
+		select count(1) from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</select>
+
+	<select id="selectOne"  resultMap="BaseResultMap">
+	  <include refid="Base_Select" />
+	</select>
+
+	<select id="selectList"  resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column" />
+		from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</select>
+	
+	<select id="queryConfidence"  resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column" />
+		from
+		<include refid="Table_Name" />
+		<where>
+			 USER_ID=#{userId}
+		</where>
+	</select>
+
+     <select id="selectForUpdate" resultMap="BaseResultMap" useCache="false">
+		 <include refid="Base_Select" />
+		for update
+	</select>
+	
+
+</mapper>

@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bpaas.bps.acc.mapper.AccEBookMapper">
+	<resultMap id="BaseResultMap" type="com.bpaas.bps.acc.po.AccEBookPo">
+		<id column="ID" property="id" />
+		<result column="USER_ID" property="userId" />
+		<result column="E_CARD_NO" property="eCardNo" />
+		<result column="E_ACCT_ORG" property="eAcctOrg" />
+		<result column="E_ACCT_STAT" property="eAcctStat" />
+		<result column="FRZ_STAT" property="frzStat" />
+		<result column="E_ACCT_CERT_LEVEL" property="eAcctCertLevel" />
+		<result column="CREATE_TIME" property="createTime" />
+		<result column="REMARK1" property="remark1" />
+		<result column="REMARK2" property="remark2" />
+	</resultMap>
+
+	<sql id="Table_Name">
+		T_ACC_E_BOOK
+	</sql>
+
+	<sql id="Base_Column">
+		ID,
+		USER_ID,
+		E_CARD_NO,
+		E_ACCT_ORG,
+		E_ACCT_STAT,
+		FRZ_STAT,
+		E_ACCT_CERT_LEVEL,
+		CREATE_TIME,
+		REMARK1,
+		REMARK2
+	</sql>
+
+	<sql id="Base_Where">
+		<trim suffixOverrides="AND">
+			<if test="id != null">
+				ID = #{id} AND
+			</if>
+			<if test="userId != null">
+				USER_ID = #{userId} AND
+			</if>
+			<if test="eCardNo != null">
+				E_CARD_NO = #{eCardNo} AND
+			</if>
+			<if test="eAcctOrg != null">
+				E_ACCT_ORG = #{eAcctOrg} AND
+			</if>
+			<if test="eAcctStat != null">
+				E_ACCT_STAT = #{eAcctStat} AND
+			</if>
+			<if test="frzStat != null">
+				FRZ_STAT = #{frzStat} AND
+			</if>
+			<if test="eAcctCertLevel != null">
+				E_ACCT_CERT_LEVEL = #{eAcctCertLevel} AND
+			</if>
+			<if test="createTime != null">
+				CREATE_TIME = #{createTime} AND
+			</if>
+			<if test="remark1 != null">
+				REMARK1 = #{remark1} AND
+			</if>
+			<if test="remark2 != null">
+				REMARK2 = #{remark2}
+			</if>
+		</trim>
+	</sql>
+
+	<insert id="insert">
+		insert into
+		<include refid="Table_Name" />
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				ID,
+			</if>
+			<if test="userId != null">
+				USER_ID,
+			</if>
+			<if test="eCardNo != null">
+				E_CARD_NO,
+			</if>
+			<if test="eAcctOrg != null">
+				E_ACCT_ORG,
+			</if>
+			<if test="eAcctStat != null">
+				E_ACCT_STAT,
+			</if>
+			<if test="frzStat != null">
+				FRZ_STAT,
+			</if>
+			<if test="eAcctCertLevel != null">
+				E_ACCT_CERT_LEVEL,
+			</if>
+			<if test="createTime != null">
+				CREATE_TIME,
+			</if>
+			<if test="remark1 != null">
+				REMARK1,
+			</if>
+			<if test="remark2 != null">
+				REMARK2,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				#{id},
+			</if>
+			<if test="userId != null">
+				#{userId},
+			</if>
+			<if test="eCardNo != null">
+				#{eCardNo},
+			</if>
+			<if test="eAcctOrg != null">
+				#{eAcctOrg},
+			</if>
+			<if test="eAcctStat != null">
+				#{eAcctStat},
+			</if>
+			<if test="frzStat != null">
+				#{frzStat},
+			</if>
+			<if test="eAcctCertLevel != null">
+				#{eAcctCertLevel},
+			</if>
+			<if test="createTime != null">
+				#{createTime},
+			</if>
+			<if test="remark1 != null">
+				#{remark1},
+			</if>
+			<if test="remark2 != null">
+				#{remark2},
+			</if>
+		</trim>
+	</insert>
+
+	<update id="update">
+		update
+		<include refid="Table_Name" />
+		<set>
+			<if test="userId != null">
+				USER_ID = #{userId},
+			</if>
+			<if test="eCardNo != null">
+				E_CARD_NO = #{eCardNo},
+			</if>
+			<if test="eAcctOrg != null">
+				E_ACCT_ORG = #{eAcctOrg},
+			</if>
+			<if test="eAcctStat != null">
+				E_ACCT_STAT = #{eAcctStat},
+			</if>
+			<if test="frzStat != null">
+				FRZ_STAT = #{frzStat},
+			</if>
+			<if test="eAcctCertLevel != null">
+				E_ACCT_CERT_LEVEL = #{eAcctCertLevel},
+			</if>
+			<if test="createTime != null">
+				CREATE_TIME = #{createTime},
+			</if>
+			<if test="remark1 != null">
+				REMARK1 = #{remark1},
+			</if>
+			<if test="remark2 != null">
+				REMARK2 = #{remark2},
+			</if>
+		</set>
+			where ID = #{id}
+	</update>
+	
+	
+	<update id="updateByEntity" >
+		UPDATE
+		<include refid="Table_Name" />
+		<set>
+			<if test="s.userId != null">
+				USER_ID = #{s.userId},
+			</if>
+			<if test="s.eCardNo != null">
+				E_CARD_NO = #{s.eCardNo},
+			</if>
+			<if test="s.eAcctOrg != null">
+				E_ACCT_ORG = #{s.eAcctOrg},
+			</if>
+			<if test="s.eAcctStat != null">
+				E_ACCT_STAT = #{s.eAcctStat},
+			</if>
+			<if test="s.frzStat != null">
+				FRZ_STAT = #{s.frzStat},
+			</if>
+			<if test="s.eAcctCertLevel != null">
+				E_ACCT_CERT_LEVEL = #{s.eAcctCertLevel},
+			</if>
+			<if test="s.createTime != null">
+				CREATE_TIME = #{s.createTime},
+			</if>
+			<if test="s.remark1 != null">
+				REMARK1 = #{s.remark1},
+			</if>
+			<if test="s.remark2 != null">
+				REMARK2 = #{s.remark2},
+			</if>
+		</set>
+		<where> 
+			<trim prefix="(" suffix=")" suffixOverrides="AND">
+				<if test="w.id != null">
+					ID = #{w.id} AND
+				</if>
+				<if test="w.userId != null">
+					USER_ID = #{w.userId} AND
+				</if>
+				<if test="w.eCardNo != null">
+					E_CARD_NO = #{w.eCardNo} AND
+				</if>
+				<if test="w.eAcctOrg != null">
+					E_ACCT_ORG = #{w.eAcctOrg} AND
+				</if>
+				<if test="w.eAcctStat != null">
+					E_ACCT_STAT = #{w.eAcctStat} AND
+				</if>
+				<if test="w.frzStat != null">
+					FRZ_STAT = #{w.frzStat} AND
+				</if>
+				<if test="w.eAcctCertLevel != null">
+					E_ACCT_CERT_LEVEL = #{w.eAcctCertLevel} AND
+				</if>
+				<if test="w.createTime != null">
+					CREATE_TIME = #{w.createTime} AND
+				</if>
+				<if test="w.remark1 != null">
+					REMARK1 = #{w.remark1} AND
+				</if>
+				<if test="w.remark2 != null">
+					REMARK2 = #{w.remark2}
+				</if>
+			</trim>
+		</where>
+	</update>
+	
+	<sql id="Base_Select">
+			select
+		<include refid="Base_Column" />
+		from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</sql>
+	
+	<delete id="delete" >
+		delete from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</delete>
+
+	<select id="count" parameterType="java.util.Map" resultType="int">
+		select count(1) from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</select>
+
+	<select id="selectOne"  resultMap="BaseResultMap">
+	  <include refid="Base_Select" />
+	</select>
+
+	<select id="selectList"  resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column" />
+		from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</select>
+	
+	<select id="queryConfidence"  resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column" />
+		from
+		<include refid="Table_Name" />
+		<where>
+			 USER_ID=#{userId}
+		</where>
+	</select>
+
+     <select id="selectForUpdate" resultMap="BaseResultMap" useCache="false">
+		 <include refid="Base_Select" />
+		for update
+	</select>
+	
+	
+</mapper>

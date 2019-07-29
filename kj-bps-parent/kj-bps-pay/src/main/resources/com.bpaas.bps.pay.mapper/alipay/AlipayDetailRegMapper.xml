@@ -1,0 +1,638 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bpaas.bps.pay.mapper.alipay.AlipayDetailRegMapper" >
+  <resultMap id="BaseResultMap" type="com.bpaas.bps.pay.po.alipay.AlipayDetailRegPo" >
+    <result column="id" property="id" jdbcType="VARCHAR" />
+    <result column="bill_date" property="billDate" jdbcType="VARCHAR" />
+    <result column="trade_no" property="tradeNo" jdbcType="VARCHAR" />
+    <result column="out_trade_no" property="outTradeNo" jdbcType="VARCHAR" />
+    <result column="tran_type" property="tranType" jdbcType="VARCHAR" />
+    <result column="body" property="body" jdbcType="VARCHAR" />
+    <result column="gmt_create" property="gmtCreate" jdbcType="TIMESTAMP" />
+    <result column="gmt_close" property="gmtClose" jdbcType="TIMESTAMP" />
+    <result column="store_id" property="storeId" jdbcType="VARCHAR" />
+    <result column="store_name" property="storeName" jdbcType="VARCHAR" />
+    <result column="operator_id" property="operatorId" jdbcType="VARCHAR" />
+    <result column="terminal_id" property="terminalId" jdbcType="VARCHAR" />
+    <result column="acctno" property="acctno" jdbcType="VARCHAR" />
+    <result column="total_amount" property="totalAmount" jdbcType="DECIMAL" />
+    <result column="receipt_amount" property="receiptAmount" jdbcType="DECIMAL" />
+    <result column="red_amount" property="redAmount" jdbcType="DECIMAL" />
+    <result column="point_amount" property="pointAmount" jdbcType="DECIMAL" />
+    <result column="zfb_discount_amount" property="zfbDiscountAmount" jdbcType="DECIMAL" />
+    <result column="bus_discount_amount" property="busDiscountAmount" jdbcType="DECIMAL" />
+    <result column="ticket_amount" property="ticketAmount" jdbcType="DECIMAL" />
+    <result column="ticket_name" property="ticketName" jdbcType="VARCHAR" />
+    <result column="bus_red_amount" property="busRedAmount" jdbcType="DECIMAL" />
+    <result column="card_amount" property="cardAmount" jdbcType="DECIMAL" />
+    <result column="refund_id" property="refundId" jdbcType="VARCHAR" />
+    <result column="svc_amount" property="svcAmount" jdbcType="DECIMAL" />
+    <result column="bft_amount" property="bftAmount" jdbcType="DECIMAL" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="chkflag" property="chkflag" jdbcType="CHAR" />
+    <result column="chktime" property="chktime" jdbcType="TIMESTAMP" />
+    <result column="remark1" property="remark1" jdbcType="VARCHAR" />
+    <result column="remark2" property="remark2" jdbcType="VARCHAR" />
+  </resultMap>
+  
+	<sql id="Base_Column" >
+	    id, bill_date, trade_no, out_trade_no, tran_type, body, gmt_create, gmt_close, store_id, 
+	    store_name, operator_id, terminal_id, acctno, total_amount, receipt_amount, red_amount, 
+	    point_amount, zfb_discount_amount, bus_discount_amount, ticket_amount, ticket_name, 
+	    bus_red_amount, card_amount, refund_id, svc_amount, bft_amount, remark, chkflag, 
+	    chktime, remark1, remark2
+  	</sql>
+  
+  
+  	<sql id="Table_Name">
+		t_alipay_detail_reg
+	</sql>
+	
+	
+	<sql id="Base_Where">
+		<trim suffixOverrides="AND">
+		<if test="id != null" >
+        id = #{id}
+	           AND 
+      </if>
+      <if test="billDate != null" >
+        bill_date = #{billDate}
+	           AND 
+      </if>
+      <if test="tradeNo != null" >
+        trade_no = #{tradeNo}
+	           AND 
+      </if>
+      <if test="outTradeNo != null" >
+        out_trade_no = #{outTradeNo}
+	           AND 
+      </if>
+      <if test="tranType != null" >
+        tran_type = #{tranType}
+	           AND 
+      </if>
+      <if test="body != null" >
+        body = #{body}
+	           AND 
+      </if>
+      <if test="gmtCreate != null" >
+        gmt_create = #{gmtCreate}
+	           AND 
+      </if>
+      <if test="gmtClose != null" >
+        gmt_close = #{gmtClose}
+	           AND 
+      </if>
+      <if test="storeId != null" >
+        store_id = #{storeId}
+	           AND 
+      </if>
+      <if test="storeName != null" >
+        store_name = #{storeName}
+	           AND 
+      </if>
+      <if test="operatorId != null" >
+        operator_id = #{operatorId}
+	           AND 
+      </if>
+      <if test="terminalId != null" >
+        terminal_id = #{terminalId}
+	           AND 
+      </if>
+      <if test="acctno != null" >
+        acctno = #{acctno}
+	           AND 
+      </if>
+      <if test="totalAmount != null" >
+        total_amount = #{totalAmount}
+	           AND 
+      </if>
+      <if test="receiptAmount != null" >
+        receipt_amount = #{receiptAmount}
+	           AND 
+      </if>
+      <if test="redAmount != null" >
+        red_amount = #{redAmount}
+	           AND 
+      </if>
+      <if test="pointAmount != null" >
+        point_amount = #{pointAmount}
+	           AND 
+      </if>
+      <if test="zfbDiscountAmount != null" >
+        zfb_discount_amount = #{zfbDiscountAmount}
+	           AND 
+      </if>
+      <if test="busDiscountAmount != null" >
+        bus_discount_amount = #{busDiscountAmount}
+	           AND 
+      </if>
+      <if test="ticketAmount != null" >
+        ticket_amount = #{ticketAmount}
+	           AND 
+      </if>
+      <if test="ticketName != null" >
+        ticket_name = #{ticketName}
+	           AND 
+      </if>
+      <if test="busRedAmount != null" >
+        bus_red_amount = #{busRedAmount}
+	           AND 
+      </if>
+      <if test="cardAmount != null" >
+        card_amount = #{cardAmount}
+	           AND 
+      </if>
+      <if test="refundId != null" >
+        refund_id = #{refundId}
+	           AND 
+      </if>
+      <if test="svcAmount != null" >
+        svc_amount = #{svcAmount}
+	           AND 
+      </if>
+      <if test="bftAmount != null" >
+        bft_amount = #{bftAmount}
+	           AND 
+      </if>
+      <if test="remark != null" >
+        remark = #{remark}
+	           AND 
+      </if>
+      <if test="chkflag != null" >
+        chkflag = #{chkflag}
+	           AND 
+      </if>
+      <if test="chktime != null" >
+        chktime = #{chktime}
+	           AND 
+      </if>
+      <if test="remark1 != null" >
+        remark1 = #{remark1}
+	           AND 
+      </if>
+      <if test="remark2 != null" >
+        remark2 = #{remark2}
+      </if>
+      </trim>
+	</sql>
+  
+  
+  	<insert id="insert" >
+    insert into 
+    <include refid="Table_Name" />
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="billDate != null" >
+        bill_date,
+      </if>
+      <if test="tradeNo != null" >
+        trade_no,
+      </if>
+      <if test="outTradeNo != null" >
+        out_trade_no,
+      </if>
+      <if test="tranType != null" >
+        tran_type,
+      </if>
+      <if test="body != null" >
+        body,
+      </if>
+      <if test="gmtCreate != null" >
+        gmt_create,
+      </if>
+      <if test="gmtClose != null" >
+        gmt_close,
+      </if>
+      <if test="storeId != null" >
+        store_id,
+      </if>
+      <if test="storeName != null" >
+        store_name,
+      </if>
+      <if test="operatorId != null" >
+        operator_id,
+      </if>
+      <if test="terminalId != null" >
+        terminal_id,
+      </if>
+      <if test="acctno != null" >
+        acctno,
+      </if>
+      <if test="totalAmount != null" >
+        total_amount,
+      </if>
+      <if test="receiptAmount != null" >
+        receipt_amount,
+      </if>
+      <if test="redAmount != null" >
+        red_amount,
+      </if>
+      <if test="pointAmount != null" >
+        point_amount,
+      </if>
+      <if test="zfbDiscountAmount != null" >
+        zfb_discount_amount,
+      </if>
+      <if test="busDiscountAmount != null" >
+        bus_discount_amount,
+      </if>
+      <if test="ticketAmount != null" >
+        ticket_amount,
+      </if>
+      <if test="ticketName != null" >
+        ticket_name,
+      </if>
+      <if test="busRedAmount != null" >
+        bus_red_amount,
+      </if>
+      <if test="cardAmount != null" >
+        card_amount,
+      </if>
+      <if test="refundId != null" >
+        refund_id,
+      </if>
+      <if test="svcAmount != null" >
+        svc_amount,
+      </if>
+      <if test="bftAmount != null" >
+        bft_amount,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+      <if test="chkflag != null" >
+        chkflag,
+      </if>
+      <if test="chktime != null" >
+        chktime,
+      </if>
+      <if test="remark1 != null" >
+        remark1,
+      </if>
+      <if test="remark2 != null" >
+        remark2,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id},
+      </if>
+      <if test="billDate != null" >
+        #{billDate},
+      </if>
+      <if test="tradeNo != null" >
+        #{tradeNo},
+      </if>
+      <if test="outTradeNo != null" >
+        #{outTradeNo},
+      </if>
+      <if test="tranType != null" >
+        #{tranType},
+      </if>
+      <if test="body != null" >
+        #{body},
+      </if>
+      <if test="gmtCreate != null" >
+        #{gmtCreate},
+      </if>
+      <if test="gmtClose != null" >
+        #{gmtClose},
+      </if>
+      <if test="storeId != null" >
+        #{storeId},
+      </if>
+      <if test="storeName != null" >
+        #{storeName},
+      </if>
+      <if test="operatorId != null" >
+        #{operatorId},
+      </if>
+      <if test="terminalId != null" >
+        #{terminalId},
+      </if>
+      <if test="acctno != null" >
+        #{acctno},
+      </if>
+      <if test="totalAmount != null" >
+        #{totalAmount},
+      </if>
+      <if test="receiptAmount != null" >
+        #{receiptAmount},
+      </if>
+      <if test="redAmount != null" >
+        #{redAmount},
+      </if>
+      <if test="pointAmount != null" >
+        #{pointAmount},
+      </if>
+      <if test="zfbDiscountAmount != null" >
+        #{zfbDiscountAmount},
+      </if>
+      <if test="busDiscountAmount != null" >
+        #{busDiscountAmount},
+      </if>
+      <if test="ticketAmount != null" >
+        #{ticketAmount},
+      </if>
+      <if test="ticketName != null" >
+        #{ticketName},
+      </if>
+      <if test="busRedAmount != null" >
+        #{busRedAmount},
+      </if>
+      <if test="cardAmount != null" >
+        #{cardAmount},
+      </if>
+      <if test="refundId != null" >
+        #{refundId},
+      </if>
+      <if test="svcAmount != null" >
+        #{svcAmount},
+      </if>
+      <if test="bftAmount != null" >
+        #{bftAmount},
+      </if>
+      <if test="remark != null" >
+        #{remark},
+      </if>
+      <if test="chkflag != null" >
+        #{chkflag},
+      </if>
+      <if test="chktime != null" >
+        #{chktime},
+      </if>
+      <if test="remark1 != null" >
+        #{remark1},
+      </if>
+      <if test="remark2 != null" >
+        #{remark2},
+      </if>
+    </trim>
+  </insert>
+  
+  
+   <update id="updateByEntity">
+    update t
+    <include refid="Table_Name" />
+    <set >
+      <if test="s.billDate != null" >
+        bill_date = #{s.billDate},
+      </if>
+      <if test="s.tradeNo != null" >
+        trade_no = #{s.tradeNo},
+      </if>
+      <if test="s.outTradeNo != null" >
+        out_trade_no = #{s.outTradeNo},
+      </if>
+      <if test="s.tranType != null" >
+        tran_type = #{s.tranType},
+      </if>
+      <if test="s.body != null" >
+        body = #{s.body},
+      </if>
+      <if test="s.gmtCreate != null" >
+        gmt_create = #{s.gmtCreate},
+      </if>
+      <if test="s.gmtClose != null" >
+        gmt_close = #{s.gmtClose},
+      </if>
+      <if test="s.storeId != null" >
+        store_id = #{s.storeId},
+      </if>
+      <if test="s.storeName != null" >
+        store_name = #{s.storeName},
+      </if>
+      <if test="s.operatorId != null" >
+        operator_id = #{s.operatorId},
+      </if>
+      <if test="s.terminalId != null" >
+        terminal_id = #{s.terminalId},
+      </if>
+      <if test="s.acctno != null" >
+        acctno = #{s.acctno},
+      </if>
+      <if test="s.totalAmount != null" >
+        total_amount = #{s.totalAmount},
+      </if>
+      <if test="s.receiptAmount != null" >
+        receipt_amount = #{s.receiptAmount},
+      </if>
+      <if test="s.redAmount != null" >
+        red_amount = #{s.redAmount},
+      </if>
+      <if test="s.pointAmount != null" >
+        point_amount = #{s.pointAmount},
+      </if>
+      <if test="s.zfbDiscountAmount != null" >
+        zfb_discount_amount = #{s.zfbDiscountAmount},
+      </if>
+      <if test="s.busDiscountAmount != null" >
+        bus_discount_amount = #{s.busDiscountAmount},
+      </if>
+      <if test="s.ticketAmount != null" >
+        ticket_amount = #{s.ticketAmount},
+      </if>
+      <if test="s.ticketName != null" >
+        ticket_name = #{s.ticketName},
+      </if>
+      <if test="s.busRedAmount != null" >
+        bus_red_amount = #{s.busRedAmount},
+      </if>
+      <if test="s.cardAmount != null" >
+        card_amount = #{s.cardAmount},
+      </if>
+      <if test="s.refundId != null" >
+        refund_id = #{s.refundId},
+      </if>
+      <if test="s.svcAmount != null" >
+        svc_amount = #{s.svcAmount},
+      </if>
+      <if test="s.bftAmount != null" >
+        bft_amount = #{s.bftAmount},
+      </if>
+      <if test="s.remark != null" >
+        remark = #{s.remark},
+      </if>
+      <if test="s.chkflag != null" >
+        chkflag = #{s.chkflag},
+      </if>
+      <if test="s.chktime != null" >
+        chktime = #{s.chktime},
+      </if>
+      <if test="s.remark1 != null" >
+        remark1 = #{s.remark1},
+      </if>
+      <if test="s.remark2 != null" >
+        remark2 = #{s.remark2},
+      </if>
+    </set>
+   <where> 
+		<trim prefix="(" suffix=")" suffixOverrides="AND">
+  		 <if test="w.id != null" >
+        	id = #{w.id}
+	           AND 
+      	</if>
+      <if test="w.billDate != null" >
+        bill_date = #{w.billDate}
+	           AND 
+      </if>
+      <if test="w.tradeNo != null" >
+        trade_no = #{w.tradeNo}
+	           AND 
+      </if>
+      <if test="w.outTradeNo != null" >
+        out_trade_no = #{w.outTradeNo}
+	           AND 
+      </if>
+      <if test="w.tranType != null" >
+        tran_type = #{w.tranType}
+	           AND 
+      </if>
+      <if test="w.body != null" >
+        body = #{w.body}
+	           AND 
+      </if>
+      <if test="w.gmtCreate != null" >
+        gmt_create = #{w.gmtCreate}
+	           AND 
+      </if>
+      <if test="w.gmtClose != null" >
+        gmt_close = #{w.gmtClose}
+	           AND 
+      </if>
+      <if test="w.storeId != null" >
+        store_id = #{w.storeId}
+	           AND 
+      </if>
+      <if test="w.storeName != null" >
+        store_name = #{w.storeName}
+	           AND 
+      </if>
+      <if test="w.operatorId != null" >
+        operator_id = #{w.operatorId}
+	           AND 
+      </if>
+      <if test="w.terminalId != null" >
+        terminal_id = #{w.terminalId}
+	           AND 
+      </if>
+      <if test="w.acctno != null" >
+        acctno = #{w.acctno}
+	           AND 
+      </if>
+      <if test="w.totalAmount != null" >
+        total_amount = #{w.totalAmount}
+	           AND 
+      </if>
+      <if test="w.receiptAmount != null" >
+        receipt_amount = #{w.receiptAmount}
+	           AND 
+      </if>
+      <if test="w.redAmount != null" >
+        red_amount = #{w.redAmount}
+	           AND 
+      </if>
+      <if test="w.pointAmount != null" >
+        point_amount = #{w.pointAmount}
+	           AND 
+      </if>
+      <if test="w.zfbDiscountAmount != null" >
+        zfb_discount_amount = #{w.zfbDiscountAmount}
+	           AND 
+      </if>
+      <if test="w.busDiscountAmount != null" >
+        bus_discount_amount = #{w.busDiscountAmount}
+	           AND 
+      </if>
+      <if test="w.ticketAmount != null" >
+        ticket_amount = #{w.ticketAmount}
+	           AND 
+      </if>
+      <if test="w.ticketName != null" >
+        ticket_name = #{w.ticketName}
+	           AND 
+      </if>
+      <if test="w.busRedAmount != null" >
+        bus_red_amount = #{w.busRedAmount}
+	           AND 
+      </if>
+      <if test="w.cardAmount != null" >
+        card_amount = #{w.cardAmount}
+	           AND 
+      </if>
+      <if test="w.refundId != null" >
+        refund_id = #{w.refundId}
+	           AND 
+      </if>
+      <if test="w.svcAmount != null" >
+        svc_amount = #{w.svcAmount}
+	           AND 
+      </if>
+      <if test="w.bftAmount != null" >
+        bft_amount = #{w.bftAmount}
+	           AND 
+      </if>
+      <if test="w.remark != null" >
+        remark = #{w.remark}
+	           AND 
+      </if>
+      <if test="w.chkflag != null" >
+        chkflag = #{w.chkflag}
+	           AND 
+      </if>
+      <if test="w.chktime != null" >
+        chktime = #{w.chktime}
+	           AND 
+      </if>
+      <if test="w.remark1 != null" >
+        remark1 = #{w.remark1}
+	           AND 
+      </if>
+      <if test="w.remark2 != null" >
+        remark2 = #{w.remark2}
+      </if>
+   </trim>
+	</where>
+  </update>
+  
+  <delete id="delete" >
+		delete from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</delete>
+
+	<select id="count" parameterType="java.util.Map" resultType="int">
+		select count(1) from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</select>
+
+	<select id="selectOne"  resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column" />
+		from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</select>
+
+	<select id="selectList"  resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column" />
+		from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+		<include refid="com.fPaaS1.dipper.mybatis.common.Comm_Order_By"/>
+	</select>
+  
+</mapper>

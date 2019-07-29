@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bpaas.bps.user.mapper.UsrSignMapper">
+	<resultMap id="BaseResultMap" type="com.bpaas.bps.user.po.UsrSignPo">
+		<id column="id" property="wuid" />
+		<result column="user_id" property="userId" />
+		<result column="sign_time" property="signTime" />
+		<result column="pot_bal" property="potBal" />
+		<result column="continue_days" property="continueDays" />
+		<result column="reserved_field" property="reservedField" />
+		<result column="create_time" property="createTime" />
+	</resultMap>
+
+	<sql id="Table_Name">
+		t_usr_sign
+	</sql>
+	<sql id="Base_Column">
+		id,
+		user_id,
+		sign_time,
+		pot_bal,
+		continue_days,
+		reserved_field,
+		create_time
+	</sql>
+
+	<sql id="Base_Where">
+		<trim suffixOverrides="AND">
+			<if test="wuid != null">
+				id= #{wuid}
+				AND
+			</if>
+			<if test="userId != null">
+				user_id= #{userId}
+				AND
+			</if>
+			<if test="signTime != null">
+				sign_time= #{signTime}
+				AND
+			</if>
+			<if test="potBal != null">
+				pot_bal= #{potBal}
+				AND
+			</if>
+			<if test="continueDays != null">
+				continue_days= #{continueDays}
+				AND
+			</if>
+			<if test="reservedField != null">
+				date_format(create_time, '%Y%m%d') = #{reservedField}
+				AND
+			</if>
+			<if test="createTime != null">
+				create_time= #{createTime}
+				AND
+			</if>
+		</trim>
+	</sql>
+
+	<insert id="insert">
+		insert into
+		<include refid="Table_Name" />
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="wuid != null">
+				id,
+			</if>
+			<if test="userId != null">
+				user_id,
+			</if>
+			<if test="signTime != null">
+				sign_time,
+			</if>
+			<if test="potBal != null">
+				pot_bal,
+			</if>
+			<if test="continueDays != null">
+				continue_days,
+			</if>
+			<if test="reservedField != null">
+				reserved_field,
+			</if>
+			<if test="createTime != null">
+				create_time,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="wuid != null">
+				#{wuid},
+			</if>
+			<if test="userId != null">
+				#{userId},
+			</if>
+			<if test="signTime != null">
+				#{signTime},
+			</if>
+			<if test="potBal != null">
+				#{potBal},
+			</if>
+			<if test="continueDays != null">
+				#{continueDays},
+			</if>
+			<if test="reservedField != null">
+				#{reservedField},
+			</if>
+			<if test="createTime != null">
+				#{createTime},
+			</if>
+		</trim>
+	</insert>
+	
+	<delete id="delete" >
+		delete from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</delete>
+	
+	<select id="selectOne"  resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column" />
+		from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</select>
+
+	<select id="selectList"  resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column" />
+		from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+		<include refid="Order_by_SignTime_Desc"/>
+	</select>
+	
+	<select id="selectForUpdate" resultMap="BaseResultMap" useCache="false">
+		select
+		<include refid="Base_Column" />
+		from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+		for update
+	</select>
+	<sql id="Order_by_SignTime_Desc">
+		order by sign_time desc
+	</sql>
+</mapper>

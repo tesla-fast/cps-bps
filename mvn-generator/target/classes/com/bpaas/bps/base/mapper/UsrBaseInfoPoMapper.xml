@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bpaas.bps.base.mapper.UsrBaseInfoPoMapper" >
+  <resultMap id="BaseResultMap" type="com.bpaas.bps.base.po.gnr.UsrBaseInfoPo" >
+    <id column="ID" property="id" jdbcType="VARCHAR" />
+    <result column="USER_ID" property="userId" jdbcType="VARCHAR" />
+    <result column="CERT_TYPE" property="certType" jdbcType="VARCHAR" />
+    <result column="CERT_NO" property="certNo" jdbcType="VARCHAR" />
+    <result column="CERT_NAME" property="certName" jdbcType="VARCHAR" />
+    <result column="CERT_EXP_FLAG" property="certExpFlag" jdbcType="CHAR" />
+    <result column="CERT_EXP_BEGIN" property="certExpBegin" jdbcType="DATE" />
+    <result column="CERT_EXP_END" property="certExpEnd" jdbcType="DATE" />
+    <result column="SEX" property="sex" jdbcType="CHAR" />
+    <result column="BIRTHDAY" property="birthday" jdbcType="DATE" />
+    <result column="COUNTRY" property="country" jdbcType="CHAR" />
+    <result column="NATION" property="nation" jdbcType="CHAR" />
+    <result column="BACKGROUND" property="background" jdbcType="CHAR" />
+    <result column="RELIGION" property="religion" jdbcType="CHAR" />
+    <result column="MARRIAGE" property="marriage" jdbcType="CHAR" />
+    <result column="EDU_BG" property="eduBg" jdbcType="CHAR" />
+    <result column="JOB" property="job" jdbcType="CHAR" />
+    <result column="EMAIL" property="email" jdbcType="VARCHAR" />
+    <result column="QQ" property="qq" jdbcType="VARCHAR" />
+    <result column="WEIXIN" property="weixin" jdbcType="VARCHAR" />
+    <result column="SIGN" property="sign" jdbcType="VARCHAR" />
+    <result column="PRE_INFO" property="preInfo" jdbcType="VARCHAR" />
+    <result column="ECIF_CUST_NO" property="ecifCustNo" jdbcType="VARCHAR" />
+    <result column="LAST_UPDATE_TIME" property="lastUpdateTime" jdbcType="TIMESTAMP" />
+    <result column="REMARK1" property="remark1" jdbcType="VARCHAR" />
+    <result column="REMARK2" property="remark2" jdbcType="VARCHAR" />
+    <result column="REMARK3" property="remark3" jdbcType="VARCHAR" />
+    <result column="POST_CODE" property="postCode" jdbcType="VARCHAR" />
+    <result column="MONTHLY_INCOME" property="monthlyIncome" jdbcType="VARCHAR" />
+    <result column="TELEPHONE" property="telephone" jdbcType="VARCHAR" />
+    <result column="ocr_org" property="ocrOrg" jdbcType="VARCHAR" />
+    <result column="ocr_address_zone" property="ocrAddressZone" jdbcType="VARCHAR" />
+    <result column="confidence" property="confidence" jdbcType="VARCHAR" />
+    <result column="is_fund" property="isFund" jdbcType="VARCHAR" />
+    <result column="career_type" property="careerType" jdbcType="VARCHAR" />
+    <result column="DIST_CODE" property="distCode" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.bpaas.bps.base.po.gnr.UsrBaseInfoPoWithBLOBs" extends="BaseResultMap" >
+    <result column="PIC_HEAD" property="picHead" jdbcType="LONGVARCHAR" />
+    <result column="PIC_CERT_FRONT" property="picCertFront" jdbcType="LONGVARCHAR" />
+    <result column="PIC_CERT_BACK" property="picCertBack" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ID, USER_ID, CERT_TYPE, CERT_NO, CERT_NAME, CERT_EXP_FLAG, CERT_EXP_BEGIN, CERT_EXP_END, 
+    SEX, BIRTHDAY, COUNTRY, NATION, BACKGROUND, RELIGION, MARRIAGE, EDU_BG, JOB, EMAIL, 
+    QQ, WEIXIN, SIGN, PRE_INFO, ECIF_CUST_NO, LAST_UPDATE_TIME, REMARK1, REMARK2, REMARK3, 
+    POST_CODE, MONTHLY_INCOME, TELEPHONE, ocr_org, ocr_address_zone, confidence, is_fund, 
+    career_type, DIST_CODE
+  </sql>
+  <sql id="Blob_Column_List" >
+    PIC_HEAD, PIC_CERT_FRONT, PIC_CERT_BACK
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from t_usr_base_info
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from t_usr_base_info
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.bpaas.bps.base.po.gnr.UsrBaseInfoPoWithBLOBs" >
+    insert into t_usr_base_info (ID, USER_ID, CERT_TYPE, 
+      CERT_NO, CERT_NAME, CERT_EXP_FLAG, 
+      CERT_EXP_BEGIN, CERT_EXP_END, SEX, 
+      BIRTHDAY, COUNTRY, NATION, BACKGROUND, 
+      RELIGION, MARRIAGE, EDU_BG, JOB, 
+      EMAIL, QQ, WEIXIN, 
+      SIGN, PRE_INFO, ECIF_CUST_NO, 
+      LAST_UPDATE_TIME, REMARK1, REMARK2, 
+      REMARK3, POST_CODE, MONTHLY_INCOME, 
+      TELEPHONE, ocr_org, ocr_address_zone, 
+      confidence, is_fund, career_type, 
+      DIST_CODE, PIC_HEAD, PIC_CERT_FRONT, 
+      PIC_CERT_BACK)
+    values (#{id,jdbcType=VARCHAR}, #{userId,jdbcType=VARCHAR}, #{certType,jdbcType=VARCHAR}, 
+      #{certNo,jdbcType=VARCHAR}, #{certName,jdbcType=VARCHAR}, #{certExpFlag,jdbcType=CHAR}, 
+      #{certExpBegin,jdbcType=DATE}, #{certExpEnd,jdbcType=DATE}, #{sex,jdbcType=CHAR}, 
+      #{birthday,jdbcType=DATE}, #{country,jdbcType=CHAR}, #{nation,jdbcType=CHAR}, #{background,jdbcType=CHAR}, 
+      #{religion,jdbcType=CHAR}, #{marriage,jdbcType=CHAR}, #{eduBg,jdbcType=CHAR}, #{job,jdbcType=CHAR}, 
+      #{email,jdbcType=VARCHAR}, #{qq,jdbcType=VARCHAR}, #{weixin,jdbcType=VARCHAR}, 
+      #{sign,jdbcType=VARCHAR}, #{preInfo,jdbcType=VARCHAR}, #{ecifCustNo,jdbcType=VARCHAR}, 
+      #{lastUpdateTime,jdbcType=TIMESTAMP}, #{remark1,jdbcType=VARCHAR}, #{remark2,jdbcType=VARCHAR}, 
+      #{remark3,jdbcType=VARCHAR}, #{postCode,jdbcType=VARCHAR}, #{monthlyIncome,jdbcType=VARCHAR}, 
+      #{telephone,jdbcType=VARCHAR}, #{ocrOrg,jdbcType=VARCHAR}, #{ocrAddressZone,jdbcType=VARCHAR}, 
+      #{confidence,jdbcType=VARCHAR}, #{isFund,jdbcType=VARCHAR}, #{careerType,jdbcType=VARCHAR}, 
+      #{distCode,jdbcType=VARCHAR}, #{picHead,jdbcType=LONGVARCHAR}, #{picCertFront,jdbcType=LONGVARCHAR}, 
+      #{picCertBack,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.bpaas.bps.base.po.gnr.UsrBaseInfoPoWithBLOBs" >
+    insert into t_usr_base_info
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="userId != null" >
+        USER_ID,
+      </if>
+      <if test="certType != null" >
+        CERT_TYPE,
+      </if>
+      <if test="certNo != null" >
+        CERT_NO,
+      </if>
+      <if test="certName != null" >
+        CERT_NAME,
+      </if>
+      <if test="certExpFlag != null" >
+        CERT_EXP_FLAG,
+      </if>
+      <if test="certExpBegin != null" >
+        CERT_EXP_BEGIN,
+      </if>
+      <if test="certExpEnd != null" >
+        CERT_EXP_END,
+      </if>
+      <if test="sex != null" >
+        SEX,
+      </if>
+      <if test="birthday != null" >
+        BIRTHDAY,
+      </if>
+      <if test="country != null" >
+        COUNTRY,
+      </if>
+      <if test="nation != null" >
+        NATION,
+      </if>
+      <if test="background != null" >
+        BACKGROUND,
+      </if>
+      <if test="religion != null" >
+        RELIGION,
+      </if>
+      <if test="marriage != null" >
+        MARRIAGE,
+      </if>
+      <if test="eduBg != null" >
+        EDU_BG,
+      </if>
+      <if test="job != null" >
+        JOB,
+      </if>
+      <if test="email != null" >
+        EMAIL,
+      </if>
+      <if test="qq != null" >
+        QQ,
+      </if>
+      <if test="weixin != null" >
+        WEIXIN,
+      </if>
+      <if test="sign != null" >
+        SIGN,
+      </if>
+      <if test="preInfo != null" >
+        PRE_INFO,
+      </if>
+      <if test="ecifCustNo != null" >
+        ECIF_CUST_NO,
+      </if>
+      <if test="lastUpdateTime != null" >
+        LAST_UPDATE_TIME,
+      </if>
+      <if test="remark1 != null" >
+        REMARK1,
+      </if>
+      <if test="remark2 != null" >
+        REMARK2,
+      </if>
+      <if test="remark3 != null" >
+        REMARK3,
+      </if>
+      <if test="postCode != null" >
+        POST_CODE,
+      </if>
+      <if test="monthlyIncome != null" >
+        MONTHLY_INCOME,
+      </if>
+      <if test="telephone != null" >
+        TELEPHONE,
+      </if>
+      <if test="ocrOrg != null" >
+        ocr_org,
+      </if>
+      <if test="ocrAddressZone != null" >
+        ocr_address_zone,
+      </if>
+      <if test="confidence != null" >
+        confidence,
+      </if>
+      <if test="isFund != null" >
+        is_fund,
+      </if>
+      <if test="careerType != null" >
+        career_type,
+      </if>
+      <if test="distCode != null" >
+        DIST_CODE,
+      </if>
+      <if test="picHead != null" >
+        PIC_HEAD,
+      </if>
+      <if test="picCertFront != null" >
+        PIC_CERT_FRONT,
+      </if>
+      <if test="picCertBack != null" >
+        PIC_CERT_BACK,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="certType != null" >
+        #{certType,jdbcType=VARCHAR},
+      </if>
+      <if test="certNo != null" >
+        #{certNo,jdbcType=VARCHAR},
+      </if>
+      <if test="certName != null" >
+        #{certName,jdbcType=VARCHAR},
+      </if>
+      <if test="certExpFlag != null" >
+        #{certExpFlag,jdbcType=CHAR},
+      </if>
+      <if test="certExpBegin != null" >
+        #{certExpBegin,jdbcType=DATE},
+      </if>
+      <if test="certExpEnd != null" >
+        #{certExpEnd,jdbcType=DATE},
+      </if>
+      <if test="sex != null" >
+        #{sex,jdbcType=CHAR},
+      </if>
+      <if test="birthday != null" >
+        #{birthday,jdbcType=DATE},
+      </if>
+      <if test="country != null" >
+        #{country,jdbcType=CHAR},
+      </if>
+      <if test="nation != null" >
+        #{nation,jdbcType=CHAR},
+      </if>
+      <if test="background != null" >
+        #{background,jdbcType=CHAR},
+      </if>
+      <if test="religion != null" >
+        #{religion,jdbcType=CHAR},
+      </if>
+      <if test="marriage != null" >
+        #{marriage,jdbcType=CHAR},
+      </if>
+      <if test="eduBg != null" >
+        #{eduBg,jdbcType=CHAR},
+      </if>
+      <if test="job != null" >
+        #{job,jdbcType=CHAR},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="qq != null" >
+        #{qq,jdbcType=VARCHAR},
+      </if>
+      <if test="weixin != null" >
+        #{weixin,jdbcType=VARCHAR},
+      </if>
+      <if test="sign != null" >
+        #{sign,jdbcType=VARCHAR},
+      </if>
+      <if test="preInfo != null" >
+        #{preInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="ecifCustNo != null" >
+        #{ecifCustNo,jdbcType=VARCHAR},
+      </if>
+      <if test="lastUpdateTime != null" >
+        #{lastUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remark1 != null" >
+        #{remark1,jdbcType=VARCHAR},
+      </if>
+      <if test="remark2 != null" >
+        #{remark2,jdbcType=VARCHAR},
+      </if>
+      <if test="remark3 != null" >
+        #{remark3,jdbcType=VARCHAR},
+      </if>
+      <if test="postCode != null" >
+        #{postCode,jdbcType=VARCHAR},
+      </if>
+      <if test="monthlyIncome != null" >
+        #{monthlyIncome,jdbcType=VARCHAR},
+      </if>
+      <if test="telephone != null" >
+        #{telephone,jdbcType=VARCHAR},
+      </if>
+      <if test="ocrOrg != null" >
+        #{ocrOrg,jdbcType=VARCHAR},
+      </if>
+      <if test="ocrAddressZone != null" >
+        #{ocrAddressZone,jdbcType=VARCHAR},
+      </if>
+      <if test="confidence != null" >
+        #{confidence,jdbcType=VARCHAR},
+      </if>
+      <if test="isFund != null" >
+        #{isFund,jdbcType=VARCHAR},
+      </if>
+      <if test="careerType != null" >
+        #{careerType,jdbcType=VARCHAR},
+      </if>
+      <if test="distCode != null" >
+        #{distCode,jdbcType=VARCHAR},
+      </if>
+      <if test="picHead != null" >
+        #{picHead,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="picCertFront != null" >
+        #{picCertFront,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="picCertBack != null" >
+        #{picCertBack,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bpaas.bps.base.po.gnr.UsrBaseInfoPoWithBLOBs" >
+    update t_usr_base_info
+    <set >
+      <if test="userId != null" >
+        USER_ID = #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="certType != null" >
+        CERT_TYPE = #{certType,jdbcType=VARCHAR},
+      </if>
+      <if test="certNo != null" >
+        CERT_NO = #{certNo,jdbcType=VARCHAR},
+      </if>
+      <if test="certName != null" >
+        CERT_NAME = #{certName,jdbcType=VARCHAR},
+      </if>
+      <if test="certExpFlag != null" >
+        CERT_EXP_FLAG = #{certExpFlag,jdbcType=CHAR},
+      </if>
+      <if test="certExpBegin != null" >
+        CERT_EXP_BEGIN = #{certExpBegin,jdbcType=DATE},
+      </if>
+      <if test="certExpEnd != null" >
+        CERT_EXP_END = #{certExpEnd,jdbcType=DATE},
+      </if>
+      <if test="sex != null" >
+        SEX = #{sex,jdbcType=CHAR},
+      </if>
+      <if test="birthday != null" >
+        BIRTHDAY = #{birthday,jdbcType=DATE},
+      </if>
+      <if test="country != null" >
+        COUNTRY = #{country,jdbcType=CHAR},
+      </if>
+      <if test="nation != null" >
+        NATION = #{nation,jdbcType=CHAR},
+      </if>
+      <if test="background != null" >
+        BACKGROUND = #{background,jdbcType=CHAR},
+      </if>
+      <if test="religion != null" >
+        RELIGION = #{religion,jdbcType=CHAR},
+      </if>
+      <if test="marriage != null" >
+        MARRIAGE = #{marriage,jdbcType=CHAR},
+      </if>
+      <if test="eduBg != null" >
+        EDU_BG = #{eduBg,jdbcType=CHAR},
+      </if>
+      <if test="job != null" >
+        JOB = #{job,jdbcType=CHAR},
+      </if>
+      <if test="email != null" >
+        EMAIL = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="qq != null" >
+        QQ = #{qq,jdbcType=VARCHAR},
+      </if>
+      <if test="weixin != null" >
+        WEIXIN = #{weixin,jdbcType=VARCHAR},
+      </if>
+      <if test="sign != null" >
+        SIGN = #{sign,jdbcType=VARCHAR},
+      </if>
+      <if test="preInfo != null" >
+        PRE_INFO = #{preInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="ecifCustNo != null" >
+        ECIF_CUST_NO = #{ecifCustNo,jdbcType=VARCHAR},
+      </if>
+      <if test="lastUpdateTime != null" >
+        LAST_UPDATE_TIME = #{lastUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remark1 != null" >
+        REMARK1 = #{remark1,jdbcType=VARCHAR},
+      </if>
+      <if test="remark2 != null" >
+        REMARK2 = #{remark2,jdbcType=VARCHAR},
+      </if>
+      <if test="remark3 != null" >
+        REMARK3 = #{remark3,jdbcType=VARCHAR},
+      </if>
+      <if test="postCode != null" >
+        POST_CODE = #{postCode,jdbcType=VARCHAR},
+      </if>
+      <if test="monthlyIncome != null" >
+        MONTHLY_INCOME = #{monthlyIncome,jdbcType=VARCHAR},
+      </if>
+      <if test="telephone != null" >
+        TELEPHONE = #{telephone,jdbcType=VARCHAR},
+      </if>
+      <if test="ocrOrg != null" >
+        ocr_org = #{ocrOrg,jdbcType=VARCHAR},
+      </if>
+      <if test="ocrAddressZone != null" >
+        ocr_address_zone = #{ocrAddressZone,jdbcType=VARCHAR},
+      </if>
+      <if test="confidence != null" >
+        confidence = #{confidence,jdbcType=VARCHAR},
+      </if>
+      <if test="isFund != null" >
+        is_fund = #{isFund,jdbcType=VARCHAR},
+      </if>
+      <if test="careerType != null" >
+        career_type = #{careerType,jdbcType=VARCHAR},
+      </if>
+      <if test="distCode != null" >
+        DIST_CODE = #{distCode,jdbcType=VARCHAR},
+      </if>
+      <if test="picHead != null" >
+        PIC_HEAD = #{picHead,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="picCertFront != null" >
+        PIC_CERT_FRONT = #{picCertFront,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="picCertBack != null" >
+        PIC_CERT_BACK = #{picCertBack,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.bpaas.bps.base.po.gnr.UsrBaseInfoPoWithBLOBs" >
+    update t_usr_base_info
+    set USER_ID = #{userId,jdbcType=VARCHAR},
+      CERT_TYPE = #{certType,jdbcType=VARCHAR},
+      CERT_NO = #{certNo,jdbcType=VARCHAR},
+      CERT_NAME = #{certName,jdbcType=VARCHAR},
+      CERT_EXP_FLAG = #{certExpFlag,jdbcType=CHAR},
+      CERT_EXP_BEGIN = #{certExpBegin,jdbcType=DATE},
+      CERT_EXP_END = #{certExpEnd,jdbcType=DATE},
+      SEX = #{sex,jdbcType=CHAR},
+      BIRTHDAY = #{birthday,jdbcType=DATE},
+      COUNTRY = #{country,jdbcType=CHAR},
+      NATION = #{nation,jdbcType=CHAR},
+      BACKGROUND = #{background,jdbcType=CHAR},
+      RELIGION = #{religion,jdbcType=CHAR},
+      MARRIAGE = #{marriage,jdbcType=CHAR},
+      EDU_BG = #{eduBg,jdbcType=CHAR},
+      JOB = #{job,jdbcType=CHAR},
+      EMAIL = #{email,jdbcType=VARCHAR},
+      QQ = #{qq,jdbcType=VARCHAR},
+      WEIXIN = #{weixin,jdbcType=VARCHAR},
+      SIGN = #{sign,jdbcType=VARCHAR},
+      PRE_INFO = #{preInfo,jdbcType=VARCHAR},
+      ECIF_CUST_NO = #{ecifCustNo,jdbcType=VARCHAR},
+      LAST_UPDATE_TIME = #{lastUpdateTime,jdbcType=TIMESTAMP},
+      REMARK1 = #{remark1,jdbcType=VARCHAR},
+      REMARK2 = #{remark2,jdbcType=VARCHAR},
+      REMARK3 = #{remark3,jdbcType=VARCHAR},
+      POST_CODE = #{postCode,jdbcType=VARCHAR},
+      MONTHLY_INCOME = #{monthlyIncome,jdbcType=VARCHAR},
+      TELEPHONE = #{telephone,jdbcType=VARCHAR},
+      ocr_org = #{ocrOrg,jdbcType=VARCHAR},
+      ocr_address_zone = #{ocrAddressZone,jdbcType=VARCHAR},
+      confidence = #{confidence,jdbcType=VARCHAR},
+      is_fund = #{isFund,jdbcType=VARCHAR},
+      career_type = #{careerType,jdbcType=VARCHAR},
+      DIST_CODE = #{distCode,jdbcType=VARCHAR},
+      PIC_HEAD = #{picHead,jdbcType=LONGVARCHAR},
+      PIC_CERT_FRONT = #{picCertFront,jdbcType=LONGVARCHAR},
+      PIC_CERT_BACK = #{picCertBack,jdbcType=LONGVARCHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bpaas.bps.base.po.gnr.UsrBaseInfoPo" >
+    update t_usr_base_info
+    set USER_ID = #{userId,jdbcType=VARCHAR},
+      CERT_TYPE = #{certType,jdbcType=VARCHAR},
+      CERT_NO = #{certNo,jdbcType=VARCHAR},
+      CERT_NAME = #{certName,jdbcType=VARCHAR},
+      CERT_EXP_FLAG = #{certExpFlag,jdbcType=CHAR},
+      CERT_EXP_BEGIN = #{certExpBegin,jdbcType=DATE},
+      CERT_EXP_END = #{certExpEnd,jdbcType=DATE},
+      SEX = #{sex,jdbcType=CHAR},
+      BIRTHDAY = #{birthday,jdbcType=DATE},
+      COUNTRY = #{country,jdbcType=CHAR},
+      NATION = #{nation,jdbcType=CHAR},
+      BACKGROUND = #{background,jdbcType=CHAR},
+      RELIGION = #{religion,jdbcType=CHAR},
+      MARRIAGE = #{marriage,jdbcType=CHAR},
+      EDU_BG = #{eduBg,jdbcType=CHAR},
+      JOB = #{job,jdbcType=CHAR},
+      EMAIL = #{email,jdbcType=VARCHAR},
+      QQ = #{qq,jdbcType=VARCHAR},
+      WEIXIN = #{weixin,jdbcType=VARCHAR},
+      SIGN = #{sign,jdbcType=VARCHAR},
+      PRE_INFO = #{preInfo,jdbcType=VARCHAR},
+      ECIF_CUST_NO = #{ecifCustNo,jdbcType=VARCHAR},
+      LAST_UPDATE_TIME = #{lastUpdateTime,jdbcType=TIMESTAMP},
+      REMARK1 = #{remark1,jdbcType=VARCHAR},
+      REMARK2 = #{remark2,jdbcType=VARCHAR},
+      REMARK3 = #{remark3,jdbcType=VARCHAR},
+      POST_CODE = #{postCode,jdbcType=VARCHAR},
+      MONTHLY_INCOME = #{monthlyIncome,jdbcType=VARCHAR},
+      TELEPHONE = #{telephone,jdbcType=VARCHAR},
+      ocr_org = #{ocrOrg,jdbcType=VARCHAR},
+      ocr_address_zone = #{ocrAddressZone,jdbcType=VARCHAR},
+      confidence = #{confidence,jdbcType=VARCHAR},
+      is_fund = #{isFund,jdbcType=VARCHAR},
+      career_type = #{careerType,jdbcType=VARCHAR},
+      DIST_CODE = #{distCode,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

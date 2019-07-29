@@ -1,0 +1,90 @@
+spring:  
+  profiles:
+    active: dev
+---  
+server:
+  port: 8760
+spring: 
+  profiles: dev
+  application: 
+    name: micro-api-gateway
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name}
+        instance-id: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+      - id: kj-bps-user
+        uri: lb://kj-bps-user
+        predicates:
+        - Path=/api/member/**
+        filters:
+        - StripPrefix=2
+      - id: kj-bps-pay
+        uri: lb://kj-bps-pay
+        predicates:
+        - Path=/api/pay/**
+        filters:
+        - StripPrefix=2
+
+#zuul:
+#  routes:
+#    base:
+#      path: /api/base/**
+#      serviceId: bps-base
+#    user:
+#      path: /api/member/**
+#      serviceId: bps-user
+#    pay:
+#      path: /api/pay/**
+#      serviceId: kj-bps-pay
+#  ratelimit:
+#    enabled: true
+#    behind-proxy: true
+#    default-policy:
+#      limit: 1
+#      quota: 2
+#      refresh-interval: 3
+#    repository: redis
+
+#hystrix:
+#  threadpool:
+#    default:
+#      coreSize: 200 ##并发执行的最大线程数，默认10
+#      maxQueueSize: 200 ##BlockingQueue的最大队列数
+#      queueSizeRejectionThreshold: 50 ##即使maxQueueSize没有达到，达到queueSizeRejectionThreshold该值后，请求也会被拒绝
+#      execution:
+#        timeout:
+#          enabled: true
+#        isolation:
+#          strategy: THREAD
+#          semaphore:
+#            maxConcurrentRequests: 1000
+#          thread:
+#            timeoutInMilliseconds: 30000
+#ribbon:
+#  ConnectTimeout: 3000
+#  ReadTimeout: 60000
+
+---   
+server:
+  port: 8765 
+spring: 
+  profiles: prod
+  application: 
+    name: hz-lmtapply
+
+eureka: 
+  client: 
+    service-url: 
+      defaultZone: http://172.16.87.83:8761/eureka/,http://172.16.87.84:8761/eureka/
+  instance: 
+    prefer-ip-address: true
+
+  

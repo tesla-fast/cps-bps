@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bpaas.bps.pay.mapper.wechat.WechatRefundMapper">
+	<resultMap id="BaseResultMap" type="com.bpaas.bps.pay.po.wechat.WechatRefundPo">
+		<id column="id" property="id" />
+		<result column="transaction_id" property="transaction_id" />
+		<result column="out_trade_no" property="out_trade_no" />
+		<result column="out_refund_no" property="out_refund_no" />
+		<result column="total_fee" property="total_fee" />
+		<result column="refund_fee" property="refund_fee" />
+		<result column="status" property="status" />
+		<result column="create_time" property="create_time" />
+		<result column="update_flag" property="update_flag" />
+		<result column="update_time" property="update_time" />
+		<result column="time_end" property="time_end" />
+		<result column="result_code" property="result_code" />
+	</resultMap>
+
+	<sql id="Table_Name">
+		t_wxrefund
+	</sql>
+	<sql id="Base_Column">
+		id,
+		transaction_id,
+		out_trade_no,
+		out_refund_no,
+		total_fee,
+		refund_fee,
+		status,
+		create_time,
+		update_flag,
+		update_time,
+		time_end,
+		result_code
+	</sql>
+
+	<sql id="Base_Where">
+		<trim suffixOverrides="AND">
+			<if test="transaction_id != null">
+				transaction_id= #{transaction_id}
+				AND
+			</if>
+			<if test="out_trade_no != null">
+				out_trade_no= #{out_trade_no}
+				AND
+			</if>
+			<if test="out_refund_no != null">
+				out_refund_no= #{out_refund_no}
+				AND
+			</if>
+			<if test="total_fee != null">
+				total_fee= #{total_fee}
+				AND
+			</if>
+			<if test="refund_fee != null">
+				refund_fee= #{refund_fee}
+				AND
+			</if>
+			<if test="status != null">
+				status= #{status}
+				AND
+			</if>
+			<if test="create_time != null">
+				create_time= #{create_time}
+				AND
+			</if>
+			<if test="update_flag != null">
+				update_flag= #{update_flag}
+				AND
+			</if>
+			<if test="update_time != null">
+				update_time= #{update_time}
+				AND
+			</if>
+			<if test="time_end != null">
+				time_end= #{time_end}
+				AND
+			</if>
+			<if test="result_code != null">
+				result_code= #{result_code}
+			</if>
+		</trim>
+	</sql>
+
+	<insert id="insert">
+		insert into
+		<include refid="Table_Name" />
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="transaction_id != null">
+				transaction_id,
+			</if>
+			<if test="out_trade_no != null">
+				out_trade_no,
+			</if>
+			<if test="out_refund_no != null">
+				out_refund_no,
+			</if>
+			<if test="total_fee != null">
+				total_fee,
+			</if>
+			<if test="refund_fee != null">
+				refund_fee,
+			</if>
+			<if test="status != null">
+				status,
+			</if>
+			<if test="create_time != null">
+				create_time,
+			</if>
+			<if test="update_flag != null">
+				update_flag,
+			</if>
+			<if test="update_time != null">
+				update_time,
+			</if>
+			<if test="time_end != null">
+				time_end,
+			</if>
+			<if test="result_code != null">
+				result_code,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="transaction_id != null">
+				#{transaction_id},
+			</if>
+			<if test="out_trade_no != null">
+				#{out_trade_no},
+			</if>
+			<if test="out_refund_no != null">
+				#{out_refund_no},
+			</if>
+			<if test="total_fee != null">
+				#{total_fee},
+			</if>
+			<if test="refund_fee != null">
+				#{refund_fee},
+			</if>			
+			<if test="status != null">
+				#{status},
+			</if>
+			<if test="create_time != null">
+				#{create_time},
+			</if>
+			<if test="update_flag != null">
+				#{update_flag},
+			</if>
+			<if test="update_time != null">
+				#{update_time},
+			</if>
+			<if test="time_end != null">
+				#{time_end},
+			</if>
+			<if test="result_code != null">
+				#{result_code},
+			</if>
+		</trim>
+	</insert>
+	
+	<update id="update" >
+		update
+		<include refid="Table_Name" />
+		<set>
+			<if test="transaction_id != null">
+				transaction_id=#{transaction_id},
+			</if>
+			<if test="out_trade_no != null">
+				out_trade_no=#{out_trade_no},
+			</if>
+			<if test="out_refund_no != null">
+				out_refund_no=#{out_refund_no},
+			</if>
+			<if test="total_fee != null">
+				total_fee=#{total_fee},
+			</if>
+			<if test="refund_fee != null">
+				refund_fee=#{refund_fee},
+			</if>
+			<if test="status != null">
+				status=#{status},
+			</if>
+			<if test="create_time != null">
+				create_time=#{create_time},
+			</if>
+			<if test="update_flag != null">
+				update_flag=#{update_flag},
+			</if>
+			<if test="update_time != null">
+				update_time=#{update_time},
+			</if>
+			<if test="time_end != null">
+				time_end=#{time_end},
+			</if>
+			<if test="result_code != null">
+				result_code=#{result_code},
+			</if>
+		</set>
+		where 
+			      out_trade_no=#{out_trade_no}
+	</update>
+	
+	<delete id="delete" >
+		delete from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</delete>
+	
+	<select id="selectOne"  resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column" />
+		from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</select>
+
+	<select id="selectList"  resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column" />
+		from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+		order by createtime desc
+	</select>
+	
+	<select id="selectForUpdate" resultMap="BaseResultMap" useCache="false">
+		select
+		<include refid="Base_Column" />
+		from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+		for update
+	</select>
+</mapper>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bpaas.bps.base.mapper.GnrSequencesPoMapper" >
+  <resultMap id="BaseResultMap" type="com.bpaas.bps.base.po.gnr.GnrSequencesPo" >
+    <id column="ID" property="id" jdbcType="VARCHAR" />
+    <result column="NAME" property="name" jdbcType="VARCHAR" />
+    <result column="CURRVAL" property="currval" jdbcType="INTEGER" />
+    <result column="NEXTVAL" property="nextval" jdbcType="INTEGER" />
+    <result column="INCREASE" property="increase" jdbcType="INTEGER" />
+    <result column="INITVAL" property="initval" jdbcType="INTEGER" />
+    <result column="MAXVAL" property="maxval" jdbcType="INTEGER" />
+    <result column="CYCLE" property="cycle" jdbcType="CHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ID, NAME, CURRVAL, NEXTVAL, INCREASE, INITVAL, MAXVAL, CYCLE
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_gnr_sequences
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from t_gnr_sequences
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.bpaas.bps.base.po.gnr.GnrSequencesPo" >
+    insert into t_gnr_sequences (ID, NAME, CURRVAL, 
+      NEXTVAL, INCREASE, INITVAL, 
+      MAXVAL, CYCLE)
+    values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{currval,jdbcType=INTEGER}, 
+      #{nextval,jdbcType=INTEGER}, #{increase,jdbcType=INTEGER}, #{initval,jdbcType=INTEGER}, 
+      #{maxval,jdbcType=INTEGER}, #{cycle,jdbcType=CHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.bpaas.bps.base.po.gnr.GnrSequencesPo" >
+    insert into t_gnr_sequences
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="name != null" >
+        NAME,
+      </if>
+      <if test="currval != null" >
+        CURRVAL,
+      </if>
+      <if test="nextval != null" >
+        NEXTVAL,
+      </if>
+      <if test="increase != null" >
+        INCREASE,
+      </if>
+      <if test="initval != null" >
+        INITVAL,
+      </if>
+      <if test="maxval != null" >
+        MAXVAL,
+      </if>
+      <if test="cycle != null" >
+        CYCLE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="currval != null" >
+        #{currval,jdbcType=INTEGER},
+      </if>
+      <if test="nextval != null" >
+        #{nextval,jdbcType=INTEGER},
+      </if>
+      <if test="increase != null" >
+        #{increase,jdbcType=INTEGER},
+      </if>
+      <if test="initval != null" >
+        #{initval,jdbcType=INTEGER},
+      </if>
+      <if test="maxval != null" >
+        #{maxval,jdbcType=INTEGER},
+      </if>
+      <if test="cycle != null" >
+        #{cycle,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bpaas.bps.base.po.gnr.GnrSequencesPo" >
+    update t_gnr_sequences
+    <set >
+      <if test="name != null" >
+        NAME = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="currval != null" >
+        CURRVAL = #{currval,jdbcType=INTEGER},
+      </if>
+      <if test="nextval != null" >
+        NEXTVAL = #{nextval,jdbcType=INTEGER},
+      </if>
+      <if test="increase != null" >
+        INCREASE = #{increase,jdbcType=INTEGER},
+      </if>
+      <if test="initval != null" >
+        INITVAL = #{initval,jdbcType=INTEGER},
+      </if>
+      <if test="maxval != null" >
+        MAXVAL = #{maxval,jdbcType=INTEGER},
+      </if>
+      <if test="cycle != null" >
+        CYCLE = #{cycle,jdbcType=CHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bpaas.bps.base.po.gnr.GnrSequencesPo" >
+    update t_gnr_sequences
+    set NAME = #{name,jdbcType=VARCHAR},
+      CURRVAL = #{currval,jdbcType=INTEGER},
+      NEXTVAL = #{nextval,jdbcType=INTEGER},
+      INCREASE = #{increase,jdbcType=INTEGER},
+      INITVAL = #{initval,jdbcType=INTEGER},
+      MAXVAL = #{maxval,jdbcType=INTEGER},
+      CYCLE = #{cycle,jdbcType=CHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

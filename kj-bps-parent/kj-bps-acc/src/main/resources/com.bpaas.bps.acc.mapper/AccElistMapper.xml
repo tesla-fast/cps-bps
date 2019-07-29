@@ -1,0 +1,834 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bpaas.bps.acc.mapper.AccElistMapper">
+	<resultMap id="BaseResultMap" type="com.bpaas.bps.acc.po.AccElistPo">
+		<id column="ID" property="id" />
+		<result column="TRANS_TIME" property="transTime" />
+		<result column="TRANS_SEQ" property="transSeq" />
+		<result column="TRANS_CODE" property="transCode" />
+		<result column="CHNL_ID" property="chnlId" />
+		<result column="CHNL_TIME" property="chnlTime" />
+		<result column="CHNL_SEQ" property="chnlSeq" />
+		<result column="USER_ID" property="userId" />
+		<result column="E_CARD_NO" property="ecardNo" />
+		<result column="E_ACCT_NO" property="eacctNo" />
+		<result column="REL_ACCT_TYPE" property="relAcctType" />
+		<result column="REL_ACCT_BRC" property="relAcctBrc" />
+		<result column="REL_ACCT" property="relAcct" />
+		<result column="REL_NAME" property="relName" />
+		<result column="TRANS_STAT" property="transStat" />
+		<result column="CCY" property="ccy" />
+		<result column="TRANS_AMT" property="transAmt" />
+		<result column="CUST_FEE" property="custFee" />
+		<result column="ACCT_BAL" property="acctBal" />
+		<result column="DC_FLAG" property="dcFlag" />
+		<result column="MEMO_CODE" property="memoCode" />
+		<result column="MEMO_MSG" property="memoMsg" />
+		<result column="REMARK1" property="remark1" />
+		<result column="REMARK2" property="remark2" />
+		<result column="CALL_NUM" property="callNum" />
+		<result column="SEQ" property="seq" />
+	</resultMap>
+
+	<sql id="Table_Name">
+		T_ACC_E_LIST
+	</sql>
+
+	<sql id="Base_Column">
+		ID,
+		TRANS_TIME,
+		TRANS_SEQ,
+		TRANS_CODE,
+		CHNL_ID,
+		CHNL_TIME,
+		CHNL_SEQ,
+		USER_ID,
+		E_CARD_NO,
+		E_ACCT_NO,
+		REL_ACCT_TYPE,
+		REL_ACCT_BRC,
+		REL_ACCT,
+		REL_NAME,
+		TRANS_STAT,
+		CCY,
+		TRANS_AMT,
+		CUST_FEE,
+		ACCT_BAL,
+		DC_FLAG,
+		MEMO_CODE,
+		MEMO_MSG,
+		REMARK1,
+		REMARK2,
+		CALL_NUM,
+		SEQ
+	</sql>
+
+	<sql id="Base_Where">
+		<trim suffixOverrides="AND">
+		<if test="id != null">
+			ID= #{id}
+	           AND 
+		</if>
+		<if test="transTime != null">
+			TRANS_TIME= #{transTime}
+	           AND 
+		</if>
+		<if test="transSeq != null">
+			TRANS_SEQ= #{transSeq}
+	           AND 
+		</if>
+		<if test="transCode != null">
+			TRANS_CODE= #{transCode}
+	           AND 
+		</if>
+		<if test="chnlId != null">
+			CHNL_ID= #{chnlId}
+	           AND 
+		</if>
+		<if test="chnlTime != null">
+			CHNL_TIME= #{chnlTime}
+	           AND 
+		</if>
+		<if test="chnlSeq != null">
+			CHNL_SEQ= #{chnlSeq}
+	           AND 
+		</if>
+		<if test="userId != null">
+			USER_ID= #{userId}
+	           AND 
+		</if>
+		<if test="ecardNo != null">
+			E_CARD_NO= #{ecardNo}
+	           AND 
+		</if>
+		<if test="eacctNo != null">
+			E_ACCT_NO= #{eacctNo}
+	           AND 
+		</if>
+		<if test="relAcctType != null">
+			REL_ACCT_TYPE= #{relAcctType}
+	           AND 
+		</if>
+		<if test="relAcctBrc != null">
+			REL_ACCT_BRC= #{relAcctBrc}
+	           AND 
+		</if>
+		<if test="relAcct != null">
+			REL_ACCT= #{relAcct}
+	           AND 
+		</if>
+		<if test="relName != null">
+			REL_NAME= #{relName}
+	           AND 
+		</if>
+		<if test="transStat != null">
+			TRANS_STAT= #{transStat}
+	           AND 
+		</if>
+		<if test="ccy != null">
+			CCY= #{ccy}
+	           AND 
+		</if>
+		<if test="transAmt != null">
+			TRANS_AMT= #{transAmt}
+	           AND 
+		</if>
+		<if test="custFee != null">
+			CUST_FEE= #{custFee}
+	           AND 
+		</if>
+		<if test="acctBal != null">
+			ACCT_BAL= #{acctBal}
+	           AND 
+		</if>
+		<if test="dcFlag != null">
+			DC_FLAG= #{dcFlag}
+	           AND 
+		</if>
+		<if test="memoCode != null">
+			MEMO_CODE= #{memoCode}
+	           AND 
+		</if>
+		<if test="memoMsg != null">
+			MEMO_MSG= #{memoMsg}
+	           AND 
+		</if>
+		<if test="remark1 != null">
+			REMARK1= #{remark1}
+	           AND 
+		</if>
+		<if test="remark2 != null">
+			REMARK2= #{remark2}
+	           AND 
+		</if>
+		<if test="callNum != null">
+			CALL_NUM= #{callNum}
+	           AND 
+		</if>
+		<if test="seq != null">
+			SEQ= #{seq}
+		</if>
+		</trim>
+	</sql>
+	
+	<sql id="Base_Where2">
+		<trim suffixOverrides="AND">
+		<if test="queryStart != null">
+			TRANS_TIME &gt;= #{queryStart}
+	           AND 
+		</if>
+		<if test="queryEnd != null">
+			TRANS_TIME &lt;= #{queryEnd}
+	           AND 
+		</if>
+		<if test="transTime != null">
+			TRANS_TIME= #{transTime}
+	           AND 
+		</if>
+		<if test="userId != null">
+			USER_ID= #{userId}
+	           AND 
+		</if>
+		</trim>
+	</sql>
+	
+	<sql id="Base_Where1">
+		<trim suffixOverrides="AND">
+		<if test="id != null">
+			ID= #{id}
+	           AND 
+		</if>
+		<if test="queryStart != null">
+			TRANS_TIME &gt;= #{queryStart}
+	           AND 
+		</if>
+		<if test="queryEnd != null">
+			TRANS_TIME &lt;= #{queryEnd}
+	           AND 
+		</if>
+		<if test="transTime != null">
+			TRANS_TIME= #{transTime}
+	           AND 
+		</if>
+		<if test="transSeq != null">
+			TRANS_SEQ= #{transSeq}
+	           AND 
+		</if>
+		<if test="transCode != null">
+			TRANS_CODE= #{transCode}
+	           AND 
+		</if>
+		<if test="chnlId != null">
+			CHNL_ID= #{chnlId}
+	           AND 
+		</if>
+		<if test="chnlTime != null">
+			CHNL_TIME= #{chnlTime}
+	           AND 
+		</if>
+		<if test="chnlSeq != null">
+			CHNL_SEQ= #{chnlSeq}
+	           AND 
+		</if>
+		<if test="userId != null">
+			USER_ID= #{userId}
+	           AND 
+		</if>
+		<if test="ecardNo != null">
+			E_CARD_NO= #{ecardNo}
+	           AND 
+		</if>
+		<if test="eacctNo != null">
+			E_ACCT_NO= #{eacctNo}
+	           AND 
+		</if>
+		<if test="relAcctType != null">
+			REL_ACCT_TYPE= #{relAcctType}
+	           AND 
+		</if>
+		<if test="relAcctBrc != null">
+			REL_ACCT_BRC= #{relAcctBrc}
+	           AND 
+		</if>
+		<if test="relAcct != null">
+			REL_ACCT= #{relAcct}
+	           AND 
+		</if>
+		<if test="relName != null">
+			REL_NAME= #{relName}
+	           AND 
+		</if>
+		<if test="transStat != null">
+			TRANS_STAT= #{transStat}
+	           AND 
+		</if>
+		<if test="ccy != null">
+			CCY= #{ccy}
+	           AND 
+		</if>
+		<if test="transAmt != null">
+			TRANS_AMT= #{transAmt}
+	           AND 
+		</if>
+		<if test="custFee != null">
+			CUST_FEE= #{custFee}
+	           AND 
+		</if>
+		<if test="acctBal != null">
+			ACCT_BAL= #{acctBal}
+	           AND 
+		</if>
+		<if test="dcFlag != null">
+			DC_FLAG= #{dcFlag}
+	           AND 
+		</if>
+		<if test="memoCode != null">
+			MEMO_CODE= #{memoCode}
+	           AND 
+		</if>
+		<if test="memoMsg != null">
+			MEMO_MSG= #{memoMsg}
+	           AND 
+		</if>
+		<if test="remark1 != null">
+			REMARK1= #{remark1}
+	           AND 
+		</if>
+		<if test="remark2 != null">
+			REMARK2= #{remark2}
+	           AND 
+		</if>
+		<if test="callNum != null">
+			CALL_NUM= #{callNum}
+	           AND 
+		</if>
+		<if test="seq != null">
+			SEQ= #{seq}
+		</if>
+		</trim>
+	</sql>
+
+	<sql id="Base_OrderBy">
+		<trim suffixOverrides=",">
+			<if test="orderby_transTime != null">
+				TRANS_TIME,
+			</if>
+		</trim>
+	</sql>
+	
+	<insert id="insert" >
+		insert into
+		<include refid="Table_Name" />
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+	<if test="id != null">
+		ID,
+	</if>
+	<if test="transTime != null">
+		TRANS_TIME,
+	</if>
+	<if test="transSeq != null">
+		TRANS_SEQ,
+	</if>
+	<if test="transCode != null">
+		TRANS_CODE,
+	</if>
+	<if test="chnlId != null">
+		CHNL_ID,
+	</if>
+	<if test="chnlTime != null">
+		CHNL_TIME,
+	</if>
+	<if test="chnlSeq != null">
+		CHNL_SEQ,
+	</if>
+	<if test="userId != null">
+		USER_ID,
+	</if>
+	<if test="ecardNo != null">
+		E_CARD_NO,
+	</if>
+	<if test="eacctNo != null">
+		E_ACCT_NO,
+	</if>
+	<if test="relAcctType != null">
+		REL_ACCT_TYPE,
+	</if>
+	<if test="relAcctBrc != null">
+		REL_ACCT_BRC,
+	</if>
+	<if test="relAcct != null">
+		REL_ACCT,
+	</if>
+	<if test="relName != null">
+		REL_NAME,
+	</if>
+	<if test="transStat != null">
+		TRANS_STAT,
+	</if>
+	<if test="ccy != null">
+		CCY,
+	</if>
+	<if test="transAmt != null">
+		TRANS_AMT,
+	</if>
+	<if test="custFee != null">
+		CUST_FEE,
+	</if>
+	<if test="acctBal != null">
+		ACCT_BAL,
+	</if>
+	<if test="dcFlag != null">
+		DC_FLAG,
+	</if>
+	<if test="memoCode != null">
+		MEMO_CODE,
+	</if>
+	<if test="memoMsg != null">
+		MEMO_MSG,
+	</if>
+	<if test="remark1 != null">
+		REMARK1,
+	</if>
+	<if test="remark2 != null">
+		REMARK2,
+	</if>
+	<if test="callNum != null">
+		CALL_NUM,
+	</if>
+	<if test="seq != null">
+		SEQ,
+	</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+	<if test="id != null">
+		#{id},
+	</if>
+	<if test="transTime != null">
+		#{transTime},
+	</if>
+	<if test="transSeq != null">
+		#{transSeq},
+	</if>
+	<if test="transCode != null">
+		#{transCode},
+	</if>
+	<if test="chnlId != null">
+		#{chnlId},
+	</if>
+	<if test="chnlTime != null">
+		#{chnlTime},
+	</if>
+	<if test="chnlSeq != null">
+		#{chnlSeq},
+	</if>
+	<if test="userId != null">
+		#{userId},
+	</if>
+	<if test="ecardNo != null">
+		#{ecardNo},
+	</if>
+	<if test="eacctNo != null">
+		#{eacctNo},
+	</if>
+	<if test="relAcctType != null">
+		#{relAcctType},
+	</if>
+	<if test="relAcctBrc != null">
+		#{relAcctBrc},
+	</if>
+	<if test="relAcct != null">
+		#{relAcct},
+	</if>
+	<if test="relName != null">
+		#{relName},
+	</if>
+	<if test="transStat != null">
+		#{transStat},
+	</if>
+	<if test="ccy != null">
+		#{ccy},
+	</if>
+	<if test="transAmt != null">
+		#{transAmt},
+	</if>
+	<if test="custFee != null">
+		#{custFee},
+	</if>
+	<if test="acctBal != null">
+		#{acctBal},
+	</if>
+	<if test="dcFlag != null">
+		#{dcFlag},
+	</if>
+	<if test="memoCode != null">
+		#{memoCode},
+	</if>
+	<if test="memoMsg != null">
+		#{memoMsg},
+	</if>
+	<if test="remark1 != null">
+		#{remark1},
+	</if>
+	<if test="remark2 != null">
+		#{remark2},
+	</if>
+	<if test="callNum != null">
+		#{callNum},
+	</if>
+	<if test="seq != null">
+		#{seq},
+	</if>
+		</trim>
+	</insert>
+
+	<update id="update" >
+		update
+		<include refid="Table_Name" />
+		<set>
+	<if test="id != null">
+		ID=#{id},
+	</if>
+	<if test="transTime != null">
+		TRANS_TIME=#{transTime},
+	</if>
+	<if test="transSeq != null">
+		TRANS_SEQ=#{transSeq},
+	</if>
+	<if test="transCode != null">
+		TRANS_CODE=#{transCode},
+	</if>
+	<if test="chnlId != null">
+		CHNL_ID=#{chnlId},
+	</if>
+	<if test="chnlTime != null">
+		CHNL_TIME=#{chnlTime},
+	</if>
+	<if test="chnlSeq != null">
+		CHNL_SEQ=#{chnlSeq},
+	</if>
+	<if test="userId != null">
+		USER_ID=#{userId},
+	</if>
+	<if test="ecardNo != null">
+		E_CARD_NO=#{ecardNo},
+	</if>
+	<if test="eacctNo != null">
+		E_ACCT_NO=#{eacctNo},
+	</if>
+	<if test="relAcctType != null">
+		REL_ACCT_TYPE=#{relAcctType},
+	</if>
+	<if test="relAcctBrc != null">
+		REL_ACCT_BRC=#{relAcctBrc},
+	</if>
+	<if test="relAcct != null">
+		REL_ACCT=#{relAcct},
+	</if>
+	<if test="relName != null">
+		REL_NAME=#{relName},
+	</if>
+	<if test="transStat != null">
+		TRANS_STAT=#{transStat},
+	</if>
+	<if test="ccy != null">
+		CCY=#{ccy},
+	</if>
+	<if test="transAmt != null">
+		TRANS_AMT=#{transAmt},
+	</if>
+	<if test="custFee != null">
+		CUST_FEE=#{custFee},
+	</if>
+	<if test="acctBal != null">
+		ACCT_BAL=#{acctBal},
+	</if>
+	<if test="dcFlag != null">
+		DC_FLAG=#{dcFlag},
+	</if>
+	<if test="memoCode != null">
+		MEMO_CODE=#{memoCode},
+	</if>
+	<if test="memoMsg != null">
+		MEMO_MSG=#{memoMsg},
+	</if>
+	<if test="remark1 != null">
+		REMARK1=#{remark1},
+	</if>
+	<if test="remark2 != null">
+		REMARK2=#{remark2},
+	</if>
+	<if test="callNum != null">
+		CALL_NUM=#{callNum},
+	</if>
+	<if test="seq != null">
+		SEQ=#{seq},
+	</if>
+		</set>
+		where 
+			      ID=#{id}
+	</update>
+
+	<update id="updateByEntity" >
+		UPDATE
+		<include refid="Table_Name" />
+		<set>
+			<if test="s.transTime != null">
+                    TRANS_TIME=#{s.transTime},
+			</if>
+			<if test="s.transSeq != null">
+                    TRANS_SEQ=#{s.transSeq},
+			</if>
+			<if test="s.transCode != null">
+                    TRANS_CODE=#{s.transCode},
+			</if>
+			<if test="s.chnlId != null">
+                    CHNL_ID=#{s.chnlId},
+			</if>
+			<if test="s.chnlTime != null">
+                    CHNL_TIME=#{s.chnlTime},
+			</if>
+			<if test="s.chnlSeq != null">
+                    CHNL_SEQ=#{s.chnlSeq},
+			</if>
+			<if test="s.userId != null">
+                    USER_ID=#{s.userId},
+			</if>
+			<if test="s.ecardNo != null">
+                    E_CARD_NO=#{s.ecardNo},
+			</if>
+			<if test="s.eacctNo != null">
+                    E_ACCT_NO=#{s.eacctNo},
+			</if>
+			<if test="s.relAcctType != null">
+                    REL_ACCT_TYPE=#{s.relAcctType},
+			</if>
+			<if test="s.relAcctBrc != null">
+                    REL_ACCT_BRC=#{s.relAcctBrc},
+			</if>
+			<if test="s.relAcct != null">
+                    REL_ACCT=#{s.relAcct},
+			</if>
+			<if test="s.relName != null">
+                    REL_NAME=#{s.relName},
+			</if>
+			<if test="s.transStat != null">
+                    TRANS_STAT=#{s.transStat},
+			</if>
+			<if test="s.ccy != null">
+                    CCY=#{s.ccy},
+			</if>
+			<if test="s.transAmt != null">
+                    TRANS_AMT=#{s.transAmt},
+			</if>
+			<if test="s.custFee != null">
+                    CUST_FEE=#{s.custFee},
+			</if>
+			<if test="s.acctBal != null">
+                    ACCT_BAL=#{s.acctBal},
+			</if>
+			<if test="s.dcFlag != null">
+                    DC_FLAG=#{s.dcFlag},
+			</if>
+			<if test="s.memoCode != null">
+                    MEMO_CODE=#{s.memoCode},
+			</if>
+			<if test="s.memoMsg != null">
+                    MEMO_MSG=#{s.memoMsg},
+			</if>
+			<if test="s.remark1 != null">
+                    REMARK1=#{s.remark1},
+			</if>
+			<if test="s.remark2 != null">
+                    REMARK2=#{s.remark2},
+			</if>
+			<if test="s.callNum != null">
+                    CALL_NUM=#{s.callNum},
+			</if>
+			<if test="s.seq != null">
+                    SEQ=#{s.seq}
+			</if>
+		</set>
+		<where> 
+			<trim prefix="(" suffix=")" suffixOverrides="AND">
+			<if test="w.id != null">
+                    ID=#{w.id}
+                   AND 
+ 			</if>
+			<if test="w.transTime != null">
+                    TRANS_TIME=#{w.transTime}
+                   AND 
+ 			</if>
+			<if test="w.transSeq != null">
+                    TRANS_SEQ=#{w.transSeq}
+                   AND 
+ 			</if>
+			<if test="w.transCode != null">
+                    TRANS_CODE=#{w.transCode}
+                   AND 
+ 			</if>
+			<if test="w.chnlId != null">
+                    CHNL_ID=#{w.chnlId}
+                   AND 
+ 			</if>
+			<if test="w.chnlTime != null">
+                    CHNL_TIME=#{w.chnlTime}
+                   AND 
+ 			</if>
+			<if test="w.chnlSeq != null">
+                    CHNL_SEQ=#{w.chnlSeq}
+                   AND 
+ 			</if>
+			<if test="w.userId != null">
+                    USER_ID=#{w.userId}
+                   AND 
+ 			</if>
+			<if test="w.ecardNo != null">
+                    E_CARD_NO=#{w.ecardNo}
+                   AND 
+ 			</if>
+			<if test="w.eacctNo != null">
+                    E_ACCT_NO=#{w.eacctNo}
+                   AND 
+ 			</if>
+			<if test="w.relAcctType != null">
+                    REL_ACCT_TYPE=#{w.relAcctType}
+                   AND 
+ 			</if>
+			<if test="w.relAcctBrc != null">
+                    REL_ACCT_BRC=#{w.relAcctBrc}
+                   AND 
+ 			</if>
+			<if test="w.relAcct != null">
+                    REL_ACCT=#{w.relAcct}
+                   AND 
+ 			</if>
+			<if test="w.relName != null">
+                    REL_NAME=#{w.relName}
+                   AND 
+ 			</if>
+			<if test="w.transStat != null">
+                    TRANS_STAT=#{w.transStat}
+                   AND 
+ 			</if>
+			<if test="w.ccy != null">
+                    CCY=#{w.ccy}
+                   AND 
+ 			</if>
+			<if test="w.transAmt != null">
+                    TRANS_AMT=#{w.transAmt}
+                   AND 
+ 			</if>
+			<if test="w.custFee != null">
+                    CUST_FEE=#{w.custFee}
+                   AND 
+ 			</if>
+			<if test="w.acctBal != null">
+                    ACCT_BAL=#{w.acctBal}
+                   AND 
+ 			</if>
+			<if test="w.dcFlag != null">
+                    DC_FLAG=#{w.dcFlag}
+                   AND 
+ 			</if>
+			<if test="w.memoCode != null">
+                    MEMO_CODE=#{w.memoCode}
+                   AND 
+ 			</if>
+			<if test="w.memoMsg != null">
+                    MEMO_MSG=#{w.memoMsg}
+                   AND 
+ 			</if>
+			<if test="w.remark1 != null">
+                    REMARK1=#{w.remark1}
+                   AND 
+ 			</if>
+			<if test="w.remark2 != null">
+                    REMARK2=#{w.remark2}
+                   AND 
+ 			</if>
+			<if test="w.callNum != null">
+                    CALL_NUM=#{w.callNum}
+                   AND 
+ 			</if>
+			<if test="w.seq != null">
+                    SEQ=#{w.seq}
+ 			</if>
+			</trim>
+		</where>
+	</update>
+
+	<delete id="delete" >
+		delete from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</delete>
+
+	<select id="count" parameterType="java.util.Map" resultType="int">
+		select count(1) from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</select>
+
+	<select id="selectOne"  resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column" />
+		from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</select>
+
+	<select id="selectList"  resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column" />
+		from
+		<include refid="Table_Name" />
+		<where>
+			<include refid="Base_Where" />
+		</where>
+	</select>
+	
+	<select id="selectQueryTime" parameterType="java.util.Map" resultMap="BaseResultMap">
+        select
+		<include refid="Base_Column" />
+		from
+		<include refid="Table_Name" />
+        <where>
+			<include refid="Base_Where1" />
+		</where>
+		order by
+		<include refid="Base_OrderBy" />
+		desc
+    </select>
+    
+    
+    <select id="selectQueryAccTransList" parameterType="java.util.Map" resultMap="BaseResultMap"> 
+        select *
+        from (	
+			select t.trans_time,t.trans_stat,t.trans_seq,t.trans_amt,t.remark1,t.dc_flag,
+		    t.e_card_no,t.rel_acct_type,t.rel_acct,t.acct_bal,t.memo_msg,t.user_id
+			from t_acc_e_list t 
+		union all
+			select t2.last_update_time trans_time,t2.trans_stat,t2.sys_seq trans_seq,t2.trans_amt,t2.ERR_MSG remark1,
+		  	case t2.trans_code when 'SI_ACC80002_OWN_FULL' then 'C' else 'D' end as dc_flag,
+		  	case t2.trans_code when 'SI_ACC80002_OWN_FULL' then t2.payee_acct_no else t2.payer_acct_no end as e_card_no,
+		    '11' as rel_acct_type,
+		  	case t2.trans_code when 'SI_ACC80002_OWN_FULL' then t2.payer_acct_no else t2.payee_acct_no end as rel_acct,
+		  	nvl((select t3.acct_bal from t_acc_e_list t3 where t3.trans_seq = t2.sys_seq),0),
+		  	case t2.trans_code when 'SI_ACC80002_OWN_FULL' then '电子账户充值' else '电子账户提现' end as memo_msg,
+		    t2.pay_user_id as user_id
+		   	from t_pmt_flow_list t2 where t2.trans_code in('SI_ACC80002_OWN_FULL') and t2.trans_stat in('2','8','A')
+         )
+         <where>
+			<include refid="Base_Where2" />
+		 </where>
+		order by trans_time desc
+    </select>
+
+</mapper>

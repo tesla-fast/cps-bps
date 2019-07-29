@@ -1,0 +1,60 @@
+spring:  
+  profiles:
+    active: dev
+---  
+server:
+  port: 8008
+spring: 
+  profiles: dev
+  application: 
+    name: kj-bps-user-common
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name}
+        instance-id: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
+  datasource:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://127.0.0.1:3306/mall
+      username: root
+      password: 123456
+      type: com.alibaba.druid.pool.DruidDataSource
+      druid:
+        max-active: 20
+        initial-size: 5
+        min-idle: 5
+        max-wait: 60000
+        time-between-eviction-runs-millis: 60000
+        min-evictable-idle-time-millis: 300000
+        test-while-idle: true
+        test-on-borrow: false
+        test-on-return: false
+        filters: config,stat,wall
+        connectionProperties: config.decrypt=false;config.decrypt.key=MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBALHFe8Mce4Lvj1fA2lgwKCAyz0Qbgy6AdxqCGlmi93VJUx8a2S1etbEr1TTF+zyR6+e/7UY0MuB4WuBnCMYKpxECAwEAAQ==
+  task:
+    pool:
+      corePoolSize: 10
+      maxPoolSize: 50
+      keepAliveSeconds: 1000
+      queueCapacity: 300
+
+mybatis:
+  type-aliases-package: com.bpaas.bps.user.common.po
+  mapper-locations: classpath:com.bpaas.bps.user.common.mapper/*.xml
+
+logging:
+  level:
+    com:
+      bpaas:
+        bps:
+          user:
+            mapper: debug
+
+
+cloudwalk: 
+    appKey: 6af70d377541aec6c1e70afdf5cabe05
+    appSecret: 5519dfedfd444456b606abc8b5e6663d
+    charset: UTF-8
+    faceCompareUrl: https://api-ai.cloudwalk.cn/ai-cloud-face/face/tool/compare
