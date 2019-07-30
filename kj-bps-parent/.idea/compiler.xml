@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="kj-bps-acc" />
         <module name="kj-bps-base" />
         <module name="kj-bps-common" />
         <module name="kj-bps-common-httpclient" />
@@ -15,6 +16,7 @@
         <module name="kj-bps-order" />
         <module name="kj-bps-pay" />
         <module name="kj-bps-user" />
+        <module name="kj-bps-user-common" />
         <module name="micro-api-gateway" />
       </profile>
     </annotationProcessing>
@@ -24,5 +26,20 @@
       <module name="micro-consul" target="1.8" />
       <module name="micro-eureka" target="1.8" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="kj-bps-acc" options="-parameters" />
+      <module name="kj-bps-base" options="-parameters" />
+      <module name="kj-bps-common" options="-parameters" />
+      <module name="kj-bps-common-httpclient" options="-parameters" />
+      <module name="kj-bps-common-rabbitmq" options="-parameters" />
+      <module name="kj-bps-common-redis" options="-parameters" />
+      <module name="kj-bps-order" options="-parameters" />
+      <module name="kj-bps-pay" options="-parameters" />
+      <module name="kj-bps-user" options="-parameters" />
+      <module name="kj-bps-user-common" options="-parameters" />
+      <module name="micro-api-gateway" options="-parameters" />
+    </option>
   </component>
 </project>

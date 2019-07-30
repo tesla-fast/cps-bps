@@ -1,7 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3acf8f18-f097-47aa-b970-8ab3674c8a78" name="Default" comment="" />
+    <list default="true" id="3acf8f18-f097-47aa-b970-8ab3674c8a78" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kj-bps-user-common/target/classes/META-INF/spring-configuration-metadata.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-acc/target/classes/com/bpaas/bps/acc/AccApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-acc/target/classes/com/bpaas/bps/acc/AccApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-acc/target/classes/com/bpaas/bps/acc/controller/AccountController.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-acc/target/classes/com/bpaas/bps/acc/controller/AccountController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-acc/target/classes/com/bpaas/bps/acc/mapper/AccEBookMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-acc/target/classes/com/bpaas/bps/acc/mapper/AccEBookMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-acc/target/classes/com/bpaas/bps/acc/mapper/AccElistMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-acc/target/classes/com/bpaas/bps/acc/mapper/AccElistMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-acc/target/classes/com/bpaas/bps/acc/mapper/PotBookMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-acc/target/classes/com/bpaas/bps/acc/mapper/PotBookMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-acc/target/classes/com/bpaas/bps/acc/po/AccEBookPo.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-acc/target/classes/com/bpaas/bps/acc/po/AccEBookPo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-acc/target/classes/com/bpaas/bps/acc/service/AccountService.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-acc/target/classes/com/bpaas/bps/acc/service/AccountService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-acc/target/classes/com/bpaas/bps/acc/service/impl/AccountServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-acc/target/classes/com/bpaas/bps/acc/service/impl/AccountServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-base/target/classes/com/bpaas/bps/base/mapper/GnrParmMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-base/target/classes/com/bpaas/bps/base/mapper/GnrParmMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-base/target/classes/com/bpaas/bps/base/po/gnr/GnrParmPo.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-base/target/classes/com/bpaas/bps/base/po/gnr/GnrParmPo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-base/target/classes/com/bpaas/bps/base/service/GnrParmService.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-base/target/classes/com/bpaas/bps/base/service/GnrParmService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-base/target/classes/com/bpaas/bps/base/service/impl/GnrParmServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-base/target/classes/com/bpaas/bps/base/service/impl/GnrParmServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-common-httpclient/target/classes/com/bpaas/bps/httpclient/BpsAbstractHttpClient$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-common-httpclient/target/classes/com/bpaas/bps/httpclient/BpsAbstractHttpClient$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-common-httpclient/target/classes/com/bpaas/bps/httpclient/BpsAbstractHttpClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-common-httpclient/target/classes/com/bpaas/bps/httpclient/BpsAbstractHttpClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-common-httpclient/target/classes/com/bpaas/bps/httpclient/BpsDefaultHttpClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-common-httpclient/target/classes/com/bpaas/bps/httpclient/BpsDefaultHttpClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-common-httpclient/target/classes/com/bpaas/bps/httpclient/BpsHttpClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-common-httpclient/target/classes/com/bpaas/bps/httpclient/BpsHttpClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-common/target/classes/com/bpaas/bps/common/dto/BpsDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-common/target/classes/com/bpaas/bps/common/dto/BpsDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-common/target/classes/com/bpaas/bps/common/utils/BeanCopyUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-common/target/classes/com/bpaas/bps/common/utils/BeanCopyUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-common/target/classes/com/bpaas/bps/common/utils/InitData.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-common/target/classes/com/bpaas/bps/common/utils/InitData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-common/target/classes/com/bpaas/bps/common/utils/StringUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-common/target/classes/com/bpaas/bps/common/utils/StringUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-common/target/classes/com/bpaas/bps/common/utils/UUIDGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-common/target/classes/com/bpaas/bps/common/utils/UUIDGenerator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-pay/target/classes/com/bpaas/bps/pay/config/AlipayAppConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-pay/target/classes/com/bpaas/bps/pay/config/AlipayAppConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-pay/target/classes/com/bpaas/bps/pay/config/WechatAppConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-pay/target/classes/com/bpaas/bps/pay/config/WechatAppConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-pay/target/classes/com/bpaas/bps/pay/controller/AlipayAppController.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-pay/target/classes/com/bpaas/bps/pay/controller/AlipayAppController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-pay/target/classes/com/bpaas/bps/pay/controller/WechatAppController.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-pay/target/classes/com/bpaas/bps/pay/controller/WechatAppController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-pay/target/classes/com/bpaas/bps/pay/mapper/alipay/AlipayDetailRegMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-pay/target/classes/com/bpaas/bps/pay/mapper/alipay/AlipayDetailRegMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-pay/target/classes/com/bpaas/bps/pay/mapper/alipay/AlipayOrderMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-pay/target/classes/com/bpaas/bps/pay/mapper/alipay/AlipayOrderMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-pay/target/classes/com/bpaas/bps/pay/mapper/alipay/AlipayTotalRegMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-pay/target/classes/com/bpaas/bps/pay/mapper/alipay/AlipayTotalRegMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-pay/target/classes/com/bpaas/bps/pay/mapper/wechat/WechatOrderMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-pay/target/classes/com/bpaas/bps/pay/mapper/wechat/WechatOrderMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-pay/target/classes/com/bpaas/bps/pay/mapper/wechat/WechatPayDetailAllRegMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-pay/target/classes/com/bpaas/bps/pay/mapper/wechat/WechatPayDetailAllRegMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-pay/target/classes/com/bpaas/bps/pay/mapper/wechat/WechatPayDetailRefundRegMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-pay/target/classes/com/bpaas/bps/pay/mapper/wechat/WechatPayDetailRefundRegMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-pay/target/classes/com/bpaas/bps/pay/mapper/wechat/WechatPayDetailSuccRegMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-pay/target/classes/com/bpaas/bps/pay/mapper/wechat/WechatPayDetailSuccRegMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-pay/target/classes/com/bpaas/bps/pay/mapper/wechat/WechatPayTotalRegMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-pay/target/classes/com/bpaas/bps/pay/mapper/wechat/WechatPayTotalRegMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-pay/target/classes/com/bpaas/bps/pay/mapper/wechat/WechatRefundMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-pay/target/classes/com/bpaas/bps/pay/mapper/wechat/WechatRefundMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-pay/target/classes/com/bpaas/bps/pay/service/AppPayService.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-pay/target/classes/com/bpaas/bps/pay/service/AppPayService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-pay/target/classes/com/bpaas/bps/pay/service/impl/AlipayAppServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-pay/target/classes/com/bpaas/bps/pay/service/impl/AlipayAppServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-pay/target/classes/com/bpaas/bps/pay/service/impl/WechatAppServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-pay/target/classes/com/bpaas/bps/pay/service/impl/WechatAppServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-pay/target/classes/com/bpaas/bps/pay/vo/alipay/AlipayAppVo.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-pay/target/classes/com/bpaas/bps/pay/vo/alipay/AlipayAppVo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-pay/target/classes/com/bpaas/bps/pay/vo/wechat/WechatAppVo.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-pay/target/classes/com/bpaas/bps/pay/vo/wechat/WechatAppVo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-user-common/target/classes/com/bpaas/bps/user/common/config/CloudwalkConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-user-common/target/classes/com/bpaas/bps/user/common/config/CloudwalkConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-user-common/target/classes/com/bpaas/bps/user/common/controller/CloudwalkController.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-user-common/target/classes/com/bpaas/bps/user/common/controller/CloudwalkController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-user-common/target/classes/com/bpaas/bps/user/common/controller/UserCommonController.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-user-common/target/classes/com/bpaas/bps/user/common/controller/UserCommonController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-user-common/target/classes/com/bpaas/bps/user/common/controller/UserOtherController.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-user-common/target/classes/com/bpaas/bps/user/common/controller/UserOtherController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-user-common/target/classes/com/bpaas/bps/user/common/service/CcintService.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-user-common/target/classes/com/bpaas/bps/user/common/service/CcintService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-user-common/target/classes/com/bpaas/bps/user/common/service/CloudwalkService.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-user-common/target/classes/com/bpaas/bps/user/common/service/CloudwalkService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-user-common/target/classes/com/bpaas/bps/user/common/service/UserCommonService.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-user-common/target/classes/com/bpaas/bps/user/common/service/UserCommonService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-user-common/target/classes/com/bpaas/bps/user/common/service/UserOtherService.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-user-common/target/classes/com/bpaas/bps/user/common/service/UserOtherService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-user-common/target/classes/com/bpaas/bps/user/common/service/impl/CcintServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-user-common/target/classes/com/bpaas/bps/user/common/service/impl/CcintServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-user-common/target/classes/com/bpaas/bps/user/common/service/impl/CloudwalkServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-user-common/target/classes/com/bpaas/bps/user/common/service/impl/CloudwalkServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-user-common/target/classes/com/bpaas/bps/user/common/service/impl/UserCommonServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-user-common/target/classes/com/bpaas/bps/user/common/service/impl/UserCommonServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-user-common/target/classes/com/bpaas/bps/user/common/service/impl/UserOtherServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-user-common/target/classes/com/bpaas/bps/user/common/service/impl/UserOtherServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-user/target/classes/com/bpaas/bps/user/controller/PwdManagerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-user/target/classes/com/bpaas/bps/user/controller/PwdManagerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-user/target/classes/com/bpaas/bps/user/controller/ShippingAddressController.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-user/target/classes/com/bpaas/bps/user/controller/ShippingAddressController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-user/target/classes/com/bpaas/bps/user/controller/UserInfoUpdController.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-user/target/classes/com/bpaas/bps/user/controller/UserInfoUpdController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-user/target/classes/com/bpaas/bps/user/controller/UserLoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-user/target/classes/com/bpaas/bps/user/controller/UserLoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-user/target/classes/com/bpaas/bps/user/controller/UserRegController.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-user/target/classes/com/bpaas/bps/user/controller/UserRegController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-user/target/classes/com/bpaas/bps/user/service/PwdManagerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-user/target/classes/com/bpaas/bps/user/service/PwdManagerService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-user/target/classes/com/bpaas/bps/user/service/ShippingAddressService.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-user/target/classes/com/bpaas/bps/user/service/ShippingAddressService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-user/target/classes/com/bpaas/bps/user/service/UserInfoUpdService.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-user/target/classes/com/bpaas/bps/user/service/UserInfoUpdService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-user/target/classes/com/bpaas/bps/user/service/UserLoginService.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-user/target/classes/com/bpaas/bps/user/service/UserLoginService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-user/target/classes/com/bpaas/bps/user/service/UserRegService.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-user/target/classes/com/bpaas/bps/user/service/UserRegService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-user/target/classes/com/bpaas/bps/user/service/impl/PwdManagerServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-user/target/classes/com/bpaas/bps/user/service/impl/PwdManagerServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-user/target/classes/com/bpaas/bps/user/service/impl/ShippingAddressServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-user/target/classes/com/bpaas/bps/user/service/impl/ShippingAddressServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-user/target/classes/com/bpaas/bps/user/service/impl/UserInfoUpdServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-user/target/classes/com/bpaas/bps/user/service/impl/UserInfoUpdServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-user/target/classes/com/bpaas/bps/user/service/impl/UserLoginServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-user/target/classes/com/bpaas/bps/user/service/impl/UserLoginServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kj-bps-user/target/classes/com/bpaas/bps/user/service/impl/UserRegServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/kj-bps-user/target/classes/com/bpaas/bps/user/service/impl/UserRegServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/kj-bps-common/target/" />
@@ -18,8 +92,8 @@
     <ignored path="$PROJECT_DIR$/kj-bps-common-redis/target/" />
     <ignored path="$PROJECT_DIR$/kj-bps-common-httpclient/target/" />
     <ignored path="$PROJECT_DIR$/kj-bps-mbg/target/" />
+    <ignored path="$PROJECT_DIR$/kj-bps-acc/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,7 +123,38 @@
     <favorites_list name="kj-bps-parent" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/kj-bps-user/src/main/resources/com.bpaas.bps.user.mapper/UsrRewardsDtlsMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="19">
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.project">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="625">
+              <caret line="37" column="54" selection-start-line="37" selection-start-column="54" selection-end-line="37" selection-end-column="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/kj-bps-user/.classpath">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-372" />
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -65,6 +170,9 @@
       <find>UnmergeableXmlMappersPlugin</find>
       <find>CommentGenerator</find>
     </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -123,12 +231,6 @@
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -153,33 +255,21 @@
       <select />
     </treeState>
   </component>
-  <component name="NodePackageJsonFileManager">
-    <packageJsonPaths />
-  </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-1" />
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="817" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane" />
       <pane id="Scope" />
       <pane id="PackagesPane" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="kj-bps-parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kj-bps-parent" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -190,13 +280,14 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1564474687964" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.ignored.files" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -227,8 +318,9 @@
         </RuleState>
       </list>
     </option>
+    <option name="contentProportion" value="0.24565756" />
   </component>
-  <component name="RunManager" selected="Application.Generator">
+  <component name="RunManager" selected="Spring Boot.UserApplication">
     <configuration name="Generator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.bpaas.bps.mbg.Generator" />
       <module name="kj-bps-mbg" />
@@ -239,25 +331,21 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="BaseApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="kj-bps-base" />
@@ -268,6 +356,9 @@
         </pattern>
       </extension>
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.bpaas.bps.base.BaseApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="GatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="micro-api-gateway" />
@@ -278,6 +369,9 @@
         </pattern>
       </extension>
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.micro.cloud.gateway.GatewayApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="PayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="kj-bps-pay" />
@@ -288,6 +382,9 @@
         </pattern>
       </extension>
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.bpaas.bps.pay.PayApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="UserApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="kj-bps-user" />
@@ -298,33 +395,22 @@
         </pattern>
       </extension>
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.bpaas.bps.user.UserApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration default="true" type="TestNG" factoryName="TestNG">
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
+    <configuration default="true" type="TestNG">
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
       <properties />
       <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <list>
+      <item itemvalue="Application.Generator" />
       <item itemvalue="Spring Boot.PayApplication" />
       <item itemvalue="Spring Boot.GatewayApplication" />
-      <item itemvalue="Application.Generator" />
       <item itemvalue="Spring Boot.BaseApplication" />
       <item itemvalue="Spring Boot.UserApplication" />
     </list>
@@ -355,7 +441,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85805000" />
+    <option name="totallyTimeSpent" value="86042000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -367,54 +453,47 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="817" extended-state="6" />
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info anchor="right" id="Palette" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5007153" side_tool="true" weight="0.32998565" />
-      <window_info anchor="right" id="Maven Projects" order="0" weight="0.3297568" />
-      <window_info anchor="bottom" id="Database Changes" order="4" show_stripe_button="false" />
-      <window_info id="Capture Tool" order="7" />
       <window_info id="Designer" order="0" />
-      <window_info anchor="right" id="Database" order="2" weight="0.3297568" />
-      <window_info id="Structure" order="6" sideWeight="0.5010707" side_tool="true" weight="0.24964234" />
-      <window_info anchor="right" id="Ant Build" order="8" weight="0.25" />
-      <window_info id="UI Designer" order="2" />
-      <window_info anchor="bottom" id="Debug" order="10" weight="0.39885223" />
-      <window_info anchor="bottom" id="TODO" order="13" weight="0.32998565" />
-      <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="1" />
-      <window_info anchor="bottom" id="Java Enterprise" order="2" weight="0.32998565" />
-      <window_info anchor="right" id="Capture Analysis" order="1" />
-      <window_info anchor="bottom" id="Run Dashboard" order="14" visible="true" weight="0.3400287" />
-      <window_info anchor="bottom" id="Version Control" order="5" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="9" sideWeight="0.49928468" weight="0.32998565" />
+      <window_info id="UI Designer" order="2" />
+      <window_info id="Favorites" order="3" sideWeight="0.5010707" side_tool="true" weight="0.24964234" />
+      <window_info id="Web" order="4" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.49892932" visible="true" weight="0.3257882" />
+      <window_info id="Structure" order="6" sideWeight="0.5010707" side_tool="true" weight="0.24964234" />
+      <window_info id="Capture Tool" order="7" />
       <window_info anchor="bottom" id="Spring" order="0" sideWeight="0.49928468" weight="0.32998565" />
       <window_info anchor="bottom" id="Terminal" order="1" weight="0.32998565" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" sideWeight="0.49892932" visible="true" weight="0.25679544" />
+      <window_info anchor="bottom" id="Java Enterprise" order="2" weight="0.32998565" />
       <window_info anchor="bottom" id="Problems" order="3" weight="0.32998565" />
-      <window_info anchor="right" id="Bean Validation" order="5" />
-      <window_info id="Web" order="4" side_tool="true" />
-      <window_info anchor="right" id="Theme Preview" order="4" />
-      <window_info id="Favorites" order="3" sideWeight="0.5010707" side_tool="true" weight="0.24964234" />
-      <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="7" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
-      <window_info anchor="bottom" id="Messages" order="14" sideWeight="0.49928468" weight="0.32998565" />
+      <window_info anchor="bottom" id="Database Changes" order="4" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="5" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="6" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5012126" side_tool="true" weight="0.46003553" />
+      <window_info anchor="bottom" id="Run" order="9" sideWeight="0.49928468" weight="0.32998565" />
+      <window_info anchor="bottom" id="Debug" order="10" weight="0.39885223" />
+      <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="13" weight="0.32998565" />
+      <window_info anchor="bottom" id="Messages" order="14" sideWeight="0.49928468" weight="0.32998565" />
+      <window_info anchor="bottom" id="Run Dashboard" order="15" sideWeight="0.4987874" visible="true" weight="0.46003553" />
+      <window_info anchor="right" id="Maven Projects" order="0" weight="0.3297568" />
+      <window_info anchor="right" id="Capture Analysis" order="1" />
+      <window_info anchor="right" id="Database" order="2" weight="0.3297568" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info anchor="right" id="Theme Preview" order="4" />
+      <window_info anchor="right" id="Bean Validation" order="5" />
+      <window_info anchor="right" id="Palette" order="6" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="7" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="8" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="9" weight="0.25" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <option name="time" value="7" />
-    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/kj-bps-common-httpclient/src/main/java/com/bpaas/bps/httpclient/HttpTools.java">
@@ -572,13 +651,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kj-bps-common/src/main/java/com/bpaas/bps/common/config/Swagger2Config.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="41" column="32" lean-forward="true" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/kj-bps-common/src/main/java/com/bpaas/bps/common/config/Swagger2Config.java" />
     <entry file="file://$PROJECT_DIR$/kj-bps-user/src/main/java/com/bpaas/bps/user/config/Swagger2Config.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
@@ -591,8 +664,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1919">
-          <caret line="14" column="49" selection-start-line="14" selection-start-column="49" selection-end-line="14" selection-end-column="49" />
+        <state relative-caret-position="625">
+          <caret line="37" column="54" selection-start-line="37" selection-start-column="54" selection-end-line="37" selection-end-column="54" />
         </state>
       </provider>
     </entry>
@@ -620,20 +693,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kj-bps-pay/src/main/java/com/bpaas/bps/pay/controller/WechatPayController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="50" column="40" selection-start-line="50" selection-start-column="30" selection-end-line="50" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kj-bps-pay/src/main/java/com/bpaas/bps/pay/controller/AliPayController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="44" column="29" selection-start-line="44" selection-start-column="29" selection-end-line="44" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/kj-bps-pay/src/main/java/com/bpaas/bps/pay/controller/WechatPayController.java" />
+    <entry file="file://$PROJECT_DIR$/kj-bps-pay/src/main/java/com/bpaas/bps/pay/controller/AliPayController.java" />
     <entry file="file://$PROJECT_DIR$/../micro-api-gateway/src/main/java/com/micro/cloud/gateway/config/GatewaySwaggerProvider.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -728,7 +789,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>jdk1.8</last-edited>
+          <last-edited>1.8</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -740,7 +801,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>micro-consul</last-edited>
+          <last-edited>kj-bps-pay</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -765,7 +826,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Maven: antlr:antlr:2.7.7</last-edited>
+          <last-edited>Maven: cglib:cglib-nodep:3.1</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
